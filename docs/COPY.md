@@ -36,7 +36,7 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
 | —  | Navbar                   | —                | `layout/Navbar.jsx`        | Feito, por aprovar  |
 | 1  | Hero                     | `#inicio`        | `sections/Hero.jsx`        | Feito, por aprovar  |
 | 2  | Quem sou                 | `#quem-sou`      | `sections/QuemSou.jsx`     | Feito, por aprovar  |
-| 3  | Serviços                 | `#servicos`      | `sections/Servicos.jsx`    | Por refazer         |
+| 3  | Serviços                 | `#servicos`      | `sections/Servicos.jsx`    | Feito, por aprovar  |
 | 4  | Como funciona            | `#como-funciona` | — (novo)                   | Por fazer           |
 | 5  | Porque escolher          | `#porque`        | `sections/Beneficios.jsx`  | Por refazer         |
 | 6  | Madeiras                 | `#madeiras`      | — (novo)                   | Por fazer           |
@@ -153,7 +153,11 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 
 **CTA em cada serviço:** Pedir orçamento → `#pedido`
 
-> **Implementação:** o botão de cada cartão abre o formulário com o tipo de serviço correspondente já selecionado (`#pedido?servico=construcao`, etc.).
+> **Implementação:** o botão de cada cartão leva a `#pedido` e guarda o serviço em `sessionStorage` (`servico_pretendido` = `construcao` | `reparacao` | `setup`). Na fase do formulário, este lê o valor e pré-seleciona o tipo de serviço.
+>
+> **Design:** cada serviço é apresentado sobre a madeira correspondente da secção Madeiras (Construção → abeto, Reparação → pau-santo, Setup → ébano), com o conteúdo num painel de vidro (glassmorphism). No telemóvel, os cartões empilham-se ao fazer scroll: cada um fixa-se no topo e o seguinte desliza por cima. Se um cartão for mais alto que o ecrã, fixa-se encostado ao fundo para o botão ficar sempre visível.
+>
+> **Imagens das madeiras** (`public/madeiras/`): amostras de referência da Xiloteca do Cirad, publicadas no Wikimedia Commons em **domínio público** (não exigem atribuição). Espécies: *Picea abies*, *Dalbergia latifolia*, *Diospyros crassiflora* — as mesmas da copy. Podem ser reutilizadas na secção Madeiras.
 
 ---
 
@@ -285,7 +289,7 @@ Carácter: solidez, sustentabilidade, sonoridade densa
 
 > Queres saber que madeiras fazem sentido para o teu instrumento? Fala comigo.
 
-**Botão:** Pedir aconselhamento → `#pedido?servico=construcao`
+**Botão:** Pedir aconselhamento → `#pedido`, com `servico_pretendido` = `construcao` (mesmo mecanismo dos cartões de Serviços)
 
 > **Porquê o formulário:** os campos de madeira da construção já aceitam “não sei, preciso de ajuda”. O pedido chega com o contexto todo (instrumento, estilo, orçamento) e a resposta pode ser concreta.
 > **Implementação:** são 10 madeiras em 4 grupos. Para não criar uma secção interminável, mostrar por separadores (Tampos · Fundos e ilhargas · Braços · Escala e cavalete) ou em grelha de cartões.

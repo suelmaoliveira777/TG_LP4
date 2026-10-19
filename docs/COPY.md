@@ -105,9 +105,9 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 
 > Num instrumento, a diferença não está só na marca nem no preço. Está também em quem o fez e em quem o cuida — e isso pode transformar completamente o som e a experiência de quem toca.
 >
-> Aprendi lutheria com quem realmente sabe: mestres portugueses com décadas de experiência na construção e reparação de instrumentos de corda tradicionais.
+> Sou o **Tiago Gago dos Santos** e aprendi lutheria com quem realmente sabe: mestres portugueses com décadas de experiência na construção e reparação de instrumentos de corda tradicionais.
 >
-> Hoje, no meu atelier em Cascais, recebo instrumentos de músicos de todo o país.
+> Hoje, no meu atelier em Cascais, construo, reparo e afino instrumentos de músicos que chegam de todo o país.
 
 ---
 
@@ -496,7 +496,8 @@ Alterações feitas à copy original entregue pelo cliente.
 | Hero | Ver instrumentos | Pedir orçamento → `#pedido` | Não existe galeria de instrumentos; o CTA principal leva ao pedido |
 | Hero | solicitar orçamento | Ver serviços → `#servicos` | Evita dois botões iguais lado a lado |
 | Secção 2, 1.º parágrafo | A diferença não está só na marca… quem os fez e em quem os cuida, isto pode… | Num instrumento, a diferença… quem o fez e em quem o cuida — e isso pode… | “os” não tinha a que se referir; vírgula a unir duas frases |
-| Secção 2, 2.º e 3.º parágrafos | O Tiago Gago aprendeu… / recebe | Aprendi… / no meu atelier… recebo | Voz na primeira pessoa |
+| Secção 2, 2.º parágrafo | O Tiago Gago aprendeu lutheria… | Sou o Tiago Gago dos Santos e aprendi lutheria… | Voz na primeira pessoa; apresenta o nome completo |
+| Secção 2, 3.º parágrafo | Hoje, em Cascais, recebe instrumentos de músicos de todo o país. | Hoje, no meu atelier em Cascais, construo, reparo e afino instrumentos de músicos que chegam de todo o país. | Destaca o atelier e resume os três serviços |
 | Secção 4, passo 02 | O Tiago analisa e devolve | Analiso o teu pedido e devolvo-te | Voz na primeira pessoa |
 | Secção 6, introdução | No atelier Tiago Gago | No meu atelier | Voz na primeira pessoa |
 | Secção 6, Cipreste · Formulário · Hero | campanica | campaniça | Grafia correta |

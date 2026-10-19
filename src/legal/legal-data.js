@@ -1,7 +1,7 @@
 // Dados usados nas páginas legais. Cada valor a null aparece destacado nas páginas
 // como "por preencher" — nenhum pode ficar a null quando o site for publicado.
 export const LEGAL = {
-  responsavel: null, // Nome completo do Tiago (empresário em nome individual) ou da empresa
+  responsavel: 'Tiago Gago dos Santos', // Confirmar que é o nome que consta no registo fiscal (NIF)
   nif: null,
   morada: null, // Morada do atelier, com código postal
   email: null, // Email para pedidos e para exercício de direitos RGPD

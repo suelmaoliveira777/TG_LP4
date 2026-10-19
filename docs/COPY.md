@@ -27,7 +27,7 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
 | -- | ------------------------ | ---------------- | -------------------------- | ------------------- |
 | —  | Navbar                   | —                | `layout/Navbar.jsx`        | Feito, por aprovar  |
 | 1  | Hero                     | `#inicio`        | `sections/Hero.jsx`        | Feito, por aprovar  |
-| 2  | Quem sou                 | `#quem-sou`      | `sections/QuemSou.jsx`     | Por refazer         |
+| 2  | Quem sou                 | `#quem-sou`      | `sections/QuemSou.jsx`     | Feito, por aprovar  |
 | 3  | Serviços                 | `#servicos`      | `sections/Servicos.jsx`    | Por refazer         |
 | 4  | Como funciona            | `#como-funciona` | — (novo)                   | Por fazer           |
 | 5  | Porque escolher          | `#porque`        | `sections/Beneficios.jsx`  | Por refazer         |

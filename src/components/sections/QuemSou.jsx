@@ -30,22 +30,23 @@ function QuemSou() {
             </div>
           </motion.figure>
 
-          <motion.div {...fadeUp} className="max-w-2xl">
+          {/* Até lg: etiqueta e título centrados, texto justificado (com hifenização para evitar buracos entre palavras) */}
+          <motion.div {...fadeUp} className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
             <SectionLabel>Quem sou</SectionLabel>
             <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
               Das mãos de
               <br />
               <span className="text-gold-light">quem sabe</span>
             </h2>
-            <p className="mt-8 text-lg leading-8 text-text/90 sm:text-xl sm:leading-9">
+            <p className="mt-8 hyphens-auto text-justify text-lg leading-8 text-text/90 sm:text-xl sm:leading-9 lg:hyphens-manual lg:text-left">
               Num instrumento, a diferença não está só na marca nem no preço. Está também em quem o fez e em quem o cuida — e
               isso pode transformar completamente o som e a experiência de quem toca.
             </p>
-            <p className="mt-6 text-base leading-8 text-text/75 sm:text-lg">
+            <p className="mt-6 hyphens-auto text-justify text-base leading-8 text-text/75 sm:text-lg lg:hyphens-manual lg:text-left">
               Aprendi lutheria com quem realmente sabe: mestres portugueses com décadas de experiência na construção e reparação de
               instrumentos de corda tradicionais.
             </p>
-            <p className="mt-4 text-base leading-8 text-text/75 sm:text-lg">
+            <p className="mt-4 hyphens-auto text-justify text-base leading-8 text-text/75 sm:text-lg lg:hyphens-manual lg:text-left">
               Hoje, no meu atelier em Cascais, recebo instrumentos de músicos de todo o país.
             </p>
           </motion.div>

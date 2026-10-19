@@ -1,5 +1,4 @@
 import SectionLabel from '../ui/SectionLabel'
-import RosetaSeparator from '../ui/RosetaSeparator'
 
 const proofs = [
   'Músicos que vinham com instrumentos difíceis de resolver e saíam com confiança.' ,
@@ -27,7 +26,6 @@ function ProvasSocial() {
             </div>
           ))}
         </div>
-        <RosetaSeparator />
       </div>
     </section>
   )

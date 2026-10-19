@@ -9,6 +9,7 @@ function RosetaSeparator() {
 
   useEffect(() => {
     if (!lineRef.current) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -20,8 +21,10 @@ function RosetaSeparator() {
 
     tl.fromTo(lineRef.current, { scaleX: 0, transformOrigin: 'center' }, { scaleX: 1, duration: 0.8, ease: 'power3.out' })
 
+    // Só desfaz a própria animação: com vários separadores na página, cada um gere o seu
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+      tl.scrollTrigger?.kill()
+      tl.kill()
     }
   }, [])
 

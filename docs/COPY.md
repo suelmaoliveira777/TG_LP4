@@ -21,6 +21,13 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
 
 ---
 
+## Regras de design
+
+- **Separador entre secções:** a roseta ✦ (`ui/RosetaSeparator.jsx`) fica entre todas as secções, sobre a linha de fronteira. É colocada automaticamente em `App.jsx` (`ui/SectionDivider.jsx`), por isso uma secção nova recebe-a sem código extra.
+- **Telemóvel e tablet (até `lg`):** etiqueta e título centrados, texto corrido justificado com hifenização. A partir de `lg`, tudo alinhado à esquerda.
+
+---
+
 ## Mapa de secções
 
 | #  | Secção                   | Âncora           | Componente atual           | Estado              |

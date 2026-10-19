@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useState } from 'react'
+import { Fragment, Suspense, lazy, useEffect, useState } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/layout/Navbar'
 import Hero from './components/sections/Hero'
@@ -11,12 +11,16 @@ import Garantia from './components/sections/Garantia'
 import Faq from './components/sections/Faq'
 import Formulario from './components/sections/Formulario'
 import CookieBanner from './components/ui/CookieBanner'
+import SectionDivider from './components/ui/SectionDivider'
 import { useGTM } from './hooks/useGTM'
 import { useMetaPixel } from './hooks/useMetaPixel'
 import { useUTM } from './hooks/useUTM'
 import { schemaData } from './utils/schema'
 
 const Footer = lazy(() => import('./components/layout/Footer'))
+
+// Ordem das secções da página; entre cada uma é colocado o separador ✦
+const SECTIONS = [Hero, QuemSou, Servicos, Beneficios, ProvasSocial, Objecoes, Garantia, Faq, Formulario]
 
 function App() {
   const [consent, setConsent] = useState(() => window.localStorage.getItem('cookie_consent') || 'essential')
@@ -54,18 +58,18 @@ function App() {
         </Helmet>
 
         <Navbar />
-        <Hero />
-        <QuemSou />
-        <Servicos />
-        <Beneficios />
-        <ProvasSocial />
-        <Objecoes />
-        <Garantia />
-        <Faq />
-        <Formulario />
+        <main>
+          {SECTIONS.map((Section, index) => (
+            <Fragment key={index}>
+              {index > 0 && <SectionDivider />}
+              <Section />
+            </Fragment>
+          ))}
+        </main>
 
         <CookieBanner />
 
+        <SectionDivider />
         <Suspense fallback={null}>
           <Footer />
         </Suspense>

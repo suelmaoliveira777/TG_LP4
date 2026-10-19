@@ -4,7 +4,7 @@ import portrait from '/tiago-portrait.jpeg'
 
 function QuemSou() {
   return (
-    <section id="quem" className="bg-surface px-6 py-24 text-text lg:px-10">
+    <section id="quem-sou"className="bg-surface px-6 py-24 text-text lg:px-10">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="reveal rounded-[2rem] border border-gold-light/20 bg-bg/70 p-4 shadow-[0_0_60px_rgba(0,0,0,0.2)]">
           <img src={portrait} alt="Tiago Gago no atelier" loading="lazy" className="h-[480px] w-full rounded-[1.5rem] object-cover" />

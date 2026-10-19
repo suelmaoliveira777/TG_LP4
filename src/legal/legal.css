@@ -1,0 +1,52 @@
+/* Sem @layer: este ficheiro é importado à parte e não tem a diretiva @tailwind correspondente */
+.legal-prose {
+  @apply text-base leading-8 text-text/85;
+}
+
+.legal-prose .legal-section + .legal-section {
+  @apply mt-12 border-t border-white/10 pt-12;
+}
+
+.legal-prose h2 {
+  @apply mb-5 font-display text-2xl font-semibold text-text sm:text-3xl;
+}
+
+.legal-prose h3 {
+  @apply mb-3 mt-8 font-body text-sm font-semibold uppercase tracking-[0.2em] text-gold-light;
+}
+
+.legal-prose p + p,
+.legal-prose p + ul,
+.legal-prose ul + p,
+.legal-prose p + .legal-table,
+.legal-prose .legal-table + p {
+  @apply mt-4;
+}
+
+.legal-prose ul {
+  @apply list-disc space-y-2 pl-6 marker:text-gold-light;
+}
+
+.legal-prose a {
+  @apply text-gold-light underline decoration-gold-light/40 underline-offset-4 transition hover:decoration-gold-light;
+}
+
+.legal-prose strong {
+  @apply font-semibold text-text;
+}
+
+.legal-table {
+  @apply overflow-x-auto rounded-2xl border border-white/10;
+}
+
+.legal-table table {
+  @apply w-full min-w-[36rem] border-collapse text-left text-sm leading-6;
+}
+
+.legal-table th {
+  @apply bg-surface px-4 py-3 font-semibold uppercase tracking-[0.12em] text-muted;
+}
+
+.legal-table td {
+  @apply border-t border-white/10 px-4 py-3 align-top;
+}

@@ -52,7 +52,7 @@ function Formulario() {
   }
 
   return (
-    <section id="contacto" className="bg-bg px-6 py-24 text-text lg:px-10">
+    <section id="pedido"className="bg-bg px-6 py-24 text-text lg:px-10">
       <div className="mx-auto grid max-w-7xl gap-10 rounded-[2rem] border border-gold-light/20 bg-surface/80 p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-12">
         <div>
           <SectionLabel>Pedido</SectionLabel>

@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         bg: '#0A0805',
+        'gold-pale': '#E2B568',
         surface: '#111008',
         'gold-light': '#C8882A',
         'gold-mid': '#A0661A',

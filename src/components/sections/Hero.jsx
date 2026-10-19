@@ -1,21 +1,21 @@
-import { FinancialHero } from '@/components/ui/hero-section'
+import { HeroSection } from '@/components/ui/hero-section'
 
 function Hero() {
   return (
-    <FinancialHero
+    <HeroSection
+      id="inicio"
       title={
         <>
-          Cada instrumento começa numa ideia.
+          Guitarras Artesanais
           <br />
-          Acaba nas suas mãos.
+          com Excelência Sonora
         </>
       }
-      description="Construção artesanal, reparação especializada e set up profissional de instrumentos de corda. Feito com calma, precisão e respeito pela madeira."
-      buttonText="Orçamento gratuito"
-      buttonLink="#contacto"
+      description="Construção, reparação e setup de guitarras, violas e instrumentos de corda. Feitos com madeiras selecionadas, técnica apurada e respeito pela tradição artesanal portuguesa."
+      primaryCta={{ label: 'Pedir orçamento', href: '#pedido' }}
+      secondaryCta={{ label: 'Ver serviços', href: '#servicos' }}
       imageUrl="/hero_TG.png"
-      imageAlt="Viola artesanal em madeira clara sobre fundo escuro"
-      className="bg-bg text-text"
+      imageAlt="Viola campaniça artesanal em madeira clara sobre fundo escuro"
     />
   )
 }

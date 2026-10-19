@@ -1,14 +1,20 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { MotionConfig, motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 
-interface FinancialHeroProps {
+interface Cta {
+  label: string
+  href: string
+}
+
+interface HeroSectionProps {
+  id?: string
   title: React.ReactNode
   description: string
-  buttonText: string
-  buttonLink: string
+  primaryCta: Cta
+  secondaryCta?: Cta
   imageUrl: string
   imageAlt?: string
   className?: string
@@ -36,58 +42,72 @@ const itemVariants = {
   },
 }
 
-export const FinancialHero = ({
+export const HeroSection = ({
+  id,
   title,
   description,
-  buttonText,
-  buttonLink,
+  primaryCta,
+  secondaryCta,
   imageUrl,
   imageAlt = '',
   className,
-}: FinancialHeroProps) => {
+}: HeroSectionProps) => {
   return (
-    <section className={cn('relative w-full overflow-hidden bg-bg text-text', className)}>
-      {/* Imagem inteira, do topo da página (por trás do menu) até à base da hero; o fundo dela já é da cor do site */}
-      <div className="absolute inset-0 flex justify-end">
-        <motion.img
-          src={imageUrl}
-          alt={imageAlt}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="h-full w-auto max-w-none"
-        />
-      </div>
-      {/* No mobile o texto passa por cima da guitarra, por isso escurece */}
-      <div className="absolute inset-0 bg-bg/60 lg:hidden" />
-
-      <motion.div
-        className="relative container mx-auto flex min-h-screen items-center px-6 py-20"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:w-1/2">
-          <motion.h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl" variants={itemVariants}>
-            {title}
-          </motion.h1>
-          <motion.p className="mt-6 max-w-xl text-lg text-muted" variants={itemVariants}>
-            {description}
-          </motion.p>
-          <motion.div variants={itemVariants} className="mt-8">
-            <Button asChild size="lg" className="h-12 px-8 text-base">
-              <a
-                href={buttonLink}
-                target={buttonLink.startsWith('#') ? undefined : '_blank'}
-                rel={buttonLink.startsWith('#') ? undefined : 'noopener noreferrer'}
-              >
-                {buttonText}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
-          </motion.div>
+    <MotionConfig reducedMotion="user">
+      <section id={id} className={cn('relative w-full overflow-hidden bg-bg text-text', className)}>
+        {/* Até lg: a imagem preenche a hero e é enquadrada na viola.
+            A partir de lg: imagem inteira, do topo (por trás do menu) até à base, encostada à direita.
+            O fundo da imagem já é da cor do site, por isso não há emenda. */}
+        <div className="absolute inset-0 flex justify-end">
+          <motion.img
+            src={imageUrl}
+            alt={imageAlt}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, ease: 'easeOut' }}
+            fetchPriority="high"
+            className="h-full w-full object-cover object-[82%_center] lg:w-auto lg:max-w-none lg:shrink-0 lg:object-contain"
+          />
         </div>
-      </motion.div>
-    </section>
+        {/* Legibilidade do texto: escurece tudo no telemóvel e só a esquerda em ecrãs médios.
+            Em xl o texto já não se cruza com a viola. */}
+        <div className="absolute inset-0 bg-bg/65 lg:bg-transparent lg:bg-gradient-to-r lg:from-bg lg:via-bg/60 lg:to-transparent xl:hidden" />
+
+        <motion.div
+          className="relative mx-auto flex min-h-svh max-w-7xl items-center px-6 pb-16 pt-28 lg:px-10"
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+        >
+          <div className="flex w-full max-w-2xl flex-col items-center text-center max-lg:mx-auto lg:max-w-xl lg:items-start lg:text-left xl:max-w-2xl">
+            <motion.h1
+              variants={itemVariants}
+              className="bg-gradient-to-b from-gold-pale to-gold-light bg-clip-text pb-2 font-display text-[2.15rem] font-semibold leading-[1.1] text-transparent sm:text-5xl lg:text-6xl xl:text-7xl"
+            >
+              {title}
+            </motion.h1>
+            <motion.p variants={itemVariants} className="mt-6 max-w-xl text-base leading-relaxed text-text/80 sm:text-lg">
+              {description}
+            </motion.p>
+            <motion.div
+              variants={itemVariants}
+              className="mt-10 flex w-full max-w-sm flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:gap-4"
+            >
+              <Button asChild size="lg">
+                <a href={primaryCta.href}>
+                  {primaryCta.label}
+                  <ArrowRight className="h-5 w-5" />
+                </a>
+              </Button>
+              {secondaryCta && (
+                <Button asChild size="lg" variant="outline">
+                  <a href={secondaryCta.href}>{secondaryCta.label}</a>
+                </Button>
+              )}
+            </motion.div>
+          </div>
+        </motion.div>
+      </section>
+    </MotionConfig>
   )
 }

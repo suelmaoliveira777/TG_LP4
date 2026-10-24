@@ -69,19 +69,23 @@ function rememberService(id) {
   }
 }
 
-// Posição em que o cartão fica fixado. O ideal é logo abaixo da navbar, um pouco abaixo do cartão anterior
+// Altura da navbar fixa (py-4 + botão h-11), em rem
+const NAVBAR_HEIGHT = 4.75
+
+// Posição em que o cartão fica fixado. O ideal é logo abaixo do título fixado, um pouco abaixo do cartão anterior
 // (deixando ver a borda dos que ficam por baixo). Se o cartão não couber no ecrã a partir daí, fixa-se
 // encostado ao fundo: assim o botão "Pedir orçamento" fica sempre visível antes de o seguinte o cobrir.
-function useStickyTop(ref, index, enabled) {
+function useStickyTop(ref, titleRef, index, enabled) {
   const [top, setTop] = useState(null)
 
   useLayoutEffect(() => {
-    if (!enabled || !ref.current) return
+    if (!enabled || !ref.current || !titleRef.current) return
 
     const element = ref.current
+    const title = titleRef.current
     const update = () => {
       const rem = parseFloat(getComputedStyle(document.documentElement).fontSize)
-      const preferred = (5.5 + index * 1.25) * rem
+      const preferred = (NAVBAR_HEIGHT + 0.5 + index * 1.25) * rem + title.offsetHeight
       const fitsOnScreen = window.innerHeight - element.offsetHeight - rem
       setTop(Math.min(preferred, fitsOnScreen))
     }
@@ -89,20 +93,21 @@ function useStickyTop(ref, index, enabled) {
     update()
     const observer = new ResizeObserver(update)
     observer.observe(element)
+    observer.observe(title)
     window.addEventListener('resize', update)
     return () => {
       observer.disconnect()
       window.removeEventListener('resize', update)
     }
-  }, [ref, index, enabled])
+  }, [ref, titleRef, index, enabled])
 
   return top
 }
 
-function ServiceCard({ service, index, total, progress, stacked }) {
+function ServiceCard({ service, index, total, progress, stacked, titleRef }) {
   const { icon: Icon } = service
   const cardRef = useRef(null)
-  const top = useStickyTop(cardRef, index, stacked)
+  const top = useStickyTop(cardRef, titleRef, index, stacked)
 
   // Efeito de pilha: cada cartão encolhe ligeiramente à medida que os seguintes lhe passam por cima
   const targetScale = 1 - (total - 1 - index) * 0.05
@@ -179,6 +184,7 @@ function ServiceCard({ service, index, total, progress, stacked }) {
 
 function Servicos() {
   const listRef = useRef(null)
+  const titleRef = useRef(null)
   const reduceMotion = useReducedMotion()
   // Pilha só no telemóvel/tablet e com altura suficiente para o cartão caber fixado no ecrã
   const canStack = useMediaQuery('(max-width: 1023px) and (min-height: 640px)')
@@ -197,17 +203,29 @@ function Servicos() {
         />
 
         <div className="relative mx-auto max-w-7xl">
-          <motion.div {...fadeUp} className="mx-auto max-w-2xl text-center">
+          <motion.div {...fadeUp} className="text-center">
             <SectionLabel>Serviços</SectionLabel>
-            <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
-              O que faço <span className="text-gold-light">por ti</span>
-            </h2>
-            <p className="mt-6 text-base leading-8 text-text/75 sm:text-lg">
-              Três formas de trabalharmos juntos — cada uma com a mesma dedicação:
-            </p>
           </motion.div>
 
-          <div ref={listRef} className="mt-14 flex flex-col gap-6 sm:mt-16 lg:grid lg:grid-cols-3 lg:items-stretch lg:gap-8">
+          {/* Na pilha, o título fica fixado por baixo da navbar e os cartões empilham-se por baixo dele */}
+          <div
+            ref={titleRef}
+            className={
+              stacked
+                ? 'sticky z-10 -mx-6 mt-2 bg-bg px-6 py-4 text-center'
+                : 'mt-6 text-center'
+            }
+            style={stacked ? { top: `${NAVBAR_HEIGHT}rem` } : undefined}
+          >
+            <motion.h2 {...fadeUp} className="font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
+              O que faço <span className="text-gold-light">por ti</span>
+            </motion.h2>
+          </div>
+
+          <div
+            ref={listRef}
+            className={`flex flex-col gap-6 lg:grid lg:grid-cols-3 lg:items-stretch lg:gap-8 ${stacked ? 'mt-6' : 'mt-14 sm:mt-16'}`}
+          >
             {SERVICES.map((service, index) => (
               <ServiceCard
                 key={service.id}
@@ -216,6 +234,7 @@ function Servicos() {
                 total={SERVICES.length}
                 progress={scrollYProgress}
                 stacked={stacked}
+                titleRef={titleRef}
               />
             ))}
           </div>

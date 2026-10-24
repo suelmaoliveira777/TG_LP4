@@ -155,9 +155,9 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 
 > **Implementação:** o botão de cada cartão leva a `#pedido` e guarda o serviço em `sessionStorage` (`servico_pretendido` = `construcao` | `reparacao` | `setup`). Na fase do formulário, este lê o valor e pré-seleciona o tipo de serviço.
 >
-> **Design:** cada serviço é apresentado sobre a madeira correspondente da secção Madeiras (Construção → abeto, Reparação → pau-santo, Setup → ébano), com o conteúdo num painel de vidro (glassmorphism). No telemóvel, os cartões empilham-se ao fazer scroll: cada um fixa-se no topo e o seguinte desliza por cima. Se um cartão for mais alto que o ecrã, fixa-se encostado ao fundo para o botão ficar sempre visível.
+> **Design:** cada cartão tem um fundo escuro com um brilho dourado e seis linhas finas a lembrar cordas, com o conteúdo num painel de vidro (glassmorphism). No telemóvel, os cartões empilham-se ao fazer scroll: cada um fixa-se no topo e o seguinte desliza por cima. Se um cartão for mais alto que o ecrã, fixa-se encostado ao fundo para o botão ficar sempre visível.
 >
-> **Imagens das madeiras** (`public/madeiras/`): amostras de referência da Xiloteca do Cirad, publicadas no Wikimedia Commons em **domínio público** (não exigem atribuição). Espécies: *Picea abies*, *Dalbergia latifolia*, *Diospyros crassiflora* — as mesmas da copy. Podem ser reutilizadas na secção Madeiras.
+> **Imagens das madeiras** (`public/madeiras/`): amostras de referência da Xiloteca do Cirad, publicadas no Wikimedia Commons em **domínio público** (não exigem atribuição). Espécies: *Picea abies*, *Dalbergia latifolia*, *Diospyros crassiflora*. Já não são usadas nos Serviços; ficam guardadas para a secção Madeiras.
 
 ---
 

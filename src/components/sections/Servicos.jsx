@@ -5,8 +5,7 @@ import { Button } from '@/components/ui/button'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import SectionLabel from '../ui/SectionLabel'
 
-// Cada serviço é apresentado sobre uma madeira da secção Madeiras.
-// Imagens: amostras da Xiloteca do Cirad (Wikimedia Commons, domínio público).
+// glow: posição horizontal do brilho dourado no fundo de cada cartão
 const SERVICES = [
   {
     id: 'construcao',
@@ -20,7 +19,7 @@ const SERVICES = [
       'Instrumentos personalizados à medida',
       'Acompanhamento em todas as fases do processo',
     ],
-    wood: { name: 'Abeto europeu', species: 'Picea abies', image: '/madeiras/abeto.jpg' },
+    glow: '15%',
   },
   {
     id: 'reparacao',
@@ -35,7 +34,7 @@ const SERVICES = [
       'Restauro de verniz e acabamentos',
       'Instrumentos de herança ou coleção',
     ],
-    wood: { name: 'Pau-santo indiano', species: 'Dalbergia latifolia', image: '/madeiras/pau-santo.jpg' },
+    glow: '50%',
   },
   {
     id: 'setup',
@@ -50,7 +49,7 @@ const SERVICES = [
       'Lubrificação e ajuste de cravelhas e mecânicas',
       'Revisão geral pré-gravação ou pré-concerto',
     ],
-    wood: { name: 'Ébano africano', species: 'Diospyros crassiflora', image: '/madeiras/ebano.jpg' },
+    glow: '85%',
   },
 ]
 
@@ -101,7 +100,7 @@ function useStickyTop(ref, index, enabled) {
 }
 
 function ServiceCard({ service, index, total, progress, stacked }) {
-  const { icon: Icon, wood } = service
+  const { icon: Icon } = service
   const cardRef = useRef(null)
   const top = useStickyTop(cardRef, index, stacked)
 
@@ -119,27 +118,27 @@ function ServiceCard({ service, index, total, progress, stacked }) {
         transition={{ duration: 0.7, ease: 'easeOut', delay: stacked ? 0 : index * 0.12 }}
         className="group relative isolate flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-surface shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)] transition-colors duration-500 lg:hover:border-gold-light/40"
       >
-        {/* Madeira de fundo */}
-        <img
-          src={wood.image}
-          alt=""
+        {/* Fundo: brilho dourado (mais intenso no hover) e seis cordas, para o vidro ter o que refletir */}
+        <div
           aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-700 ease-out lg:group-hover:scale-105"
+          className="absolute inset-0 -z-10 opacity-80 transition-opacity duration-700 lg:group-hover:opacity-100"
+          style={{
+            background: `radial-gradient(110% 65% at ${service.glow} 0%, rgba(200,136,42,0.38), rgba(107,63,10,0.12) 45%, transparent 75%)`,
+          }}
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-bg/10 via-bg/25 to-bg/70" />
+        <div aria-hidden="true" className="absolute inset-y-0 right-8 -z-10 flex w-28 justify-between">
+          {Array.from({ length: 6 }, (_, string) => (
+            <span key={string} className="w-px bg-gradient-to-b from-gold-pale/40 via-gold-light/15 to-transparent" />
+          ))}
+        </div>
 
-        {/* Etiqueta da madeira e número do serviço, sobre a madeira à vista */}
-        <div className="flex items-center justify-between gap-3 px-5 pb-3 pt-4 sm:pb-4 sm:pt-5">
-          <span className="inline-flex min-w-0 items-baseline gap-2 rounded-full border border-white/20 bg-bg/55 px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.16em] text-text backdrop-blur-md">
-            <span className="truncate">{wood.name}</span>
-            <em className="hidden truncate normal-case tracking-normal text-text/65 sm:inline">{wood.species}</em>
-          </span>
+        {/* Número do serviço */}
+        <div className="flex items-center gap-4 px-6 pb-5 pt-6">
           {/* lnum: a Cormorant usa algarismos antigos por defeito ("oI" em vez de "01") */}
-          <span className="font-display text-3xl font-semibold leading-none text-gold-pale drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] [font-feature-settings:'lnum']">
+          <span className="font-display text-4xl font-semibold leading-none text-gold-pale [font-feature-settings:'lnum']">
             {String(index + 1).padStart(2, '0')}
           </span>
+          <span aria-hidden="true" className="h-px flex-1 bg-gradient-to-r from-gold-light/60 to-transparent" />
         </div>
 
         {/* Painel de vidro com o conteúdo */}

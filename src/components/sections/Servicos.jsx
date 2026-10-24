@@ -1,5 +1,5 @@
-import { useLayoutEffect, useRef, useState } from 'react'
-import { MotionConfig, motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { MotionConfig, motion, useMotionValue, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, Check, Guitar, SlidersHorizontal, Wrench } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
@@ -71,12 +71,16 @@ function rememberService(id) {
 
 // Altura da navbar fixa (py-4 + botão h-11), em rem
 const NAVBAR_HEIGHT = 4.75
+// Quanto um cartão pode encolher para caber inteiro no ecrã por baixo do título
+const MIN_FIT = 0.8
 
-// Posição em que o cartão fica fixado. O ideal é logo abaixo do título fixado, um pouco abaixo do cartão anterior
-// (deixando ver a borda dos que ficam por baixo). Se o cartão não couber no ecrã a partir daí, fixa-se
-// encostado ao fundo: assim o botão "Pedir orçamento" fica sempre visível antes de o seguinte o cobrir.
+// Posição em que o cartão fica fixado: logo abaixo do título fixado, um pouco abaixo do cartão anterior
+// (deixando ver a borda dos que ficam por baixo). Se o cartão não couber no ecrã a partir daí, encolhe
+// (fit) para que o número e o botão "Pedir orçamento" fiquem ambos visíveis. Só se tivesse de encolher
+// demasiado é que se fixa encostado ao fundo, com o topo escondido por baixo do título.
 function useStickyTop(ref, titleRef, index, enabled) {
   const [top, setTop] = useState(null)
+  const fit = useMotionValue(1)
 
   useLayoutEffect(() => {
     if (!enabled || !ref.current || !titleRef.current) return
@@ -85,9 +89,15 @@ function useStickyTop(ref, titleRef, index, enabled) {
     const title = titleRef.current
     const update = () => {
       const rem = parseFloat(getComputedStyle(document.documentElement).fontSize)
-      const preferred = (NAVBAR_HEIGHT + 0.5 + index * 1.25) * rem + title.offsetHeight
-      const fitsOnScreen = window.innerHeight - element.offsetHeight - rem
-      setTop(Math.min(preferred, fitsOnScreen))
+      const preferred = (NAVBAR_HEIGHT + 0.5 + index * 0.75) * rem + title.offsetHeight
+      const scaleToFit = (window.innerHeight - preferred - rem) / element.offsetHeight
+      if (scaleToFit >= MIN_FIT) {
+        setTop(preferred)
+        fit.set(Math.min(1, scaleToFit))
+      } else {
+        setTop(window.innerHeight - element.offsetHeight - rem)
+        fit.set(1)
+      }
     }
 
     update()
@@ -99,19 +109,20 @@ function useStickyTop(ref, titleRef, index, enabled) {
       observer.disconnect()
       window.removeEventListener('resize', update)
     }
-  }, [ref, titleRef, index, enabled])
+  }, [ref, titleRef, index, enabled, fit])
 
-  return top
+  return { top, fit }
 }
 
 function ServiceCard({ service, index, total, progress, stacked, titleRef }) {
   const { icon: Icon } = service
   const cardRef = useRef(null)
-  const top = useStickyTop(cardRef, titleRef, index, stacked)
+  const { top, fit } = useStickyTop(cardRef, titleRef, index, stacked)
 
   // Efeito de pilha: cada cartão encolhe ligeiramente à medida que os seguintes lhe passam por cima
   const targetScale = 1 - (total - 1 - index) * 0.05
-  const scale = useTransform(progress, [index / total, 1], [1, targetScale])
+  const stackScale = useTransform(progress, [index / total, 1], [1, targetScale])
+  const scale = useTransform([stackScale, fit], ([stack, fitScale]) => stack * fitScale)
 
   return (
     <div ref={cardRef} className={stacked ? 'sticky' : 'h-full'} style={stacked && top !== null ? { top } : undefined}>
@@ -138,9 +149,9 @@ function ServiceCard({ service, index, total, progress, stacked, titleRef }) {
         </div>
 
         {/* Número do serviço */}
-        <div className="flex items-center gap-4 px-6 pb-5 pt-6">
+        <div className="flex items-center gap-4 px-6 pb-3 pt-4 sm:pb-5 sm:pt-6">
           {/* lnum: a Cormorant usa algarismos antigos por defeito ("oI" em vez de "01") */}
-          <span className="font-display text-4xl font-semibold leading-none text-gold-pale [font-feature-settings:'lnum']">
+          <span className="font-display text-3xl font-semibold sm:text-4xl leading-none text-gold-pale [font-feature-settings:'lnum']">
             {String(index + 1).padStart(2, '0')}
           </span>
           <span aria-hidden="true" className="h-px flex-1 bg-gradient-to-r from-gold-light/60 to-transparent" />
@@ -149,17 +160,17 @@ function ServiceCard({ service, index, total, progress, stacked, titleRef }) {
         {/* Painel de vidro com o conteúdo */}
         <div className="mx-3 mb-3 flex flex-1 flex-col rounded-[1.5rem] border border-white/15 bg-bg/70 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl backdrop-saturate-150 sm:p-7">
           <div className="flex items-center gap-4">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-gold-light/30 bg-gold-light/10 text-gold-light">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-gold-light/30 bg-gold-light/10 text-gold-light sm:h-12 sm:w-12">
               <Icon className="h-6 w-6" strokeWidth={1.5} aria-hidden="true" />
             </span>
             <h3 className="font-display text-2xl font-semibold leading-tight sm:text-[1.75rem]">{service.title}</h3>
           </div>
 
-          <p className="mt-4 hyphens-auto text-justify text-[0.95rem] leading-7 text-text/80 sm:mt-5 lg:hyphens-manual lg:text-left">
+          <p className="mt-3 hyphens-auto text-justify text-[0.95rem] leading-[1.6rem] text-text/80 sm:mt-5 sm:leading-7 lg:hyphens-manual lg:text-left">
             {service.description}
           </p>
 
-          <ul className="mt-5 space-y-2.5 border-t border-white/10 pt-5 sm:mt-6 sm:space-y-3 sm:pt-6">
+          <ul className="mt-4 space-y-1.5 border-t border-white/10 pt-4 sm:mt-6 sm:space-y-3 sm:pt-6">
             {service.items.map((item) => (
               <li key={item} className="flex gap-3 text-sm leading-6 text-text/85">
                 <Check className="mt-1 h-4 w-4 shrink-0 text-gold-light" aria-hidden="true" />
@@ -168,7 +179,7 @@ function ServiceCard({ service, index, total, progress, stacked, titleRef }) {
             ))}
           </ul>
 
-          <div className="mt-auto pt-6 sm:pt-8">
+          <div className="mt-auto pt-5 sm:pt-8">
             <Button asChild className="w-full">
               <a href="#pedido" onClick={() => rememberService(service.id)}>
                 Pedir orçamento
@@ -186,11 +197,34 @@ function Servicos() {
   const listRef = useRef(null)
   const titleRef = useRef(null)
   const reduceMotion = useReducedMotion()
-  // Pilha só no telemóvel/tablet e com altura suficiente para o cartão caber fixado no ecrã
-  const canStack = useMediaQuery('(max-width: 1023px) and (min-height: 640px)')
+  // Pilha só no telemóvel/tablet e com altura suficiente para o título e o cartão caberem fixados no ecrã
+  const canStack = useMediaQuery('(max-width: 1023px) and (min-height: 700px)')
   const stacked = canStack && !reduceMotion
 
   const { scrollYProgress } = useScroll({ target: listRef, offset: ['start start', 'end end'] })
+
+  // O último cartão não tem onde ficar fixado: ao passar a sua posição na pilha continua a subir.
+  // A partir daí o título sobe com ele, para o número do cartão não ficar escondido por baixo do título.
+  const titleY = useMotionValue(0)
+  useEffect(() => {
+    titleY.set(0)
+    if (!stacked) return
+
+    const update = () => {
+      const last = listRef.current?.lastElementChild
+      const rest = parseFloat(last?.style.top)
+      if (Number.isNaN(rest)) return
+      titleY.set(Math.min(0, last.getBoundingClientRect().top - rest))
+    }
+
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update)
+    return () => {
+      window.removeEventListener('scroll', update)
+      window.removeEventListener('resize', update)
+    }
+  }, [stacked, titleY])
 
   return (
     <MotionConfig reducedMotion="user">
@@ -208,19 +242,19 @@ function Servicos() {
           </motion.div>
 
           {/* Na pilha, o título fica fixado por baixo da navbar e os cartões empilham-se por baixo dele */}
-          <div
+          <motion.div
             ref={titleRef}
             className={
               stacked
-                ? 'sticky z-10 -mx-6 mt-2 bg-bg px-6 py-4 text-center'
+                ? 'sticky z-10 -mx-6 mt-3 bg-bg px-6 py-3 text-center'
                 : 'mt-6 text-center'
             }
-            style={stacked ? { top: `${NAVBAR_HEIGHT}rem` } : undefined}
+            style={stacked ? { top: `${NAVBAR_HEIGHT}rem`, y: titleY } : undefined}
           >
             <motion.h2 {...fadeUp} className="font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
               O que faço <span className="text-gold-light">por ti</span>
             </motion.h2>
-          </div>
+          </motion.div>
 
           <div
             ref={listRef}

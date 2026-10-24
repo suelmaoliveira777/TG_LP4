@@ -72,10 +72,61 @@ function rememberService(id) {
 // Altura da navbar fixa (py-4 + botão h-11), em rem
 const NAVBAR_HEIGHT = 4.75
 // Quanto um cartão pode encolher para caber inteiro no ecrã por baixo do título
-const MIN_FIT = 0.8
+const MIN_FIT = 0.75
 
-// Posição em que o cartão fica fixado: logo abaixo do título fixado, um pouco abaixo do cartão anterior
-// (deixando ver a borda dos que ficam por baixo). Se o cartão não couber no ecrã a partir daí, encolhe
+const remInPx = () => parseFloat(getComputedStyle(document.documentElement).fontSize)
+
+// Posição ideal do cartão fixado: logo abaixo do título fixado, um pouco abaixo do cartão anterior
+// (deixando ver a borda dos que ficam por baixo)
+const preferredTop = (index, titleHeight, rem) => (NAVBAR_HEIGHT + 0.5 + index * 0.75) * rem + titleHeight
+
+// Altura do ecrã com as barras do browser visíveis (100svh): não muda quando o Safari as esconde ao fazer scroll
+function smallViewportHeight() {
+  const probe = document.createElement('div')
+  probe.style.cssText = 'position:fixed;top:0;height:100svh;visibility:hidden;pointer-events:none'
+  document.body.appendChild(probe)
+  const height = probe.offsetHeight
+  probe.remove()
+  return height || window.innerHeight
+}
+
+// A pilha (com o título fixado) só se liga se todos os cartões couberem inteiros por baixo do título,
+// mesmo encolhidos até MIN_FIT; senão os números ficariam escondidos. Mede-se em vez de usar uma
+// altura fixa porque o espaço útil varia muito entre telemóveis e browsers.
+function useStackFits(listRef, titleRef, enabled) {
+  const [fits, setFits] = useState(false)
+
+  useLayoutEffect(() => {
+    if (!enabled || !listRef.current || !titleRef.current) return
+
+    const list = listRef.current
+    const heading = titleRef.current.firstElementChild
+    const update = () => {
+      const rem = remInPx()
+      const viewport = smallViewportHeight()
+      const titleHeight = heading.offsetHeight + 1.5 * rem // py-3 do título fixado
+      setFits(
+        [...list.children].every(
+          (card, index) => (viewport - preferredTop(index, titleHeight, rem) - rem) / card.offsetHeight >= MIN_FIT,
+        ),
+      )
+    }
+
+    update()
+    const observer = new ResizeObserver(update)
+    observer.observe(heading)
+    for (const card of list.children) observer.observe(card)
+    window.addEventListener('resize', update)
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('resize', update)
+    }
+  }, [listRef, titleRef, enabled])
+
+  return enabled && fits
+}
+
+// Posição em que o cartão fica fixado. Se o cartão não couber no ecrã a partir da posição ideal, encolhe
 // (fit) para que o número e o botão "Pedir orçamento" fiquem ambos visíveis. Só se tivesse de encolher
 // demasiado é que se fixa encostado ao fundo, com o topo escondido por baixo do título.
 function useStickyTop(ref, titleRef, index, enabled) {
@@ -88,8 +139,8 @@ function useStickyTop(ref, titleRef, index, enabled) {
     const element = ref.current
     const title = titleRef.current
     const update = () => {
-      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize)
-      const preferred = (NAVBAR_HEIGHT + 0.5 + index * 0.75) * rem + title.offsetHeight
+      const rem = remInPx()
+      const preferred = preferredTop(index, title.offsetHeight, rem)
       const scaleToFit = (window.innerHeight - preferred - rem) / element.offsetHeight
       if (scaleToFit >= MIN_FIT) {
         setTop(preferred)
@@ -129,6 +180,8 @@ function ServiceCard({ service, index, total, progress, stacked, titleRef }) {
       <motion.article
         style={stacked ? { scale, transformOrigin: 'top center' } : undefined}
         initial={stacked ? false : { opacity: 0, y: 32 }}
+        // A pilha só se liga depois de medir o ecrã, com o cartão já montado escondido: mostra-o
+        animate={stacked ? { opacity: 1, y: 0 } : undefined}
         whileInView={stacked ? undefined : { opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.7, ease: 'easeOut', delay: stacked ? 0 : index * 0.12 }}
@@ -197,9 +250,9 @@ function Servicos() {
   const listRef = useRef(null)
   const titleRef = useRef(null)
   const reduceMotion = useReducedMotion()
-  // Pilha só no telemóvel/tablet e com altura suficiente para o título e o cartão caberem fixados no ecrã
-  const canStack = useMediaQuery('(max-width: 1023px) and (min-height: 700px)')
-  const stacked = canStack && !reduceMotion
+  // Pilha só no telemóvel/tablet e quando o título e os cartões cabem fixados no ecrã
+  const isMobile = useMediaQuery('(max-width: 1023px)')
+  const stacked = useStackFits(listRef, titleRef, isMobile && !reduceMotion)
 
   const { scrollYProgress } = useScroll({ target: listRef, offset: ['start start', 'end end'] })
 

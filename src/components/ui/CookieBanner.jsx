@@ -14,6 +14,11 @@ function CookieBanner() {
     return () => window.removeEventListener('cookie-consent:open', open)
   }, [])
 
+  // Avisa o resto da página quando o banner aparece ou desaparece (o botão de WhatsApp esconde-se para não o tapar)
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent('cookie-banner:visibility', { detail: { visible } }))
+  }, [visible])
+
   const saveConsent = (value) => {
     window.localStorage.setItem('cookie_consent', value)
     setVisible(false)

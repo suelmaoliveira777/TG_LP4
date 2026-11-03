@@ -69,9 +69,13 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 - Quem sou → `#quem-sou`
 - Serviços → `#servicos`
 - Como funciona → `#como-funciona`
+- Portfólio → `#trabalhos`
 - Madeiras → `#madeiras`
+- Preços → `#precos`
 
 **CTA:** Fazer pedido → `#pedido`
+
+> No telemóvel, o botão flutuante de WhatsApp esconde-se enquanto o menu está aberto.
 
 > **Design:** botão dourado, canto superior direito.
 > **Implementação:** no telemóvel, menu hambúrguer com os mesmos itens e o CTA em destaque. Hoje os links simplesmente desaparecem.

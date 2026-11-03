@@ -26,13 +26,19 @@ function WhatsAppButton() {
     }
   })
 
+  // Também se esconde com o menu móvel aberto
+  const [menuOpen, setMenuOpen] = useState(false)
+
   useEffect(() => {
     const timer = setTimeout(() => setReady(true), APPEAR_DELAY)
     const handleBanner = (event) => setBannerOpen(event.detail.visible)
+    const handleMenu = (event) => setMenuOpen(event.detail.visible)
     window.addEventListener('cookie-banner:visibility', handleBanner)
+    window.addEventListener('menu-movel:visibility', handleMenu)
     return () => {
       clearTimeout(timer)
       window.removeEventListener('cookie-banner:visibility', handleBanner)
+      window.removeEventListener('menu-movel:visibility', handleMenu)
     }
   }, [])
 
@@ -68,7 +74,7 @@ function WhatsAppButton() {
 
   return (
     <AnimatePresence>
-      {ready && !bannerOpen && !(isMobile && overActions) && (
+      {ready && !bannerOpen && !menuOpen && !(isMobile && overActions) && (
         <motion.a
           href={WHATSAPP_URL}
           target="_blank"

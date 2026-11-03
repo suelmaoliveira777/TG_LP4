@@ -7,7 +7,9 @@ const LINKS = [
   { href: '#quem-sou', label: 'Quem sou' },
   { href: '#servicos', label: 'Serviços' },
   { href: '#como-funciona', label: 'Como funciona' },
+  { href: '#trabalhos', label: 'Portfólio' },
   { href: '#madeiras', label: 'Madeiras' },
+  { href: '#precos', label: 'Preços' },
 ]
 
 const CTA = { href: '#pedido', label: 'Fazer pedido' }
@@ -41,6 +43,11 @@ function Navbar() {
       window.removeEventListener('keydown', handleKey)
       window.removeEventListener('resize', handleResize)
     }
+  }, [open])
+
+  // Avisa o botão de WhatsApp, que se esconde enquanto o menu móvel está aberto
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent('menu-movel:visibility', { detail: { visible: open } }))
   }, [open])
 
   const close = () => setOpen(false)

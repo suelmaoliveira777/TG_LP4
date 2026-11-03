@@ -31,21 +31,20 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
 
 ## Mapa de secções
 
-| #   | Secção               | Âncora           | Componente atual            | Estado                                         |
-| --- | -------------------- | ---------------- | --------------------------- | ---------------------------------------------- |
-| —   | Navbar               | —                | `layout/Navbar.jsx`         | Feito, por aprovar                             |
-| 1   | Hero                 | `#inicio`        | `sections/Hero.jsx`         | Feito, por aprovar                             |
-| 2   | Quem sou             | `#quem-sou`      | `sections/QuemSou.jsx`      | Feito, por aprovar                             |
-| 3   | Serviços             | `#servicos`      | `sections/Servicos.jsx`     | Feito, por aprovar                             |
-| 4   | Como funciona        | `#como-funciona` | `sections/ComoFunciona.jsx` | Feito, por aprovar                             |
-| 5   | Trabalhos realizados | `#trabalhos`     | `sections/Trabalhos.jsx`    | Feito, por aprovar (fotos e textos de exemplo) |
-| 6   | Porque escolher-nos  | `#porque`        | `sections/PorqueEscolher.jsx` | Feito, por aprovar                           |
-| 7   | Madeiras             | `#madeiras`      | — (novo)                    | Por fazer                                      |
-| 8   | CTA final            | `#contacto`      | — (novo)                    | Por fazer                                      |
-| 9   | Formulário de pedido | `#pedido`        | `sections/Formulario.jsx`   | **Fase final**                                 |
-| 10  | Footer               | —                | `layout/Footer.jsx`         | Por refazer                                    |
-| —   | WhatsApp flutuante   | —                | — (novo)                    | Por fazer                                      |
-| —   | Páginas legais       | ver abaixo       | `src/legal/`                | Feitas, por preencher                          |
+| #   | Secção               | Âncora           | Componente atual              | Estado                                         |
+| --- | -------------------- | ---------------- | ----------------------------- | ---------------------------------------------- |
+| —   | Navbar               | —                | `layout/Navbar.jsx`           | Feito, por aprovar                             |
+| 1   | Hero                 | `#inicio`        | `sections/Hero.jsx`           | Feito, por aprovar                             |
+| 2   | Quem sou             | `#quem-sou`      | `sections/QuemSou.jsx`        | Feito, por aprovar                             |
+| 3   | Serviços             | `#servicos`      | `sections/Servicos.jsx`       | Feito, por aprovar                             |
+| 4   | Como funciona        | `#como-funciona` | `sections/ComoFunciona.jsx`   | Feito, por aprovar                             |
+| 5   | Trabalhos realizados | `#trabalhos`     | `sections/Trabalhos.jsx`      | Feito, por aprovar (fotos e textos de exemplo) |
+| 6   | Madeiras             | `#madeiras`      | `sections/Madeiras.jsx`       | Feito, por aprovar                             |
+| 7   | CTA final            | `#contacto`      | — (novo)                      | Por fazer                                      |
+| 8   | Formulário de pedido | `#pedido`        | `sections/Formulario.jsx`     | **Fase final**                                 |
+| 9   | Footer               | —                | `layout/Footer.jsx`           | Por refazer                                    |
+| —   | WhatsApp flutuante   | —                | — (novo)                      | Por fazer                                      |
+| —   | Páginas legais       | ver abaixo       | `src/legal/`                  | Feitas, por preencher                          |
 
 **Saem do site** (não constam da nova estrutura): `ProvasSocial.jsx`, `Objecoes.jsx`, `Garantia.jsx`, `Faq.jsx`. Só são apagados quando a nova versão estiver no ar.
 
@@ -222,37 +221,7 @@ As descrições completas estão em `sections/Trabalhos.jsx`.
 
 ---
 
-## 6. Porque escolher-nos
-
-**Etiqueta:** Porque escolher-nos
-
-**Título**
-
-> Feito por quem sabe. Feito para durar.
-
-**✦ Madeiras selecionadas**
-
-> Só trabalho com madeiras de qualidade comprovada: algumas com anos de secagem, escolhidas a dedo para cada tipo de instrumento e som desejado.
-
-**✦ Formação com mestres**
-
-> Mais de dois anos de aprendizagem intensiva com luthiers experientes em Portugal. Cada técnica foi aprendida na prática, ao lado de quem sabe.
-
-**✦ Respeito pela tradição**
-
-> A lutheria portuguesa tem raízes profundas. O meu trabalho honra essa herança, com técnicas tradicionais e materiais que resistem ao tempo.
-
-**✦ Entrega com garantia**
-
-> Cada instrumento sai do meu atelier verificado, testado e pronto a tocar. Se surgir algum problema de construção, resolvo-o sem custo adicional.
-
-> **Design:** grelha “bento” com quatro cartões de tamanhos diferentes. **Madeiras selecionadas** é o maior: as três madeiras da secção Madeiras (abeto, pau-santo, ébano) alternam em grande plano, com aproximação lenta e o nome da espécie, e podem ser escolhidas à mão. **Formação com mestres** destaca “2+ anos com mestres” num número grande com reflexo dourado. **Respeito pela tradição** tem por fundo um padrão de azulejo português em traço dourado, a deslizar devagar. **Entrega com garantia** tem um selo do atelier (“TG Luthier”) a rodar, com “Verificado ✦ Testado ✦ Pronto a tocar”, que acelera com o rato por cima. Em todos os cartões a borda ilumina-se onde está o rato, e entram um a um ao fazer scroll. Com “reduzir movimento” ativo, nada se mexe sozinho.
->
-> **Por confirmar:** “2+ anos com mestres” resume “mais de dois anos de aprendizagem”; o selo usa as iniciais “TG”.
-
----
-
-## 7. Madeiras
+## 6. Madeiras
 
 **Eyebrow:** As matérias-primas
 
@@ -337,11 +306,18 @@ Carácter: solidez, sustentabilidade, sonoridade densa
 **Botão:** Pedir aconselhamento → `#pedido`, com `servico_pretendido` = `construcao` (mesmo mecanismo dos cartões de Serviços)
 
 > **Porquê o formulário:** os campos de madeira da construção já aceitam “não sei, preciso de ajuda”. O pedido chega com o contexto todo (instrumento, estilo, orçamento) e a resposta pode ser concreta.
-> **Implementação:** são 10 madeiras em 4 grupos. Para não criar uma secção interminável, mostrar por separadores (Tampos · Fundos e ilhargas · Braços · Escala e cavalete) ou em grelha de cartões.
+> **Implementação:** são 9 madeiras em 4 grupos. Para não criar uma secção interminável, mostrar por separadores (Tampos · Fundos e ilhargas · Braços · Escala e cavalete) ou em grelha de cartões.
+>
+> **Design:** cabeçalho editorial (título e subtítulo à esquerda, introdução à direita no desktop) e separadores para os 4 grupos, com uma pílula dourada que desliza entre eles (também funcionam com as setas do teclado). Cada madeira é um cartão com a própria madeira como fundo: à vista no topo, a escurecer para o texto em baixo, com o carácter sonoro em etiquetas. No desktop, o cartão inclina-se em 3D atrás do rato e um reflexo percorre a madeira como luz sobre verniz; em ecrãs táteis e com “reduzir movimento” ativo, os cartões ficam parados. No fim, a nota sobre a origem das madeiras e o pedido de aconselhamento.
+>
+> **Fotos** (`public/madeiras/`): amostras da Xiloteca do Cirad (Wikimedia Commons, domínio público), exceto o pau-ferro. Duas são de espécies próximas e devem ser trocadas por fotos das madeiras reais do atelier:
+>
+> - **Cipreste:** não há amostra livre de *Cupressus sempervirens*; a foto é de *Tetraclinis articulata*, um cipreste mediterrânico da mesma família.
+> - **Pau-ferro:** a foto é de *Machaerium scleroxylon* (Vojtěch Zavadil, CC BY-SA 4.0, com crédito no cartão). Na lutheria, “pau-ferro” costuma ser precisamente esta espécie; *Libidibia ferrea*, a que está na copy, é outra árvore com o mesmo nome popular no Brasil. Confirmar com o Tiago qual usa.
 
 ---
 
-## 8. CTA final
+## 7. CTA final
 
 **Texto**
 
@@ -366,7 +342,7 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 ---
 
-## 9. Formulário de pedido — fase final
+## 8. Formulário de pedido — fase final
 
 > Implementado **depois** da aprovação do cliente. A copy fica já fechada aqui.
 
@@ -440,7 +416,7 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 ---
 
-## 10. Footer
+## 9. Footer
 
 **Coluna 1 — Identidade**
 
@@ -553,13 +529,12 @@ Alterações feitas à copy original entregue pelo cliente.
 | Secção 4, passo 01                     | o que precisas — pelo formulário                                             | o que precisas, pelo formulário                                                                              | Sem travessões no site (pedido do cliente)                                        |
 | Secção 4                               | —                                                                            | Título “Três passos, sem surpresas” e etiquetas dos passos                                                   | A secção não tinha título                                                         |
 | Secção 5, título                       | Portfólio                                                                    | Trabalhos realizados                                                                                         | Pedido do cliente; “Portfólio” fica como etiqueta                                 |
-| Secção 6, Madeiras selecionadas        | qualidade comprovada — algumas com anos de secagem                           | qualidade comprovada: algumas com anos de secagem                                                            | Sem travessões no site (pedido do cliente)                                        |
-| Secção 6, Respeito pela tradição       | honra essa herança — com técnicas tradicionais                               | honra essa herança, com técnicas tradicionais                                                                | Sem travessões no site (pedido do cliente)                                        |
-| Secção 7, introdução                   | No atelier Tiago Gago                                                        | No meu atelier                                                                                               | Voz na primeira pessoa                                                            |
-| Secção 7, Cipreste · Formulário · Hero | campanica                                                                    | campaniça                                                                                                    | Grafia correta                                                                    |
-| Secção 7, Ébano                        | uma sustain suave                                                            | um sustain suave                                                                                             | Coerência com “sustain longo” e “um sustain equilibrado”                          |
-| Secção 7, botão                        | Fazer uma pergunta                                                           | Pedir aconselhamento → formulário                                                                            | Todo o contacto passa pelo formulário ou pelo WhatsApp                            |
-| Secção 8, CTA secundário               | Falar com o Tiago                                                            | Falar por WhatsApp                                                                                           | O botão diz o canal; voz na primeira pessoa                                       |
+| Secção 6, nomes das madeiras           | Abeto Europeu, Pau-Santo Indiano…                                            | Abeto europeu, Pau-santo indiano…                                                                            | Em português, só a primeira palavra leva maiúscula                                |
+| Secção 6, introdução                   | No atelier Tiago Gago                                                        | No meu atelier                                                                                               | Voz na primeira pessoa                                                            |
+| Secção 6, Cipreste · Formulário · Hero | campanica                                                                    | campaniça                                                                                                    | Grafia correta                                                                    |
+| Secção 6, Ébano                        | uma sustain suave                                                            | um sustain suave                                                                                             | Coerência com “sustain longo” e “um sustain equilibrado”                          |
+| Secção 6, botão                        | Fazer uma pergunta                                                           | Pedir aconselhamento → formulário                                                                            | Todo o contacto passa pelo formulário ou pelo WhatsApp                            |
+| Secção 7, CTA secundário               | Falar com o Tiago                                                            | Falar por WhatsApp                                                                                           | O botão diz o canal; voz na primeira pessoa                                       |
 | Formulário                             | —                                                                            | Caixa de consentimento                                                                                       | Obrigatória pelo RGPD                                                             |
 | Footer                                 | Política de Cookies (RGPD)                                                   | + Livro de Reclamações                                                                                       | Obrigatório por lei (DL 74/2017)                                                  |
 | Footer, navegação                      | Pedido · Contacto                                                            | Como funciona · Fazer pedido                                                                                 | Coerência com a navbar                                                            |

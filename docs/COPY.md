@@ -43,11 +43,11 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
 | 7   | Preços               | `#precos`        | `sections/Precos.jsx`         | Feito, por aprovar (preços fictícios)          |
 | 8   | CTA final            | `#contacto`      | `sections/CtaFinal.jsx`       | Feito, por aprovar                             |
 | 9   | Formulário de pedido | `#pedido`        | `sections/FormularioPedido.jsx` | Feito, por aprovar (falta ligar o envio)     |
-| 10  | Footer               | —                | — (novo)                      | Por fazer                                      |
+| 10  | Footer               | —                | `layout/Footer.jsx`           | Feito, por aprovar (confirmar redes sociais)   |
 | —   | WhatsApp flutuante   | —                | `ui/WhatsAppButton.jsx`       | Feito, por aprovar (falta o número)            |
 | —   | Páginas legais       | ver abaixo       | `src/legal/`                  | Feitas, por preencher                          |
 
-**Secções antigas já apagadas** (não constam da nova estrutura): Prova social, Objeções, Garantia, FAQ, o formulário antigo (“Pedido”) e o bloco “Contacto” que fazia de footer. O formulário já foi refeito a partir desta copy; falta o footer.
+**Secções antigas já apagadas** (não constam da nova estrutura): Prova social, Objeções, Garantia, FAQ, o formulário antigo (“Pedido”) e o bloco “Contacto” que fazia de footer. O formulário e o footer já foram refeitos a partir desta copy.
 
 ---
 
@@ -530,6 +530,8 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 **Links legais:** [Política de Privacidade](/politica-de-privacidade/) · [Termos e Condições](/termos-e-condicoes/) · [Política de Cookies](/politica-de-cookies/) · [Livro de Reclamações](https://www.livroreclamacoes.pt)
 
 > **Obrigatório:** o link para o Livro de Reclamações Eletrónico tem de estar visível no site de qualquer empresa que preste serviços a consumidores em Portugal (Decreto-Lei n.º 74/2017).
+>
+> **Implementação** (`layout/Footer.jsx`): as três colunas acima (no telemóvel, empilhadas ao centro), a linha final com os links legais e, no fundo, a assinatura “Tiago Gago” em letra gigante dourada, a esbater, que sobe letra a letra quando aparece. Na linha final juntou-se “Preferências de cookies” (reabre o banner, como pede o RGPD) e “Voltar ao topo”. O ano do © atualiza-se sozinho. As redes sociais têm ícones e o nome de utilizador; os links estão em `src/config/contact.js` e **foram deduzidos dos nomes da copy: confirmar** (ver Pontos a decidir). “Desenvolvido por weblygrow” fica sem link até haver o site da weblygrow.
 
 ---
 
@@ -582,7 +584,7 @@ O plano gratuito da Vercel (Hobby) é **só para uso pessoal e não comercial**.
 ### Antes de publicar
 
 1. **Número de WhatsApp** do Tiago, para o botão flutuante e o CTA final (constante `WHATSAPP_NUMBER` em `src/config/contact.js`).
-2. **URLs reais das redes sociais** (Instagram, Facebook, YouTube) e do site da weblygrow.
+2. **URLs reais das redes sociais** (Instagram, Facebook, YouTube) e do site da weblygrow. As das redes estão em `SOCIAL_LINKS`, em `src/config/contact.js`, deduzidas dos nomes da copy.
 3. **Dados para as páginas legais** (`src/legal/legal-data.js`): nome completo, NIF, morada, email, telefone, regime de IVA, percentagem do sinal, garantia de reparações e setups, foro e entidade de resolução alternativa de litígios. Para a entidade RAL, os candidatos prováveis são o CNIACC (âmbito nacional) e o Centro de Arbitragem de Conflitos de Consumo de Lisboa. A competência territorial para Cascais tem de ser confirmada no Portal do Consumidor.
 4. **Domínio:** confirmar se `tiagogagoluthier.pt` já está registado. É usado no SEO, nas páginas legais e no envio de emails.
 5. **Alojamento:** aprovar a mudança para o Cloudflare Pages (ver [Decisões técnicas](#decisões-técnicas)).

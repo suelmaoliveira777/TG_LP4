@@ -10,6 +10,7 @@ import Madeiras from './components/sections/Madeiras'
 import Precos from './components/sections/Precos'
 import CtaFinal from './components/sections/CtaFinal'
 import FormularioPedido from './components/sections/FormularioPedido'
+import Footer from './components/layout/Footer'
 import CookieBanner from './components/ui/CookieBanner'
 import WhatsAppButton from './components/ui/WhatsAppButton'
 import SectionDivider from './components/ui/SectionDivider'
@@ -65,6 +66,9 @@ function App() {
             </Fragment>
           ))}
         </main>
+
+        <SectionDivider />
+        <Footer />
 
         <WhatsAppButton />
         <CookieBanner />

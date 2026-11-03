@@ -1,12 +1,7 @@
 import { ArrowLeft } from 'lucide-react'
 import CookieBanner from '@/components/ui/CookieBanner'
 import { Dado, LinkExterno } from './components'
-
-export const LEGAL_PAGES = [
-  { href: '/politica-de-privacidade/', label: 'Política de Privacidade' },
-  { href: '/termos-e-condicoes/', label: 'Termos e Condições' },
-  { href: '/politica-de-cookies/', label: 'Política de Cookies' },
-]
+import { LEGAL_PAGES, LIVRO_RECLAMACOES_URL } from './legal-data'
 
 function LegalLayout({ titulo, children }) {
   const atual = window.location.pathname
@@ -46,7 +41,7 @@ function LegalLayout({ titulo, children }) {
                 {page.label}
               </a>
             ))}
-            <LinkExterno href="https://www.livroreclamacoes.pt">Livro de Reclamações</LinkExterno>
+            <LinkExterno href={LIVRO_RECLAMACOES_URL}>Livro de Reclamações</LinkExterno>
           </nav>
           <p>© {new Date().getFullYear()} Tiago Gago Luthier</p>
         </div>

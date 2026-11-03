@@ -1,3 +1,13 @@
+// Páginas legais, usadas no footer do site e no das próprias páginas legais
+export const LEGAL_PAGES = [
+  { href: '/politica-de-privacidade/', label: 'Política de Privacidade' },
+  { href: '/termos-e-condicoes/', label: 'Termos e Condições' },
+  { href: '/politica-de-cookies/', label: 'Política de Cookies' },
+]
+
+// Livro de Reclamações Eletrónico: link obrigatório para quem presta serviços a consumidores (DL 74/2017)
+export const LIVRO_RECLAMACOES_URL = 'https://www.livroreclamacoes.pt'
+
 // Dados usados nas páginas legais. Cada valor a null aparece destacado nas páginas
 // como "por preencher" — nenhum pode ficar a null quando o site for publicado.
 export const LEGAL = {

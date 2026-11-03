@@ -177,8 +177,9 @@ const fadeUp = {
 
 // Curva das revelações (entra depressa, assenta devagar)
 const EASE_REVEAL = [0.76, 0, 0.24, 1]
-// Margem lateral dos cartões no desktop, alinhada com o conteúdo das outras secções (max-w-7xl + px-10)
-const DESKTOP_GUTTER = 'max(2.5rem, calc((100vw - 80rem) / 2 + 2.5rem))'
+// Margem lateral dos cartões no desktop, alinhada com o conteúdo das outras secções (px-10 + max-w-7xl ao centro).
+// A percentagem é da largura do painel, que ao contrário de 100vw não inclui a barra de scroll.
+const DESKTOP_GUTTER = 'max(2.5rem, calc((100% - 80rem) / 2))'
 
 const pad = (number) => String(number).padStart(2, '0')
 
@@ -406,14 +407,16 @@ function PinnedGallery({ onOpen }) {
           className="pointer-events-none absolute left-1/3 top-1/2 h-[40rem] w-[60rem] -translate-y-1/2 rounded-full bg-gold-light/[0.07] blur-[140px]"
         />
 
-        <div className="relative mx-auto flex w-full max-w-7xl items-end justify-between gap-10 px-10">
-          <motion.div {...fadeUp}>
-            <Heading />
-          </motion.div>
-          <motion.div {...fadeUp} className="flex w-56 flex-col items-end gap-3 pb-2">
-            <Counter active={active} />
-            <ProgressBar progress={progress} className="w-full" />
-          </motion.div>
+        <div className="relative px-10">
+          <div className="mx-auto flex max-w-7xl items-end justify-between gap-10">
+            <motion.div {...fadeUp}>
+              <Heading />
+            </motion.div>
+            <motion.div {...fadeUp} className="flex w-56 flex-col items-end gap-3 pb-2">
+              <Counter active={active} />
+              <ProgressBar progress={progress} className="w-full" />
+            </motion.div>
+          </div>
         </div>
 
         <div className="relative mt-10 min-h-0 flex-1">

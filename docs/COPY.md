@@ -37,7 +37,7 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
 | 1  | Hero                     | `#inicio`        | `sections/Hero.jsx`        | Feito, por aprovar  |
 | 2  | Quem sou                 | `#quem-sou`      | `sections/QuemSou.jsx`     | Feito, por aprovar  |
 | 3  | Serviços                 | `#servicos`      | `sections/Servicos.jsx`    | Feito, por aprovar  |
-| 4  | Como funciona            | `#como-funciona` | — (novo)                   | Por fazer           |
+| 4  | Como funciona            | `#como-funciona` | `sections/ComoFunciona.jsx` | Feito, por aprovar |
 | 5  | Trabalhos realizados     | `#trabalhos`     | `sections/Trabalhos.jsx`   | Feito, por aprovar (fotos e textos de exemplo) |
 | 6  | Porque escolher          | `#porque`        | `sections/Beneficios.jsx`  | Por refazer         |
 | 7  | Madeiras                 | `#madeiras`      | — (novo)                   | Por fazer           |
@@ -160,17 +160,29 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 
 ## 4. Como funciona
 
-**01 — Descreve**
+**Etiqueta:** Como funciona
 
-> Conta o que tens e o que precisas — pelo formulário ou por WhatsApp. Quanto mais detalhe, melhor.
+**Título** (novo, por aprovar)
 
-**02 — Orçamento claro**
+> Três passos, sem surpresas
+
+**01. Descreve** · etiqueta: Formulário ou WhatsApp
+
+> Conta o que tens e o que precisas, pelo formulário ou por WhatsApp. Quanto mais detalhe, melhor.
+
+**02. Orçamento claro** · etiqueta: Orçamento gratuito
 
 > Analiso o teu pedido e devolvo-te um orçamento honesto. Sem surpresas, sem linguagem técnica que não percebas.
 
-**03 — Só começa com o teu sim**
+**03. Só começa com o teu sim** · etiqueta: Acompanhas cada fase
 
 > Nenhum trabalho arranca sem o teu acordo. E sabes sempre em que fase está o teu instrumento.
+
+**CTA:** Pedir orçamento → `#pedido`
+
+> **Design:** um fluxograma em que a linha é uma corda de guitarra. No desktop atravessa o ecrã de ponta a ponta e os três passos ficam lado a lado; no telemóvel a corda desce na vertical, ao lado dos passos. Com o scroll, um ponto de luz percorre a corda e deixa-a dourada; cada passo tem um marcador redondo, como os pontos que marcam os trastes na escala, que acende quando a luz chega, e nesse momento a corda vibra como se fosse dedilhada. No desktop, passar o rato num passo também faz vibrar a corda. Os passos ainda por chegar ficam esbatidos. Com “reduzir movimento” ativo no sistema, a corda aparece já desenhada e os passos acesos.
+>
+> **Etiquetas dos passos:** são novas. “Orçamento gratuito” repete o que já diz a descrição do site para o Google; confirmar com o cliente.
 
 ---
 
@@ -537,6 +549,8 @@ Alterações feitas à copy original entregue pelo cliente.
 | Secção 2, 2.º parágrafo | O Tiago Gago aprendeu lutheria… | Sou o Tiago Gago dos Santos e aprendi lutheria… | Voz na primeira pessoa; apresenta o nome completo |
 | Secção 2, 3.º parágrafo | Hoje, em Cascais, recebe instrumentos de músicos de todo o país. | Hoje, no meu atelier em Cascais, construo, reparo e afino instrumentos de músicos que chegam de todo o país. | Destaca o atelier e resume os três serviços |
 | Secção 4, passo 02 | O Tiago analisa e devolve | Analiso o teu pedido e devolvo-te | Voz na primeira pessoa |
+| Secção 4, passo 01 | o que precisas — pelo formulário | o que precisas, pelo formulário | Sem travessões no site (pedido do cliente) |
+| Secção 4 | — | Título “Três passos, sem surpresas” e etiquetas dos passos | A secção não tinha título |
 | Secção 5, título | Portfólio | Trabalhos realizados | Pedido do cliente; “Portfólio” fica como etiqueta |
 | Secção 7, introdução | No atelier Tiago Gago | No meu atelier | Voz na primeira pessoa |
 | Secção 7, Cipreste · Formulário · Hero | campanica | campaniça | Grafia correta |

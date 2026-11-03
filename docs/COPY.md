@@ -42,14 +42,12 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
 | 6   | Madeiras             | `#madeiras`      | `sections/Madeiras.jsx`       | Feito, por aprovar                             |
 | 7   | Preços               | `#precos`        | `sections/Precos.jsx`         | Feito, por aprovar (preços fictícios)          |
 | 8   | CTA final            | `#contacto`      | `sections/CtaFinal.jsx`       | Feito, por aprovar                             |
-| 9   | Formulário de pedido | `#pedido`        | — (novo)                      | **Fase final**                                 |
+| 9   | Formulário de pedido | `#pedido`        | `sections/FormularioPedido.jsx` | Feito, por aprovar (falta ligar o envio)     |
 | 10  | Footer               | —                | — (novo)                      | Por fazer                                      |
 | —   | WhatsApp flutuante   | —                | `ui/WhatsAppButton.jsx`       | Feito, por aprovar (falta o número)            |
 | —   | Páginas legais       | ver abaixo       | `src/legal/`                  | Feitas, por preencher                          |
 
-**Secções antigas já apagadas** (não constam da nova estrutura): Prova social, Objeções, Garantia, FAQ, o formulário antigo (“Pedido”) e o bloco “Contacto” que fazia de footer. O formulário e o footer serão feitos de novo a partir desta copy.
-
-> **Até lá**, os botões que levam ao formulário (`#pedido`) não têm destino: “Pedir orçamento”, “Fazer pedido”, “Pedir aconselhamento”.
+**Secções antigas já apagadas** (não constam da nova estrutura): Prova social, Objeções, Garantia, FAQ, o formulário antigo (“Pedido”) e o bloco “Contacto” que fazia de footer. O formulário já foi refeito a partir desta copy; falta o footer.
 
 ---
 
@@ -414,7 +412,9 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 ## 9. Formulário de pedido — fase final
 
-> Implementado **depois** da aprovação do cliente. A copy fica já fechada aqui.
+> **Feito** (`sections/FormularioPedido.jsx`, campos em `pedido/fields.js`). **Falta ligar o envio:** ver “Envio” no fim desta secção.
+
+**Etiqueta:** Pedido
 
 **Título**
 
@@ -435,9 +435,11 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 **Tipo de serviço** (seleção única)
 
-- 🎸 Construção de raiz
-- 🔧 Reparação / Restauro
-- ⚙️ Setup & Regulação
+- Construção de raiz · Um instrumento feito para ti, do zero.
+- Reparação / Restauro · Devolver ao instrumento o que perdeu.
+- Setup & Regulação · Para tocar como deve.
+
+> Os emojis da copy original deram lugar aos ícones do site (guitarra, chave, reguladores), e cada opção ganhou uma frase curta.
 
 > **Implementação:** os campos seguintes aparecem conforme o tipo de serviço escolhido.
 
@@ -450,7 +452,7 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 | Madeira para fundo e ilhargas  | Ex: Pau-santo, Mogno... (ou "não sei")                        |
 | Escala desejada (cm)           | Ex: 65 cm (padrão clássico)                                   |
 | Estilo musical principal       | Ex: Clássico, Folk, Flamenco, Jazz...                         |
-| Orçamento indicativo (€)       | Ex: 800 € – 1200 €                                            |
+| Orçamento indicativo (€)       | Ex: 800 € a 1200 €                                            |
 | Observações / referências      | Descreve o som que procuras, instrumentos de referência, etc. |
 
 ### Se Reparação
@@ -470,7 +472,7 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 | Tipo de instrumento                      | Ex: Guitarra elétrica, Viola, Guitarra clássica...              |
 | Problema principal                       | Ex: Ação muito alta, afinação instável, zumbidos nos trastos... |
 | Quando precisas do instrumento de volta? | Ex: Tenho concerto em 2 semanas                                 |
-| Observações                              | Detalha o que sentes ao tocar — o que não está certo            |
+| Observações                              | Detalha o que sentes ao tocar: o que não está certo             |
 
 ### Consentimento (obrigatório pelo RGPD)
 
@@ -483,6 +485,19 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 > Obrigado! Recebi o teu pedido e responderei em até 48 horas.
 
 > **Implementação:** redirecionamento para página de obrigado (opcional, mas recomendado: permite medir conversões em campanhas).
+>
+> **Como ficou:**
+>
+> - **Três passos:** Serviço → O instrumento → Contacto. Começa pelo mais fácil e deixa os dados pessoais para o fim, quando a pessoa já investiu no pedido. Cada passo é validado antes de avançar, com mensagens claras junto ao campo; o erro desaparece assim que o campo fica certo.
+> - **Desktop:** à esquerda, o título, os passos (marcadores dourados que se acendem, como no “Como funciona”) e um resumo vivo do pedido (serviço e instrumento); à direita, o cartão do formulário. **Telemóvel:** barra de três segmentos no topo do cartão.
+> - **Pré-seleção:** os botões de pedido dos Serviços, dos Trabalhos e das Madeiras já escolhem o serviço no formulário.
+> - **Campos:** rótulo sempre visível (o placeholder é só o exemplo), indicação de obrigatório ou opcional. São obrigatórios o serviço, o tipo de instrumento, o problema (reparação e setup), o nome, o email e o consentimento. Nas madeiras da construção há respostas rápidas (“Abeto”, “Não sei, preciso de ajuda”…).
+> - **Fotos (reparação):** arrastar e largar ou escolher, até 5, com pré-visualização. São comprimidas no navegador (lado maior 1600 px, JPEG) antes do envio: uma foto de telemóvel fica com 200 a 500 KB.
+> - **Anti-spam:** um campo-isco invisível. Quando houver alojamento definitivo, juntar o Cloudflare Turnstile (ver Decisões técnicas).
+> - **Confirmação:** a mensagem acima, no lugar do formulário, com o botão “Fazer outro pedido”; o envio é registado como `generate_lead`, só com consentimento de cookies. A página de obrigado fica para quando o envio estiver ligado.
+> - **Botão de WhatsApp:** no telemóvel, esconde-se quando os botões do formulário estão no fundo do ecrã, para não tapar o “Enviar pedido”.
+>
+> **Envio:** o formulário envia para o endereço definido em `VITE_PEDIDO_ENDPOINT` (variável de ambiente do alojamento), como `multipart/form-data`, com os campos pelos nomes legíveis (“Tipo de instrumento”, “Email”…), as fotos (`fotos`) e a origem da visita (UTM). **Enquanto essa variável não existir, o envio não está ativo**: ao carregar em “Enviar pedido” aparece “O envio do formulário ainda não está ativo. Entretanto, fala comigo por WhatsApp.” Falta criar o serviço que recebe o pedido e envia o email (recomendado: Cloudflare Pages Functions + Resend, ver Decisões técnicas), o que depende do alojamento e do domínio.
 
 ---
 
@@ -548,7 +563,7 @@ O plano gratuito da Vercel (Hobby) é **só para uso pessoal e não comercial**.
 | --------------------------------------------------- | ------------------------------------------- | ------------------------------ | ------------------------------------------------------------- |
 | **Cloudflare Pages Functions + Resend + Turnstile** | Gratuito (Resend: 3000 emails/mês, 100/dia) | Sim, como anexo do email       | **Recomendada**                                               |
 | Netlify Forms                                       | Gratuito                                    | Sim (máx. ~8 MB por envio)     | Boa alternativa, mais simples, mas obriga a alojar na Netlify |
-| Web3Forms (atual)                                   | Gratuito até 250/mês                        | **Não** (só no Pro, 149 $/ano) | Não serve para o upload de fotos                              |
+| Web3Forms (o do formulário antigo)                  | Gratuito até 250/mês                        | **Não** (só no Pro, 149 $/ano) | Não serve para o upload de fotos                              |
 | Formspree                                           | Gratuito até 50/mês                         | Não no plano gratuito          | Limite muito baixo                                            |
 
 **Porquê a recomendada:**
@@ -609,5 +624,8 @@ Alterações feitas à copy original entregue pelo cliente.
 | Secção 8, texto                        | antes do próximo concerto — estou disponível                                 | antes do próximo concerto: estou disponível                                                                  | Sem travessões no site (pedido do cliente)                                        |
 | Secção 8, CTA secundário               | Falar com o Tiago                                                            | Falar por WhatsApp                                                                                           | O botão diz o canal; voz na primeira pessoa                                       |
 | Formulário                             | —                                                                            | Caixa de consentimento                                                                                       | Obrigatória pelo RGPD                                                             |
+| Formulário, tipo de serviço            | 🎸 🔧 ⚙️ antes de cada opção                                                    | Ícones do site e uma frase curta por opção                                                                   | Coerência com o design do site                                                    |
+| Formulário, setup, observações         | Detalha o que sentes ao tocar — o que não está certo                         | Detalha o que sentes ao tocar: o que não está certo                                                          | Sem travessões no site (pedido do cliente)                                        |
+| Formulário, orçamento indicativo       | Ex: 800 € – 1200 €                                                           | Ex: 800 € a 1200 €                                                                                           | Sem travessões no site (pedido do cliente)                                        |
 | Footer                                 | Política de Cookies (RGPD)                                                   | + Livro de Reclamações                                                                                       | Obrigatório por lei (DL 74/2017)                                                  |
 | Footer, navegação                      | Pedido · Contacto                                                            | Como funciona · Fazer pedido                                                                                 | Coerência com a navbar                                                            |

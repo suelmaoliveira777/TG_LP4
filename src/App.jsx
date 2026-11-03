@@ -9,6 +9,7 @@ import Trabalhos from './components/sections/Trabalhos'
 import Madeiras from './components/sections/Madeiras'
 import Precos from './components/sections/Precos'
 import CtaFinal from './components/sections/CtaFinal'
+import FormularioPedido from './components/sections/FormularioPedido'
 import CookieBanner from './components/ui/CookieBanner'
 import WhatsAppButton from './components/ui/WhatsAppButton'
 import SectionDivider from './components/ui/SectionDivider'
@@ -18,7 +19,7 @@ import { useUTM } from './hooks/useUTM'
 import { schemaData } from './utils/schema'
 
 // Ordem das secções da página; entre cada uma é colocado o separador ✦
-const SECTIONS = [Hero, QuemSou, Servicos, ComoFunciona, Trabalhos, Madeiras, Precos, CtaFinal]
+const SECTIONS = [Hero, QuemSou, Servicos, ComoFunciona, Trabalhos, Madeiras, Precos, CtaFinal, FormularioPedido]
 
 function App() {
   const [consent, setConsent] = useState(() => window.localStorage.getItem('cookie_consent') || 'essential')

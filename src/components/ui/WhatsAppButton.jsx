@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { WHATSAPP_URL } from '@/config/contact'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { trackWhatsApp } from '@/utils/analytics'
 import WhatsAppIcon from './WhatsAppIcon'
 
@@ -8,6 +9,8 @@ import WhatsAppIcon from './WhatsAppIcon'
 const APPEAR_DELAY = 1200
 // Verde oficial da marca WhatsApp
 const WHATSAPP_GREEN = '#25D366'
+// Altura (px) da faixa do fundo do ecrã ocupada pelo botão e pela sua margem
+const BUTTON_ZONE = 110
 
 // Botão fixo de WhatsApp, no canto inferior direito de todo o site.
 // Esconde-se enquanto o banner de cookies está aberto, para não o tapar.
@@ -33,9 +36,39 @@ function WhatsAppButton() {
     }
   }, [])
 
+  // No telemóvel, esconde-se quando passa por cima de uma zona marcada com data-hide-whatsapp
+  // (os botões do formulário de pedido), para não tapar o botão de envio
+  const isMobile = useMediaQuery('(max-width: 1023px)')
+  const [overActions, setOverActions] = useState(false)
+  useEffect(() => {
+    if (!isMobile) return
+    let frame = 0
+    const check = () => {
+      frame = 0
+      const zoneTop = window.innerHeight - BUTTON_ZONE
+      setOverActions(
+        [...document.querySelectorAll('[data-hide-whatsapp]')].some((element) => {
+          const rect = element.getBoundingClientRect()
+          return rect.bottom > zoneTop && rect.top < window.innerHeight
+        }),
+      )
+    }
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(check)
+    }
+    check()
+    window.addEventListener('scroll', schedule, { passive: true })
+    window.addEventListener('resize', schedule)
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', schedule)
+      window.removeEventListener('resize', schedule)
+    }
+  }, [isMobile])
+
   return (
     <AnimatePresence>
-      {ready && !bannerOpen && (
+      {ready && !bannerOpen && !(isMobile && overActions) && (
         <motion.a
           href={WHATSAPP_URL}
           target="_blank"

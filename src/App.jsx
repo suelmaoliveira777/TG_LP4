@@ -1,4 +1,4 @@
-import { Fragment, Suspense, lazy, useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/layout/Navbar'
 import Hero from './components/sections/Hero'
@@ -8,8 +8,6 @@ import ComoFunciona from './components/sections/ComoFunciona'
 import Trabalhos from './components/sections/Trabalhos'
 import Madeiras from './components/sections/Madeiras'
 import Precos from './components/sections/Precos'
-import Faq from './components/sections/Faq'
-import Formulario from './components/sections/Formulario'
 import CookieBanner from './components/ui/CookieBanner'
 import SectionDivider from './components/ui/SectionDivider'
 import { useGTM } from './hooks/useGTM'
@@ -17,10 +15,8 @@ import { useMetaPixel } from './hooks/useMetaPixel'
 import { useUTM } from './hooks/useUTM'
 import { schemaData } from './utils/schema'
 
-const Footer = lazy(() => import('./components/layout/Footer'))
-
 // Ordem das secções da página; entre cada uma é colocado o separador ✦
-const SECTIONS = [Hero, QuemSou, Servicos, ComoFunciona, Trabalhos, Madeiras, Precos, Faq, Formulario]
+const SECTIONS = [Hero, QuemSou, Servicos, ComoFunciona, Trabalhos, Madeiras, Precos]
 
 function App() {
   const [consent, setConsent] = useState(() => window.localStorage.getItem('cookie_consent') || 'essential')
@@ -68,11 +64,6 @@ function App() {
         </main>
 
         <CookieBanner />
-
-        <SectionDivider />
-        <Suspense fallback={null}>
-          <Footer />
-        </Suspense>
       </div>
     </HelmetProvider>
   )

@@ -42,12 +42,14 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
 | 6   | Madeiras             | `#madeiras`      | `sections/Madeiras.jsx`       | Feito, por aprovar                             |
 | 7   | Preços               | `#precos`        | `sections/Precos.jsx`         | Feito, por aprovar (preços fictícios)          |
 | 8   | CTA final            | `#contacto`      | — (novo)                      | Por fazer                                      |
-| 9   | Formulário de pedido | `#pedido`        | `sections/Formulario.jsx`     | **Fase final**                                 |
-| 10  | Footer               | —                | `layout/Footer.jsx`           | Por refazer                                    |
+| 9   | Formulário de pedido | `#pedido`        | — (novo)                      | **Fase final**                                 |
+| 10  | Footer               | —                | — (novo)                      | Por fazer                                      |
 | —   | WhatsApp flutuante   | —                | — (novo)                      | Por fazer                                      |
 | —   | Páginas legais       | ver abaixo       | `src/legal/`                  | Feitas, por preencher                          |
 
-**Saem do site** (não constam da nova estrutura): `Faq.jsx`. Só é apagado quando a nova versão estiver no ar. As antigas secções Prova social, Objeções e Garantia já foram apagadas.
+**Secções antigas já apagadas** (não constam da nova estrutura): Prova social, Objeções, Garantia, FAQ, o formulário antigo (“Pedido”) e o bloco “Contacto” que fazia de footer. O formulário e o footer serão feitos de novo a partir desta copy.
+
+> **Até lá**, os botões que levam ao formulário (`#pedido`) não têm destino: “Pedir orçamento”, “Fazer pedido”, “Pedir aconselhamento”.
 
 ---
 

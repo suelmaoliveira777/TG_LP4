@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar'
 import Hero from './components/sections/Hero'
 import QuemSou from './components/sections/QuemSou'
 import Servicos from './components/sections/Servicos'
+import Trabalhos from './components/sections/Trabalhos'
 import Beneficios from './components/sections/Beneficios'
 import ProvasSocial from './components/sections/ProvasSocial'
 import Objecoes from './components/sections/Objecoes'
@@ -20,7 +21,7 @@ import { schemaData } from './utils/schema'
 const Footer = lazy(() => import('./components/layout/Footer'))
 
 // Ordem das secções da página; entre cada uma é colocado o separador ✦
-const SECTIONS = [Hero, QuemSou, Servicos, Beneficios, ProvasSocial, Objecoes, Garantia, Faq, Formulario]
+const SECTIONS = [Hero, QuemSou, Servicos, Trabalhos, Beneficios, ProvasSocial, Objecoes, Garantia, Faq, Formulario]
 
 function App() {
   const [consent, setConsent] = useState(() => window.localStorage.getItem('cookie_consent') || 'essential')

@@ -38,11 +38,12 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
 | 2  | Quem sou                 | `#quem-sou`      | `sections/QuemSou.jsx`     | Feito, por aprovar  |
 | 3  | Serviços                 | `#servicos`      | `sections/Servicos.jsx`    | Feito, por aprovar  |
 | 4  | Como funciona            | `#como-funciona` | — (novo)                   | Por fazer           |
-| 5  | Porque escolher          | `#porque`        | `sections/Beneficios.jsx`  | Por refazer         |
-| 6  | Madeiras                 | `#madeiras`      | — (novo)                   | Por fazer           |
-| 7  | CTA final                | `#contacto`      | — (novo)                   | Por fazer           |
-| 8  | Formulário de pedido     | `#pedido`        | `sections/Formulario.jsx`  | **Fase final**      |
-| 9  | Footer                   | —                | `layout/Footer.jsx`        | Por refazer         |
+| 5  | Trabalhos realizados     | `#trabalhos`     | `sections/Trabalhos.jsx`   | Feito, por aprovar (fotos e textos de exemplo) |
+| 6  | Porque escolher          | `#porque`        | `sections/Beneficios.jsx`  | Por refazer         |
+| 7  | Madeiras                 | `#madeiras`      | — (novo)                   | Por fazer           |
+| 8  | CTA final                | `#contacto`      | — (novo)                   | Por fazer           |
+| 9  | Formulário de pedido     | `#pedido`        | `sections/Formulario.jsx`  | **Fase final**      |
+| 10 | Footer                   | —                | `layout/Footer.jsx`        | Por refazer         |
 | —  | WhatsApp flutuante       | —                | — (novo)                   | Por fazer           |
 | —  | Páginas legais           | ver abaixo       | `src/legal/`               | Feitas, por preencher |
 
@@ -173,7 +174,43 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 
 ---
 
-## 5. Porque escolher Tiago Gago
+## 5. Trabalhos realizados (Portfólio)
+
+> **Fotos e textos de exemplo.** Os sete trabalhos abaixo servem só para mostrar o design e **têm de ser substituídos pelos trabalhos reais do Tiago antes de o site ir para o ar**: as fotos são de outros instrumentos e os textos foram escritos para preencher. Para cada trabalho são precisos: uma foto (de preferência sobre fundo escuro), o tipo de trabalho, o nome do instrumento, uma frase curta, uma descrição de 2–3 frases e dois detalhes.
+
+**Etiqueta:** Portfólio
+
+**Título**
+
+> Trabalhos realizados
+
+**Trabalhos (exemplo)**
+
+| #  | Tipo       | Instrumento                   | Frase curta                                 |
+| -- | ---------- | ----------------------------- | ------------------------------------------- |
+| 01 | Restauro   | Guitarra portuguesa           | Tampo recolado e verniz recuperado          |
+| 02 | Setup      | Guitarra acústica             | Trastos nivelados e ação regulada           |
+| 03 | Construção | Guitarra romântica            | Construída de raiz, ao estilo do séc. XIX   |
+| 04 | Restauro   | Guitarra manouche             | Instrumento de família, de volta ao palco   |
+| 05 | Construção | Cavaquinho                    | Roseta embutida à mão                       |
+| 06 | Reparação  | Guitarra portuguesa de Lisboa | Carrilhão revisto e afinado                 |
+| 07 | Setup      | Guitarra clássica             | Osso de cavalete talhado à medida           |
+
+As descrições completas estão em `sections/Trabalhos.jsx`.
+
+**Cartão final**
+
+> O teu instrumento pode ser o próximo.
+
+**CTA:** Pedir orçamento → `#pedido` (no cartão final e em cada trabalho ampliado; a partir de um trabalho, o formulário pré-seleciona o serviço correspondente)
+
+> **Design:** no desktop a secção fixa-se no ecrã e o scroll vertical faz deslizar os trabalhos na horizontal, com contador e barra de progresso. Cada cartão revela-se em cortina ao entrar, a foto tem parallax, os cartões inclinam ligeiramente com a velocidade do scroll, e no hover há um brilho que segue o rato e um cursor “Ver”. As fotos têm um tom quente comum, que no hover volta à cor original. No telemóvel e tablet é um carrossel de deslizar com o dedo, com o cartão central maior. Ao tocar num trabalho abre a vista ampliada (foto grande, descrição, detalhes, setas, deslizar, Esc para fechar). Com “reduzir movimento” ativo no sistema, o desktop usa também o carrossel.
+>
+> **Fotos de exemplo** (`public/portfolio/`): Wikimedia Commons, licenças CC BY e CC BY-SA, que obrigam a creditar o autor. O crédito aparece na vista ampliada de cada trabalho e desaparece quando a foto é substituída (apagar `credit` no trabalho). Para trocar uma foto: `<slug>-sm.jpg` (lado maior ~900px) e `<slug>-lg.jpg` (lado maior ~1600px).
+
+---
+
+## 6. Porque escolher Tiago Gago
 
 **Título**
 
@@ -203,7 +240,7 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 
 ---
 
-## 6. Madeiras
+## 7. Madeiras
 
 **Eyebrow:** As matérias-primas
 
@@ -292,7 +329,7 @@ Carácter: solidez, sustentabilidade, sonoridade densa
 
 ---
 
-## 7. CTA final
+## 8. CTA final
 
 **Texto**
 
@@ -317,7 +354,7 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 ---
 
-## 8. Formulário de pedido — fase final
+## 9. Formulário de pedido — fase final
 
 > Implementado **depois** da aprovação do cliente. A copy fica já fechada aqui.
 
@@ -391,7 +428,7 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 ---
 
-## 9. Footer
+## 10. Footer
 
 **Coluna 1 — Identidade**
 
@@ -500,11 +537,12 @@ Alterações feitas à copy original entregue pelo cliente.
 | Secção 2, 2.º parágrafo | O Tiago Gago aprendeu lutheria… | Sou o Tiago Gago dos Santos e aprendi lutheria… | Voz na primeira pessoa; apresenta o nome completo |
 | Secção 2, 3.º parágrafo | Hoje, em Cascais, recebe instrumentos de músicos de todo o país. | Hoje, no meu atelier em Cascais, construo, reparo e afino instrumentos de músicos que chegam de todo o país. | Destaca o atelier e resume os três serviços |
 | Secção 4, passo 02 | O Tiago analisa e devolve | Analiso o teu pedido e devolvo-te | Voz na primeira pessoa |
-| Secção 6, introdução | No atelier Tiago Gago | No meu atelier | Voz na primeira pessoa |
-| Secção 6, Cipreste · Formulário · Hero | campanica | campaniça | Grafia correta |
-| Secção 6, Ébano | uma sustain suave | um sustain suave | Coerência com “sustain longo” e “um sustain equilibrado” |
-| Secção 6, botão | Fazer uma pergunta | Pedir aconselhamento → formulário | Todo o contacto passa pelo formulário ou pelo WhatsApp |
-| Secção 7, CTA secundário | Falar com o Tiago | Falar por WhatsApp | O botão diz o canal; voz na primeira pessoa |
+| Secção 5, título | Portfólio | Trabalhos realizados | Pedido do cliente; “Portfólio” fica como etiqueta |
+| Secção 7, introdução | No atelier Tiago Gago | No meu atelier | Voz na primeira pessoa |
+| Secção 7, Cipreste · Formulário · Hero | campanica | campaniça | Grafia correta |
+| Secção 7, Ébano | uma sustain suave | um sustain suave | Coerência com “sustain longo” e “um sustain equilibrado” |
+| Secção 7, botão | Fazer uma pergunta | Pedir aconselhamento → formulário | Todo o contacto passa pelo formulário ou pelo WhatsApp |
+| Secção 8, CTA secundário | Falar com o Tiago | Falar por WhatsApp | O botão diz o canal; voz na primeira pessoa |
 | Formulário | — | Caixa de consentimento | Obrigatória pelo RGPD |
 | Footer | Política de Cookies (RGPD) | + Livro de Reclamações | Obrigatório por lei (DL 74/2017) |
 | Footer, navegação | Pedido · Contacto | Como funciona · Fazer pedido | Coerência com a navbar |

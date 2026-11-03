@@ -3,6 +3,7 @@ import { MotionConfig, motion, useMotionValue, useReducedMotion, useScroll, useT
 import { ArrowRight, Check, Guitar, SlidersHorizontal, Wrench } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { rememberService } from '@/utils/rememberService'
 import SectionLabel from '../ui/SectionLabel'
 
 // glow: posição horizontal do brilho dourado no fundo de cada cartão
@@ -58,15 +59,6 @@ const fadeUp = {
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: '-80px' },
   transition: { duration: 0.7, ease: 'easeOut' },
-}
-
-// Guarda o serviço escolhido para o formulário o pré-selecionar (implementado na fase do formulário)
-function rememberService(id) {
-  try {
-    window.sessionStorage.setItem('servico_pretendido', id)
-  } catch {
-    // Sem armazenamento disponível (modo privado, etc.): o formulário abre sem pré-seleção
-  }
 }
 
 // Altura da navbar fixa (py-4 + botão h-11), em rem

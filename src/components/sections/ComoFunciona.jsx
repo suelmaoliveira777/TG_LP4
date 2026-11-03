@@ -239,7 +239,7 @@ function Marker({ ref, index, lit }) {
   )
 }
 
-function StepCard({ step, index, lit, onPluck }) {
+function StepCard({ step, lit, onPluck }) {
   const { icon: Icon } = step
 
   return (
@@ -251,19 +251,12 @@ function StepCard({ step, index, lit, onPluck }) {
         lit ? 'border-gold-light/25' : 'border-white/10'
       }`}
     >
-      {/* Número grande em contorno, ao canto */}
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-2 -top-8 font-display text-[8rem] font-semibold leading-none text-transparent [-webkit-text-stroke:1px_rgba(200,136,42,0.14)] [font-feature-settings:'lnum']"
-      >
-        {String(index + 1).padStart(2, '0')}
-      </span>
-
-      <div className="flex items-center gap-3 text-gold-light">
+      {/* No desktop, etiqueta e título ao centro do cartão */}
+      <div className="flex items-center gap-3 text-gold-light lg:justify-center">
         <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
         <span className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] [text-wrap:balance] sm:tracking-[0.25em]">{step.tag}</span>
       </div>
-      <h3 className="mt-5 font-display text-2xl font-semibold leading-tight sm:text-3xl">{step.title}</h3>
+      <h3 className="mt-5 font-display text-2xl font-semibold leading-tight sm:text-3xl lg:text-center">{step.title}</h3>
       <p className="mt-3 hyphens-auto text-justify text-[0.95rem] leading-7 text-text/80 lg:hyphens-manual lg:text-left">
         {step.description}
       </p>
@@ -308,7 +301,7 @@ function ComoFunciona() {
         />
 
         <div className="relative mx-auto max-w-7xl">
-          <motion.div {...fadeUp} className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
+          <motion.div {...fadeUp} className="mx-auto max-w-2xl text-center">
             <SectionLabel>Como funciona</SectionLabel>
             <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
               Três passos, <span className="text-gold-light">sem surpresas</span>
@@ -330,14 +323,14 @@ function ComoFunciona() {
                       index={index}
                       lit={lit}
                     />
-                    <StepCard step={step} index={index} lit={lit} onPluck={() => animated && pluck(index)} />
+                    <StepCard step={step} lit={lit} onPluck={() => animated && pluck(index)} />
                   </li>
                 )
               })}
             </ol>
           </div>
 
-          <motion.div {...fadeUp} className="mt-14 flex justify-center sm:mt-16 lg:justify-start">
+          <motion.div {...fadeUp} className="mt-14 flex justify-center sm:mt-16">
             <Button asChild size="lg">
               <a href="#pedido">
                 Pedir orçamento

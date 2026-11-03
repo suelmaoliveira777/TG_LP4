@@ -6,6 +6,8 @@ import WhatsAppIcon from './WhatsAppIcon'
 
 // Atraso (ms) até o botão aparecer depois de a página carregar
 const APPEAR_DELAY = 1200
+// Verde oficial da marca WhatsApp
+const WHATSAPP_GREEN = '#25D366'
 
 // Botão fixo de WhatsApp, no canto inferior direito de todo o site.
 // Esconde-se enquanto o banner de cookies está aberto, para não o tapar.
@@ -50,14 +52,18 @@ function WhatsAppButton() {
           <span className="pointer-events-none mr-3 hidden translate-x-2 whitespace-nowrap rounded-full border border-white/10 bg-bg/90 px-4 py-2 text-sm font-semibold text-text opacity-0 shadow-[0_10px_30px_rgba(0,0,0,0.4)] backdrop-blur transition duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 lg:block">
             Falar por WhatsApp
           </span>
-          <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-gold-pale via-gold-light to-gold-mid text-bg shadow-glow ring-1 ring-gold-pale/50 transition-transform duration-300 group-hover:scale-105 group-focus-visible:ring-2 group-focus-visible:ring-text">
+          <span
+            style={{ backgroundColor: WHATSAPP_GREEN }}
+            className="relative flex h-14 w-14 items-center justify-center rounded-full text-white shadow-[0_8px_28px_rgba(37,211,102,0.35)] transition-transform duration-300 group-hover:scale-105 group-focus-visible:ring-2 group-focus-visible:ring-text group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-bg"
+          >
             {/* Onda discreta de tempos a tempos, a chamar a atenção sem incomodar */}
             {!reduceMotion && (
               <motion.span
                 aria-hidden="true"
                 animate={{ scale: [1, 1.7], opacity: [0.55, 0] }}
                 transition={{ duration: 1.6, ease: 'easeOut', repeat: Infinity, repeatDelay: 3.5 }}
-                className="absolute inset-0 rounded-full border border-gold-light"
+                style={{ borderColor: WHATSAPP_GREEN }}
+                className="absolute inset-0 rounded-full border"
               />
             )}
             <WhatsAppIcon className="h-7 w-7" />

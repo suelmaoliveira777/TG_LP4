@@ -408,7 +408,7 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 - **Medição:** clique registado como evento `whatsapp_click`, só com consentimento de cookies.
 - **Design:** não pode tapar o banner de cookies nem o botão de envio do formulário no telemóvel.
 
-> **Implementação:** `ui/WhatsAppButton.jsx`, com o número e a mensagem em `src/config/contact.js` (o número ainda é um marcador, ver Pontos a decidir). Círculo dourado com o logótipo do WhatsApp e uma onda discreta de tempos a tempos; no desktop, ao passar o rato, aparece a etiqueta “Falar por WhatsApp”. Esconde-se enquanto o banner de cookies está aberto. Falta garantir que não tapa o botão de envio do formulário, quando este for feito.
+> **Implementação:** `ui/WhatsAppButton.jsx`, com o número e a mensagem em `src/config/contact.js` (o número ainda é um marcador, ver Pontos a decidir). Círculo no verde oficial do WhatsApp (#25D366) com o logótipo a branco e uma onda discreta de tempos a tempos; no desktop, ao passar o rato, aparece a etiqueta “Falar por WhatsApp”. Esconde-se enquanto o banner de cookies está aberto. Falta garantir que não tapa o botão de envio do formulário, quando este for feito.
 
 ---
 

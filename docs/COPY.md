@@ -40,9 +40,10 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
 | 4   | Como funciona        | `#como-funciona` | `sections/ComoFunciona.jsx`   | Feito, por aprovar                             |
 | 5   | Trabalhos realizados | `#trabalhos`     | `sections/Trabalhos.jsx`      | Feito, por aprovar (fotos e textos de exemplo) |
 | 6   | Madeiras             | `#madeiras`      | `sections/Madeiras.jsx`       | Feito, por aprovar                             |
-| 7   | CTA final            | `#contacto`      | — (novo)                      | Por fazer                                      |
-| 8   | Formulário de pedido | `#pedido`        | `sections/Formulario.jsx`     | **Fase final**                                 |
-| 9   | Footer               | —                | `layout/Footer.jsx`           | Por refazer                                    |
+| 7   | Preços               | `#precos`        | `sections/Precos.jsx`         | Feito, por aprovar (preços fictícios)          |
+| 8   | CTA final            | `#contacto`      | — (novo)                      | Por fazer                                      |
+| 9   | Formulário de pedido | `#pedido`        | `sections/Formulario.jsx`     | **Fase final**                                 |
+| 10  | Footer               | —                | `layout/Footer.jsx`           | Por refazer                                    |
 | —   | WhatsApp flutuante   | —                | — (novo)                      | Por fazer                                      |
 | —   | Páginas legais       | ver abaixo       | `src/legal/`                  | Feitas, por preencher                          |
 
@@ -317,7 +318,70 @@ Carácter: solidez, sustentabilidade, sonoridade densa
 
 ---
 
-## 7. CTA final
+## 7. Preços
+
+> **Secção nova, com preços fictícios.** Os valores abaixo só servem para o design e **têm de ser substituídos pelos preços reais do Tiago antes de o site ir para o ar** (`sections/Precos.jsx`, lista `CATEGORIES`).
+
+**Etiqueta:** Preços
+
+**Título**
+
+> Valores claros, antes de começar.
+
+**Introdução**
+
+> Uma referência para os trabalhos mais pedidos. Cada instrumento é único: o valor final depende do estado e do tipo de instrumento, e fica sempre fechado no orçamento, antes de qualquer intervenção.
+
+**Setup & Regulação** · Para o instrumento tocar como deve.
+
+| Serviço                      | Pormenor                                                 | Preço (fictício) |
+| ---------------------------- | -------------------------------------------------------- | ---------------- |
+| Setup completo               | Ação, intonação, tensor do braço, limpeza e cordas novas | desde 65 €       |
+| Regulação do tensor do braço | Correção da curvatura do braço                           | 25 €             |
+| Pestana nova em osso         | Talhada à mão e ajustada à altura certa                  | 55 €             |
+| Osso de cavalete novo        | Com compensação, para afinar em toda a escala            | 45 €             |
+| Troca de cordas e limpeza    | Cordas não incluídas                                     | 20 €             |
+
+**Reparação** · Para devolver ao instrumento o que perdeu.
+
+| Serviço                            | Pormenor                                        | Preço (fictício) |
+| ---------------------------------- | ----------------------------------------------- | ---------------- |
+| Nivelamento e polimento de trastos | Inclui setup completo                           | desde 110 €      |
+| Substituição total de trastos      | Trastos novos, nivelados e polidos              | desde 240 €      |
+| Colagem de cavalete                | Remoção, limpeza e nova colagem                 | desde 90 €       |
+| Reparação de fissuras              | Tampo, fundo ou ilhargas, com reforço interior  | desde 80 €       |
+| Colagem de cabeça partida          | Com reforço e retoque de verniz                 | desde 150 €      |
+
+**Restauro** · Para instrumentos com história.
+
+| Serviço                    | Pormenor                                       | Preço (fictício) |
+| -------------------------- | ---------------------------------------------- | ---------------- |
+| Retoque de verniz          | Zonas gastas, riscos e pequenas falhas         | desde 120 €      |
+| Envernizamento a goma-laca | Acabamento tradicional, aplicado à mão         | desde 480 €      |
+| Restauro completo          | Instrumentos antigos, de herança ou de coleção | Sob orçamento    |
+
+**Construção** (em destaque: “Feito à medida”) · Feito à medida, do zero ao acabamento.
+
+| Serviço             | Pormenor                                     | Preço (fictício) |
+| ------------------- | -------------------------------------------- | ---------------- |
+| Guitarra clássica   | Madeiras à escolha, braço e escala à medida  | desde 2 400 €    |
+| Guitarra portuguesa | De Coimbra ou de Lisboa                      | desde 2 900 €    |
+| Viola campaniça     | Construção tradicional alentejana            | desde 1 700 €    |
+| Cavaquinho          | Com roseta embutida à mão                    | desde 750 €      |
+
+**Nota final**
+
+> Valores indicativos, em euros. O orçamento é gratuito e nenhum trabalho começa sem o teu acordo.
+
+**CTA:** Pedir orçamento → `#pedido`
+
+> **Design:** como a carta de um restaurante de alta cozinha: quatro cartões, um por tipo de serviço, com cada serviço ligado ao preço por uma linha pontilhada. A Construção fica em destaque, com borda dourada e a etiqueta “Feito à medida”. Os preços contam até ao valor quando aparecem no ecrã; cada linha ilumina-se no hover e a borda do cartão acende onde está o rato. As tabelas são tabelas HTML reais, legíveis por leitores de ecrã.
+>
+> **Por confirmar:** se os preços incluem IVA (depende do regime de IVA do Tiago, ver Pontos a decidir) e “O orçamento é gratuito”.
+
+---
+
+## 8. CTA final
 
 **Texto**
 
@@ -342,7 +406,7 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 ---
 
-## 8. Formulário de pedido — fase final
+## 9. Formulário de pedido — fase final
 
 > Implementado **depois** da aprovação do cliente. A copy fica já fechada aqui.
 
@@ -416,7 +480,7 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 ---
 
-## 9. Footer
+## 10. Footer
 
 **Coluna 1 — Identidade**
 
@@ -502,12 +566,13 @@ O plano gratuito da Vercel (Hobby) é **só para uso pessoal e não comercial**.
 4. **Domínio:** confirmar se `tiagogagoluthier.pt` já está registado. É usado no SEO, nas páginas legais e no envio de emails.
 5. **Alojamento:** aprovar a mudança para o Cloudflare Pages (ver [Decisões técnicas](#decisões-técnicas)).
 6. **Google Analytics e Meta Pixel:** os IDs no código são marcadores (`G-XXXXXXXXXX`) e os scripts nem chegam a ser carregados. Ativar os dois com as contas do Tiago, ou retirá-los do código e da Política de Cookies.
+7. **Preços reais** (secção Preços): os atuais são fictícios. Indicar também se incluem IVA.
 
 ### Confirmar com o Tiago
 
-7. **Setup de guitarras elétricas.** O formulário dá “Guitarra elétrica” como exemplo, mas os Serviços não falam em elétricas.
-8. **“Fornecedores com certificação de origem e rastreabilidade”** (Madeiras): tem de corresponder à prática real, porque é uma promessa comercial.
-9. **Nome da agência:** “weblygrow” ou “Weblygrow”?
+8. **Setup de guitarras elétricas.** O formulário dá “Guitarra elétrica” como exemplo, mas os Serviços não falam em elétricas.
+9. **“Fornecedores com certificação de origem e rastreabilidade”** (Madeiras): tem de corresponder à prática real, porque é uma promessa comercial.
+10. **Nome da agência:** “weblygrow” ou “Weblygrow”?
 
 ---
 
@@ -534,7 +599,8 @@ Alterações feitas à copy original entregue pelo cliente.
 | Secção 6, Cipreste · Formulário · Hero | campanica                                                                    | campaniça                                                                                                    | Grafia correta                                                                    |
 | Secção 6, Ébano                        | uma sustain suave                                                            | um sustain suave                                                                                             | Coerência com “sustain longo” e “um sustain equilibrado”                          |
 | Secção 6, botão                        | Fazer uma pergunta                                                           | Pedir aconselhamento → formulário                                                                            | Todo o contacto passa pelo formulário ou pelo WhatsApp                            |
-| Secção 7, CTA secundário               | Falar com o Tiago                                                            | Falar por WhatsApp                                                                                           | O botão diz o canal; voz na primeira pessoa                                       |
+| Secção 7                               | —                                                                            | Secção Preços (nova)                                                                                         | Pedido do cliente; preços fictícios até haver os reais                            |
+| Secção 8, CTA secundário               | Falar com o Tiago                                                            | Falar por WhatsApp                                                                                           | O botão diz o canal; voz na primeira pessoa                                       |
 | Formulário                             | —                                                                            | Caixa de consentimento                                                                                       | Obrigatória pelo RGPD                                                             |
 | Footer                                 | Política de Cookies (RGPD)                                                   | + Livro de Reclamações                                                                                       | Obrigatório por lei (DL 74/2017)                                                  |
 | Footer, navegação                      | Pedido · Contacto                                                            | Como funciona · Fazer pedido                                                                                 | Coerência com a navbar                                                            |

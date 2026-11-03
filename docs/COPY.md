@@ -31,21 +31,21 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
 
 ## Mapa de secções
 
-| #  | Secção                   | Âncora           | Componente atual           | Estado              |
-| -- | ------------------------ | ---------------- | -------------------------- | ------------------- |
-| —  | Navbar                   | —                | `layout/Navbar.jsx`        | Feito, por aprovar  |
-| 1  | Hero                     | `#inicio`        | `sections/Hero.jsx`        | Feito, por aprovar  |
-| 2  | Quem sou                 | `#quem-sou`      | `sections/QuemSou.jsx`     | Feito, por aprovar  |
-| 3  | Serviços                 | `#servicos`      | `sections/Servicos.jsx`    | Feito, por aprovar  |
-| 4  | Como funciona            | `#como-funciona` | `sections/ComoFunciona.jsx` | Feito, por aprovar |
-| 5  | Trabalhos realizados     | `#trabalhos`     | `sections/Trabalhos.jsx`   | Feito, por aprovar (fotos e textos de exemplo) |
-| 6  | Porque escolher          | `#porque`        | `sections/Beneficios.jsx`  | Por refazer         |
-| 7  | Madeiras                 | `#madeiras`      | — (novo)                   | Por fazer           |
-| 8  | CTA final                | `#contacto`      | — (novo)                   | Por fazer           |
-| 9  | Formulário de pedido     | `#pedido`        | `sections/Formulario.jsx`  | **Fase final**      |
-| 10 | Footer                   | —                | `layout/Footer.jsx`        | Por refazer         |
-| —  | WhatsApp flutuante       | —                | — (novo)                   | Por fazer           |
-| —  | Páginas legais           | ver abaixo       | `src/legal/`               | Feitas, por preencher |
+| #   | Secção               | Âncora           | Componente atual            | Estado                                         |
+| --- | -------------------- | ---------------- | --------------------------- | ---------------------------------------------- |
+| —   | Navbar               | —                | `layout/Navbar.jsx`         | Feito, por aprovar                             |
+| 1   | Hero                 | `#inicio`        | `sections/Hero.jsx`         | Feito, por aprovar                             |
+| 2   | Quem sou             | `#quem-sou`      | `sections/QuemSou.jsx`      | Feito, por aprovar                             |
+| 3   | Serviços             | `#servicos`      | `sections/Servicos.jsx`     | Feito, por aprovar                             |
+| 4   | Como funciona        | `#como-funciona` | `sections/ComoFunciona.jsx` | Feito, por aprovar                             |
+| 5   | Trabalhos realizados | `#trabalhos`     | `sections/Trabalhos.jsx`    | Feito, por aprovar (fotos e textos de exemplo) |
+| 6   | Porque escolher-nos  | `#porque`        | `sections/PorqueEscolher.jsx` | Feito, por aprovar                           |
+| 7   | Madeiras             | `#madeiras`      | — (novo)                    | Por fazer                                      |
+| 8   | CTA final            | `#contacto`      | — (novo)                    | Por fazer                                      |
+| 9   | Formulário de pedido | `#pedido`        | `sections/Formulario.jsx`   | **Fase final**                                 |
+| 10  | Footer               | —                | `layout/Footer.jsx`         | Por refazer                                    |
+| —   | WhatsApp flutuante   | —                | — (novo)                    | Por fazer                                      |
+| —   | Páginas legais       | ver abaixo       | `src/legal/`                | Feitas, por preencher                          |
 
 **Saem do site** (não constam da nova estrutura): `ProvasSocial.jsx`, `Objecoes.jsx`, `Garantia.jsx`, `Faq.jsx`. Só são apagados quando a nova versão estiver no ar.
 
@@ -154,7 +154,7 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 >
 > **Design:** cada cartão tem um fundo escuro com um brilho dourado e seis linhas finas a lembrar cordas, com o conteúdo num painel de vidro (glassmorphism). No telemóvel, o título “O que faço por ti” fixa-se por baixo da navbar e os cartões empilham-se por baixo dele ao fazer scroll: cada um fixa-se e o seguinte desliza por cima. Se um cartão não couber no ecrã por baixo do título, encolhe ligeiramente (até 75%) para o número e o botão ficarem ambos visíveis. No fim, o título sai junto com o último cartão. A página mede o ecrã (com as barras do browser visíveis): se mesmo assim os cartões não couberem, não há pilha nem título fixo.
 >
-> **Imagens das madeiras** (`public/madeiras/`): amostras de referência da Xiloteca do Cirad, publicadas no Wikimedia Commons em **domínio público** (não exigem atribuição). Espécies: *Picea abies*, *Dalbergia latifolia*, *Diospyros crassiflora*. Já não são usadas nos Serviços; ficam guardadas para a secção Madeiras.
+> **Imagens das madeiras** (`public/madeiras/`): amostras de referência da Xiloteca do Cirad, publicadas no Wikimedia Commons em **domínio público** (não exigem atribuição). Espécies: _Picea abies_, _Dalbergia latifolia_, _Diospyros crassiflora_. Já não são usadas nos Serviços; ficam guardadas para a secção Madeiras.
 
 ---
 
@@ -198,15 +198,15 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 
 **Trabalhos (exemplo)**
 
-| #  | Tipo       | Instrumento                   | Frase curta                                 |
-| -- | ---------- | ----------------------------- | ------------------------------------------- |
-| 01 | Restauro   | Guitarra portuguesa           | Tampo recolado e verniz recuperado          |
-| 02 | Setup      | Guitarra acústica             | Trastos nivelados e ação regulada           |
-| 03 | Construção | Guitarra romântica            | Construída de raiz, ao estilo do séc. XIX   |
-| 04 | Restauro   | Guitarra manouche             | Instrumento de família, de volta ao palco   |
-| 05 | Construção | Cavaquinho                    | Roseta embutida à mão                       |
-| 06 | Reparação  | Guitarra portuguesa de Lisboa | Carrilhão revisto e afinado                 |
-| 07 | Setup      | Guitarra clássica             | Osso de cavalete talhado à medida           |
+| #   | Tipo       | Instrumento                   | Frase curta                               |
+| --- | ---------- | ----------------------------- | ----------------------------------------- |
+| 01  | Restauro   | Guitarra portuguesa           | Tampo recolado e verniz recuperado        |
+| 02  | Setup      | Guitarra acústica             | Trastos nivelados e ação regulada         |
+| 03  | Construção | Guitarra romântica            | Construída de raiz, ao estilo do séc. XIX |
+| 04  | Restauro   | Guitarra manouche             | Instrumento de família, de volta ao palco |
+| 05  | Construção | Cavaquinho                    | Roseta embutida à mão                     |
+| 06  | Reparação  | Guitarra portuguesa de Lisboa | Carrilhão revisto e afinado               |
+| 07  | Setup      | Guitarra clássica             | Osso de cavalete talhado à medida         |
 
 As descrições completas estão em `sections/Trabalhos.jsx`.
 
@@ -222,7 +222,9 @@ As descrições completas estão em `sections/Trabalhos.jsx`.
 
 ---
 
-## 6. Porque escolher Tiago Gago
+## 6. Porque escolher-nos
+
+**Etiqueta:** Porque escolher-nos
 
 **Título**
 
@@ -230,25 +232,23 @@ As descrições completas estão em `sections/Trabalhos.jsx`.
 
 **✦ Madeiras selecionadas**
 
-> Só trabalho com madeiras de qualidade comprovada — algumas com anos de secagem, escolhidas a dedo para cada tipo de instrumento e som desejado.
+> Só trabalho com madeiras de qualidade comprovada: algumas com anos de secagem, escolhidas a dedo para cada tipo de instrumento e som desejado.
 
 **✦ Formação com mestres**
 
 > Mais de dois anos de aprendizagem intensiva com luthiers experientes em Portugal. Cada técnica foi aprendida na prática, ao lado de quem sabe.
 
-**✦ Um instrumento, uma atenção**
-
-> Não trabalho em série. Quando aceito o teu projeto, ele passa a ser o meu projeto. Tens acesso direto a mim, do início ao fim.
-
 **✦ Respeito pela tradição**
 
-> A lutheria portuguesa tem raízes profundas. O meu trabalho honra essa herança — com técnicas tradicionais e materiais que resistem ao tempo.
+> A lutheria portuguesa tem raízes profundas. O meu trabalho honra essa herança, com técnicas tradicionais e materiais que resistem ao tempo.
 
 **✦ Entrega com garantia**
 
 > Cada instrumento sai do meu atelier verificado, testado e pronto a tocar. Se surgir algum problema de construção, resolvo-o sem custo adicional.
 
-> **Coerência legal:** esta promessa está detalhada na secção 9 dos Termos e Condições (garantia legal de 3 anos, com as exclusões habituais).
+> **Design:** grelha “bento” com quatro cartões de tamanhos diferentes. **Madeiras selecionadas** é o maior: as três madeiras da secção Madeiras (abeto, pau-santo, ébano) alternam em grande plano, com aproximação lenta e o nome da espécie, e podem ser escolhidas à mão. **Formação com mestres** destaca “2+ anos com mestres” num número grande com reflexo dourado. **Respeito pela tradição** tem por fundo um padrão de azulejo português em traço dourado, a deslizar devagar. **Entrega com garantia** tem um selo do atelier (“TG Luthier”) a rodar, com “Verificado ✦ Testado ✦ Pronto a tocar”, que acelera com o rato por cima. Em todos os cartões a borda ilumina-se onde está o rato, e entram um a um ao fazer scroll. Com “reduzir movimento” ativo, nada se mexe sozinho.
+>
+> **Por confirmar:** “2+ anos com mestres” resume “mais de dois anos de aprendizagem”; o selo usa as iniciais “TG”.
 
 ---
 
@@ -270,13 +270,13 @@ As descrições completas estão em `sections/Trabalhos.jsx`.
 
 ### Tampos (soundboards)
 
-**Abeto Europeu** *(Picea abies)*
+**Abeto Europeu** _(Picea abies)_
 
 > A madeira clássica dos grandes mestres. O abeto produz um som de grande projeção, com trebles cristalinos, graves quentes e uma resposta dinâmica que cresce com o tempo. Um instrumento com tampo de abeto toca melhor aos 20 anos do que no primeiro dia, e pode manter o seu esplendor por mais de um século.
 
 Carácter sonoro: projeção, brilho, sustain longo
 
-**Cedro Vermelho do Canadá** *(Thuja plicata)*
+**Cedro Vermelho do Canadá** _(Thuja plicata)_
 
 > Mais macio e responsivo do que o abeto, o cedro responde imediatamente ao toque mais leve. O seu som é quente, rico em harmónicos e imediato, sem necessidade de “abertura”. Ideal para guitarristas de dedilhado e para quem quer profundidade sonora desde o primeiro acorde.
 
@@ -284,19 +284,19 @@ Carácter sonoro: calor, profundidade, resposta imediata
 
 ### Fundos e ilhargas
 
-**Pau-Santo Indiano** *(Dalbergia latifolia)*
+**Pau-Santo Indiano** _(Dalbergia latifolia)_
 
 > O par perfeito para os tampos de abeto. O pau-santo devolve ao som toda a complexidade que o tampo gera: graves poderosos, médios definidos e agudos brilhantes. É a escolha canónica da lutheria clássica por uma razão simples: funciona.
 
 Carácter sonoro: equilíbrio, brilho, reverberação rica
 
-**Mogno Africano** *(Khaya ivorensis)*
+**Mogno Africano** _(Khaya ivorensis)_
 
 > Quente, sustentado e com uma profundidade de médios que nenhuma outra madeira replica. O mogno é a escolha dos instrumentos que soam como se tivessem décadas de história. Visualmente elegante, com grão suave e tom avermelhado característico.
 
 Carácter sonoro: calor, médios cantantes, carácter vintage
 
-**Cipreste** *(Cupressus sempervirens)*
+**Cipreste** _(Cupressus sempervirens)_
 
 > A madeira da tradição ibérica. Leve, seca e percussiva, o cipreste é a escolha histórica para a viola campaniça, o flamenco e os instrumentos de corda regionais portugueses. Produz um ataque rápido, presença imediata e um timbre com identidade inconfundível.
 
@@ -304,23 +304,23 @@ Carácter sonoro: seco, percussivo, presença ibérica
 
 ### Braços
 
-**Mogno Hondurenho** *(Swietenia macrophylla)*
+**Mogno Hondurenho** _(Swietenia macrophylla)_
 
 > Estável, leve e de fácil conformação, o mogno hondurenho é a referência para braços de guitarra clássica e acústica de qualidade. A sua rigidez controlada traduz-se num sustain equilibrado e numa sensação ao toque que se torna familiar rapidamente.
 
-**Cedro** *(Cedrus sp.)*
+**Cedro** _(Cedrus sp.)_
 
 > Uma alternativa nobre ao mogno, com excelente estabilidade dimensional e resposta acústica própria. Muito usado na lutheria ibérica e latino-americana pela sua leveza e consistência.
 
 ### Escala e cavalete
 
-**Ébano Africano** *(Diospyros crassiflora)*
+**Ébano Africano** _(Diospyros crassiflora)_
 
 > A madeira mais densa e precisa da lutheria. O ébano confere ao instrumento um ataque limpo, um sustain suave e uma durabilidade praticamente inabalável. Ao toque, a sensação é de precisão absoluta. Visualmente, é a linha negra que define o instrumento.
 
 Carácter: firmeza, precisão, acabamento premium
 
-**Pau-Ferro** *(Libidibia ferrea)*
+**Pau-Ferro** _(Libidibia ferrea)_
 
 > A alternativa sustentável ao ébano, com propriedades acústicas muito semelhantes. Som denso, firme e consistente, com um visual expressivo de tons castanhos intercalados. Cada vez mais valorizado pelos construtores conscientes da origem dos materiais.
 
@@ -380,12 +380,12 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 ### Campos comuns
 
-| Campo               | Placeholder                    |
-| ------------------- | ------------------------------ |
-| Nome completo       | Ex: João Silva                 |
-| Email               | Ex: joao@email.com             |
-| Telefone / WhatsApp | Ex: +351 9XX XXX XXX           |
-| Localidade          | Ex: Lisboa, Porto, Cascais...  |
+| Campo               | Placeholder                   |
+| ------------------- | ----------------------------- |
+| Nome completo       | Ex: João Silva                |
+| Email               | Ex: joao@email.com            |
+| Telefone / WhatsApp | Ex: +351 9XX XXX XXX          |
+| Localidade          | Ex: Lisboa, Porto, Cascais... |
 
 **Tipo de serviço** (seleção única)
 
@@ -397,34 +397,34 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 ### Se Construção
 
-| Campo                           | Placeholder                                                        |
-| ------------------------------- | ------------------------------------------------------------------ |
-| Tipo de instrumento             | Ex: Guitarra clássica, Viola campaniça, Guitarra acústica...       |
-| Madeira preferida para o tampo  | Ex: Abeto, Cedro... (ou "não sei, preciso de ajuda")               |
-| Madeira para fundo e ilhargas   | Ex: Pau-santo, Mogno... (ou "não sei")                             |
-| Escala desejada (cm)            | Ex: 65 cm (padrão clássico)                                        |
-| Estilo musical principal        | Ex: Clássico, Folk, Flamenco, Jazz...                              |
-| Orçamento indicativo (€)        | Ex: 800 € – 1200 €                                                 |
-| Observações / referências       | Descreve o som que procuras, instrumentos de referência, etc.      |
+| Campo                          | Placeholder                                                   |
+| ------------------------------ | ------------------------------------------------------------- |
+| Tipo de instrumento            | Ex: Guitarra clássica, Viola campaniça, Guitarra acústica...  |
+| Madeira preferida para o tampo | Ex: Abeto, Cedro... (ou "não sei, preciso de ajuda")          |
+| Madeira para fundo e ilhargas  | Ex: Pau-santo, Mogno... (ou "não sei")                        |
+| Escala desejada (cm)           | Ex: 65 cm (padrão clássico)                                   |
+| Estilo musical principal       | Ex: Clássico, Folk, Flamenco, Jazz...                         |
+| Orçamento indicativo (€)       | Ex: 800 € – 1200 €                                            |
+| Observações / referências      | Descreve o som que procuras, instrumentos de referência, etc. |
 
 ### Se Reparação
 
-| Campo                                               | Placeholder / tipo                                                   |
-| --------------------------------------------------- | -------------------------------------------------------------------- |
-| Tipo de instrumento                                 | Ex: Guitarra acústica, Viola beiroa...                               |
-| Descreve o problema                                 | Ex: Tampo descolado, trasto levantado, cravelha partida...           |
-| Instrumento tem valor sentimental ou histórico?     | Sim / Não                                                            |
-| Fotos do instrumento                                | Upload — até 5 imagens                                               |
-| Observações adicionais                              | Qualquer detalhe que consideres relevante                            |
+| Campo                                           | Placeholder / tipo                                         |
+| ----------------------------------------------- | ---------------------------------------------------------- |
+| Tipo de instrumento                             | Ex: Guitarra acústica, Viola beiroa...                     |
+| Descreve o problema                             | Ex: Tampo descolado, trasto levantado, cravelha partida... |
+| Instrumento tem valor sentimental ou histórico? | Sim / Não                                                  |
+| Fotos do instrumento                            | Upload — até 5 imagens                                     |
+| Observações adicionais                          | Qualquer detalhe que consideres relevante                  |
 
 ### Se Setup
 
-| Campo                                    | Placeholder                                                              |
-| ---------------------------------------- | ------------------------------------------------------------------------ |
-| Tipo de instrumento                      | Ex: Guitarra elétrica, Viola, Guitarra clássica...                       |
-| Problema principal                       | Ex: Ação muito alta, afinação instável, zumbidos nos trastos...          |
-| Quando precisas do instrumento de volta? | Ex: Tenho concerto em 2 semanas                                          |
-| Observações                              | Detalha o que sentes ao tocar — o que não está certo                     |
+| Campo                                    | Placeholder                                                     |
+| ---------------------------------------- | --------------------------------------------------------------- |
+| Tipo de instrumento                      | Ex: Guitarra elétrica, Viola, Guitarra clássica...              |
+| Problema principal                       | Ex: Ação muito alta, afinação instável, zumbidos nos trastos... |
+| Quando precisas do instrumento de volta? | Ex: Tenho concerto em 2 semanas                                 |
+| Observações                              | Detalha o que sentes ao tocar — o que não está certo            |
 
 ### Consentimento (obrigatório pelo RGPD)
 
@@ -476,11 +476,11 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 Já criadas como páginas próprias, com URL, título e meta description individuais:
 
-| Página                   | URL                          | Conteúdo                              |
-| ------------------------ | ---------------------------- | ------------------------------------- |
-| Política de Privacidade  | `/politica-de-privacidade/`  | `src/legal/content/Privacidade.jsx`   |
-| Termos e Condições       | `/termos-e-condicoes/`       | `src/legal/content/Termos.jsx`        |
-| Política de Cookies      | `/politica-de-cookies/`      | `src/legal/content/Cookies.jsx`       |
+| Página                  | URL                         | Conteúdo                            |
+| ----------------------- | --------------------------- | ----------------------------------- |
+| Política de Privacidade | `/politica-de-privacidade/` | `src/legal/content/Privacidade.jsx` |
+| Termos e Condições      | `/termos-e-condicoes/`      | `src/legal/content/Termos.jsx`      |
+| Política de Cookies     | `/politica-de-cookies/`     | `src/legal/content/Cookies.jsx`     |
 
 - **Dados do Tiago:** preenchem-se num só ficheiro, `src/legal/legal-data.js`. Enquanto um campo estiver vazio, aparece destacado a dourado nas páginas, para não passar despercebido.
 - **Banner de cookies:** passou a ter link “Saber mais” para a Política de Cookies e pode ser reaberto a partir dela (botão “Alterar preferências de cookies”).
@@ -498,14 +498,15 @@ O plano gratuito da Vercel (Hobby) é **só para uso pessoal e não comercial**.
 
 ### Formulário (fase final)
 
-| Opção | Custo | Fotos | Avaliação |
-| ----- | ----- | ----- | --------- |
-| **Cloudflare Pages Functions + Resend + Turnstile** | Gratuito (Resend: 3000 emails/mês, 100/dia) | Sim, como anexo do email | **Recomendada** |
-| Netlify Forms | Gratuito | Sim (máx. ~8 MB por envio) | Boa alternativa, mais simples, mas obriga a alojar na Netlify |
-| Web3Forms (atual) | Gratuito até 250/mês | **Não** (só no Pro, 149 $/ano) | Não serve para o upload de fotos |
-| Formspree | Gratuito até 50/mês | Não no plano gratuito | Limite muito baixo |
+| Opção                                               | Custo                                       | Fotos                          | Avaliação                                                     |
+| --------------------------------------------------- | ------------------------------------------- | ------------------------------ | ------------------------------------------------------------- |
+| **Cloudflare Pages Functions + Resend + Turnstile** | Gratuito (Resend: 3000 emails/mês, 100/dia) | Sim, como anexo do email       | **Recomendada**                                               |
+| Netlify Forms                                       | Gratuito                                    | Sim (máx. ~8 MB por envio)     | Boa alternativa, mais simples, mas obriga a alojar na Netlify |
+| Web3Forms (atual)                                   | Gratuito até 250/mês                        | **Não** (só no Pro, 149 $/ano) | Não serve para o upload de fotos                              |
+| Formspree                                           | Gratuito até 50/mês                         | Não no plano gratuito          | Limite muito baixo                                            |
 
 **Porquê a recomendada:**
+
 - **Profissional:** os emails saem do domínio do Tiago (ex.: `pedidos@tiagogagoluthier.pt`), sem marca de terceiros.
 - **Confirmação ao cliente:** quem faz o pedido recebe automaticamente a confirmação “Recebi o teu pedido…”.
 - **Fotos:** chegam como anexos. São comprimidas no navegador antes do envio, para não pesar.
@@ -538,25 +539,27 @@ O plano gratuito da Vercel (Hobby) é **só para uso pessoal e não comercial**.
 
 Alterações feitas à copy original entregue pelo cliente.
 
-| Onde | Original | Agora | Motivo |
-| ---- | -------- | ----- | ------ |
-| Navbar, Footer, Secção 2 | Quem Somos | Quem sou | Voz na primeira pessoa do singular |
-| Navbar | Pedido · Contacto | Madeiras | “Pedido” repetia o CTA “Fazer pedido”, e “Contacto” deixou de ter destino próprio |
-| Navbar | Fazer Pedido | Fazer pedido | Uniformização dos botões |
-| Hero | Ver instrumentos | Pedir orçamento → `#pedido` | Não existe galeria de instrumentos; o CTA principal leva ao pedido |
-| Hero | solicitar orçamento | Ver serviços → `#servicos` | Evita dois botões iguais lado a lado |
-| Secção 2, 1.º parágrafo | A diferença não está só na marca… quem os fez e em quem os cuida, isto pode… | Num instrumento, a diferença… quem o fez e em quem o cuida — e isso pode… | “os” não tinha a que se referir; vírgula a unir duas frases |
-| Secção 2, 2.º parágrafo | O Tiago Gago aprendeu lutheria… | Sou o Tiago Gago dos Santos e aprendi lutheria… | Voz na primeira pessoa; apresenta o nome completo |
-| Secção 2, 3.º parágrafo | Hoje, em Cascais, recebe instrumentos de músicos de todo o país. | Hoje, no meu atelier em Cascais, construo, reparo e afino instrumentos de músicos que chegam de todo o país. | Destaca o atelier e resume os três serviços |
-| Secção 4, passo 02 | O Tiago analisa e devolve | Analiso o teu pedido e devolvo-te | Voz na primeira pessoa |
-| Secção 4, passo 01 | o que precisas — pelo formulário | o que precisas, pelo formulário | Sem travessões no site (pedido do cliente) |
-| Secção 4 | — | Título “Três passos, sem surpresas” e etiquetas dos passos | A secção não tinha título |
-| Secção 5, título | Portfólio | Trabalhos realizados | Pedido do cliente; “Portfólio” fica como etiqueta |
-| Secção 7, introdução | No atelier Tiago Gago | No meu atelier | Voz na primeira pessoa |
-| Secção 7, Cipreste · Formulário · Hero | campanica | campaniça | Grafia correta |
-| Secção 7, Ébano | uma sustain suave | um sustain suave | Coerência com “sustain longo” e “um sustain equilibrado” |
-| Secção 7, botão | Fazer uma pergunta | Pedir aconselhamento → formulário | Todo o contacto passa pelo formulário ou pelo WhatsApp |
-| Secção 8, CTA secundário | Falar com o Tiago | Falar por WhatsApp | O botão diz o canal; voz na primeira pessoa |
-| Formulário | — | Caixa de consentimento | Obrigatória pelo RGPD |
-| Footer | Política de Cookies (RGPD) | + Livro de Reclamações | Obrigatório por lei (DL 74/2017) |
-| Footer, navegação | Pedido · Contacto | Como funciona · Fazer pedido | Coerência com a navbar |
+| Onde                                   | Original                                                                     | Agora                                                                                                        | Motivo                                                                            |
+| -------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
+| Navbar, Footer, Secção 2               | Quem Somos                                                                   | Quem sou                                                                                                     | Voz na primeira pessoa do singular                                                |
+| Navbar                                 | Pedido · Contacto                                                            | Madeiras                                                                                                     | “Pedido” repetia o CTA “Fazer pedido”, e “Contacto” deixou de ter destino próprio |
+| Navbar                                 | Fazer Pedido                                                                 | Fazer pedido                                                                                                 | Uniformização dos botões                                                          |
+| Hero                                   | Ver instrumentos                                                             | Pedir orçamento → `#pedido`                                                                                  | Não existe galeria de instrumentos; o CTA principal leva ao pedido                |
+| Hero                                   | solicitar orçamento                                                          | Ver serviços → `#servicos`                                                                                   | Evita dois botões iguais lado a lado                                              |
+| Secção 2, 1.º parágrafo                | A diferença não está só na marca… quem os fez e em quem os cuida, isto pode… | Num instrumento, a diferença… quem o fez e em quem o cuida — e isso pode…                                    | “os” não tinha a que se referir; vírgula a unir duas frases                       |
+| Secção 2, 2.º parágrafo                | O Tiago Gago aprendeu lutheria…                                              | Sou o Tiago Gago dos Santos e aprendi lutheria…                                                              | Voz na primeira pessoa; apresenta o nome completo                                 |
+| Secção 2, 3.º parágrafo                | Hoje, em Cascais, recebe instrumentos de músicos de todo o país.             | Hoje, no meu atelier em Cascais, construo, reparo e afino instrumentos de músicos que chegam de todo o país. | Destaca o atelier e resume os três serviços                                       |
+| Secção 4, passo 02                     | O Tiago analisa e devolve                                                    | Analiso o teu pedido e devolvo-te                                                                            | Voz na primeira pessoa                                                            |
+| Secção 4, passo 01                     | o que precisas — pelo formulário                                             | o que precisas, pelo formulário                                                                              | Sem travessões no site (pedido do cliente)                                        |
+| Secção 4                               | —                                                                            | Título “Três passos, sem surpresas” e etiquetas dos passos                                                   | A secção não tinha título                                                         |
+| Secção 5, título                       | Portfólio                                                                    | Trabalhos realizados                                                                                         | Pedido do cliente; “Portfólio” fica como etiqueta                                 |
+| Secção 6, Madeiras selecionadas        | qualidade comprovada — algumas com anos de secagem                           | qualidade comprovada: algumas com anos de secagem                                                            | Sem travessões no site (pedido do cliente)                                        |
+| Secção 6, Respeito pela tradição       | honra essa herança — com técnicas tradicionais                               | honra essa herança, com técnicas tradicionais                                                                | Sem travessões no site (pedido do cliente)                                        |
+| Secção 7, introdução                   | No atelier Tiago Gago                                                        | No meu atelier                                                                                               | Voz na primeira pessoa                                                            |
+| Secção 7, Cipreste · Formulário · Hero | campanica                                                                    | campaniça                                                                                                    | Grafia correta                                                                    |
+| Secção 7, Ébano                        | uma sustain suave                                                            | um sustain suave                                                                                             | Coerência com “sustain longo” e “um sustain equilibrado”                          |
+| Secção 7, botão                        | Fazer uma pergunta                                                           | Pedir aconselhamento → formulário                                                                            | Todo o contacto passa pelo formulário ou pelo WhatsApp                            |
+| Secção 8, CTA secundário               | Falar com o Tiago                                                            | Falar por WhatsApp                                                                                           | O botão diz o canal; voz na primeira pessoa                                       |
+| Formulário                             | —                                                                            | Caixa de consentimento                                                                                       | Obrigatória pelo RGPD                                                             |
+| Footer                                 | Política de Cookies (RGPD)                                                   | + Livro de Reclamações                                                                                       | Obrigatório por lei (DL 74/2017)                                                  |
+| Footer, navegação                      | Pedido · Contacto                                                            | Como funciona · Fazer pedido                                                                                 | Coerência com a navbar                                                            |

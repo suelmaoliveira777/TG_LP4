@@ -16,6 +16,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { rememberService } from '@/utils/rememberService'
+import { trackSpotlight } from '@/utils/spotlight'
 import { workImageSrcSet } from '@/utils/workImage'
 import SectionLabel from '../ui/SectionLabel'
 import WorkLightbox from '../ui/WorkLightbox'
@@ -277,13 +278,6 @@ function QuoteCard({ className = '' }) {
       </div>
     </div>
   )
-}
-
-// Brilho que segue o rato dentro do cartão
-function trackSpotlight(event) {
-  const rect = event.currentTarget.getBoundingClientRect()
-  event.currentTarget.style.setProperty('--mx', `${event.clientX - rect.left}px`)
-  event.currentTarget.style.setProperty('--my', `${event.clientY - rect.top}px`)
 }
 
 // As fotos vêm de fontes diferentes: um tom quente comum dá-lhes unidade; no hover a foto volta à cor original

@@ -8,9 +8,6 @@ import ComoFunciona from './components/sections/ComoFunciona'
 import Trabalhos from './components/sections/Trabalhos'
 import Madeiras from './components/sections/Madeiras'
 import Precos from './components/sections/Precos'
-import ProvasSocial from './components/sections/ProvasSocial'
-import Objecoes from './components/sections/Objecoes'
-import Garantia from './components/sections/Garantia'
 import Faq from './components/sections/Faq'
 import Formulario from './components/sections/Formulario'
 import CookieBanner from './components/ui/CookieBanner'
@@ -23,7 +20,7 @@ import { schemaData } from './utils/schema'
 const Footer = lazy(() => import('./components/layout/Footer'))
 
 // Ordem das secções da página; entre cada uma é colocado o separador ✦
-const SECTIONS = [Hero, QuemSou, Servicos, ComoFunciona, Trabalhos, Madeiras, Precos, ProvasSocial, Objecoes, Garantia, Faq, Formulario]
+const SECTIONS = [Hero, QuemSou, Servicos, ComoFunciona, Trabalhos, Madeiras, Precos, Faq, Formulario]
 
 function App() {
   const [consent, setConsent] = useState(() => window.localStorage.getItem('cookie_consent') || 'essential')

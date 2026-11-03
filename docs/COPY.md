@@ -47,7 +47,7 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
 | —   | WhatsApp flutuante   | —                | — (novo)                      | Por fazer                                      |
 | —   | Páginas legais       | ver abaixo       | `src/legal/`                  | Feitas, por preencher                          |
 
-**Saem do site** (não constam da nova estrutura): `ProvasSocial.jsx`, `Objecoes.jsx`, `Garantia.jsx`, `Faq.jsx`. Só são apagados quando a nova versão estiver no ar.
+**Saem do site** (não constam da nova estrutura): `Faq.jsx`. Só é apagado quando a nova versão estiver no ar. As antigas secções Prova social, Objeções e Garantia já foram apagadas.
 
 ---
 

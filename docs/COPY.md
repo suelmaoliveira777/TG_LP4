@@ -32,7 +32,7 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
   | Título da Hero                                                      | 300 (leve)                |
   | Títulos das secções, da vista ampliada, do formulário e legais      | 300 (leve)                |
   | Parte dourada dos títulos (“por ti”, “realizados”…)                 | 700 (negrito)             |
-  | Subtítulos (“Começa pelo som…”, “Construção · Reparação · Setup”)   | 400 (normal)              |
+  | Subtítulo do footer (“Construção · Reparação · Setup”)              | 400 (normal)              |
   | Títulos dos cartões (serviços, trabalhos, madeiras, preços…)        | 700 (negrito)             |
   | Preços                                                              | 800 (extra-negrito)       |
 
@@ -246,15 +246,11 @@ As descrições completas estão em `sections/Trabalhos.jsx`.
 
 **Título**
 
-> A madeira certa muda tudo.
-
-**Subtítulo**
-
-> Começa pelo som. Termina na alma.
+> Madeiras selecionadas
 
 **Introdução**
 
-> Antes de existir qualquer instrumento, existe uma escolha. A escolha da madeira define o carácter sonoro, a resposta tátil, a durabilidade e a beleza de tudo o que será construído. No meu atelier, cada madeira é selecionada individualmente, peça a peça, com critérios acústicos e estéticos que não se negociam.
+> A escolha certa da madeira define o carácter sonoro, a resposta tátil, a durabilidade e a beleza de tudo o que será construído.
 
 ### Tampos (soundboards)
 
@@ -614,7 +610,8 @@ Alterações feitas à copy original entregue pelo cliente.
 | Secção 4                               | —                                                                            | Título “Três passos, sem surpresas” e etiquetas dos passos                                                   | A secção não tinha título                                                         |
 | Secção 5, título                       | Portfólio                                                                    | Trabalhos realizados                                                                                         | Pedido do cliente; “Portfólio” fica como etiqueta                                 |
 | Secção 6, nomes das madeiras           | Abeto Europeu, Pau-Santo Indiano…                                            | Abeto europeu, Pau-santo indiano…                                                                            | Em português, só a primeira palavra leva maiúscula                                |
-| Secção 6, introdução                   | No atelier Tiago Gago                                                        | No meu atelier                                                                                               | Voz na primeira pessoa                                                            |
+| Secção 6, título                       | A madeira certa muda tudo. + Começa pelo som. Termina na alma.               | Madeiras selecionadas                                                                                        | Pedido do cliente; o subtítulo foi apagado                                        |
+| Secção 6, introdução                   | Antes de existir qualquer instrumento… critérios… que não se negociam.       | A escolha certa da madeira define o carácter sonoro… de tudo o que será construído.                          | Pedido do cliente: só a frase central                                             |
 | Secção 6, Cipreste · Formulário · Hero | campanica                                                                    | campaniça                                                                                                    | Grafia correta                                                                    |
 | Secção 6, Ébano                        | uma sustain suave                                                            | um sustain suave                                                                                             | Coerência com “sustain longo” e “um sustain equilibrado”                          |
 | Secção 6, botão                        | Fazer uma pergunta                                                           | Pedir aconselhamento → formulário                                                                            | Todo o contacto passa pelo formulário ou pelo WhatsApp                            |

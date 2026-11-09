@@ -319,17 +319,16 @@ function Madeiras() {
             <motion.div {...fadeUp} className="text-center lg:text-left">
               <SectionLabel>As matérias-primas</SectionLabel>
               <h2 className="mt-6 font-display text-4xl font-light leading-[1.1] sm:text-5xl lg:text-6xl">
-                A madeira certa <span className="font-bold text-gold-light">muda tudo.</span>
+                Madeiras <span className="font-bold text-gold-light">selecionadas</span>
               </h2>
-              <p className="mt-4 font-display text-2xl font-normal text-gold-pale sm:text-3xl">Começa pelo som. Termina na alma.</p>
             </motion.div>
+            {/* Texto curto: centrado no telemóvel, como o título, em vez de justificado */}
             <motion.p
               {...fadeUp}
-              className="mx-auto max-w-2xl hyphens-auto text-justify text-base leading-8 text-text/75 sm:text-lg lg:mx-0 lg:hyphens-manual lg:text-left"
+              className="mx-auto max-w-2xl text-center text-base leading-8 text-text/75 [text-wrap:balance] sm:text-lg lg:mx-0 lg:text-left"
             >
-              Antes de existir qualquer instrumento, existe uma escolha. A escolha da madeira define o carácter sonoro, a
-              resposta tátil, a durabilidade e a beleza de tudo o que será construído. No meu atelier, cada madeira é
-              selecionada individualmente, peça a peça, com critérios acústicos e estéticos que não se negociam.
+              A escolha certa da madeira define o carácter sonoro, a resposta tátil, a durabilidade e a beleza de tudo o que
+              será construído.
             </motion.p>
           </div>
 

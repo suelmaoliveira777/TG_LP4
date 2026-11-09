@@ -111,18 +111,23 @@ const priceText = (item) =>
 
 function Price({ item, animated }) {
   if (item.price === null) {
-    return <span className="font-display text-lg italic text-gold-pale">Sob orçamento</span>
+    return <span className="font-display text-lg font-semibold italic text-gold-dark">Sob orçamento</span>
   }
   return (
     <span className="inline-flex items-baseline gap-1.5">
-      {item.from && <span className="text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-muted">desde</span>}
-      <span className="font-display text-2xl font-semibold text-gold-pale sm:text-[1.7rem]">
+      {item.from && <span className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-[#7A6446]">desde</span>}
+      <span className="font-display text-2xl font-bold text-gold-dark sm:text-[1.7rem]">
         <PriceValue value={item.price} animated={animated} />
       </span>
-      <span className="text-sm text-gold-light">€</span>
+      <span className="text-sm font-semibold text-gold-mid">€</span>
     </span>
   )
 }
+
+// Cartões em creme, como o papel de uma carta: o mesmo tom do texto do site, mais claro no topo.
+// A Construção, em destaque, leva um creme mais dourado.
+const PAPER = 'bg-gradient-to-b from-[#F5EDE0] to-text'
+const PAPER_FEATURED = 'bg-gradient-to-b from-[#FAEBCB] to-[#EFD8A8]'
 
 function PriceCard({ category, animated }) {
   const { icon: Icon } = category
@@ -131,7 +136,9 @@ function PriceCard({ category, animated }) {
     <motion.article
       variants={cardIn}
       onPointerMove={trackSpotlight}
-      className={`group relative rounded-[1.75rem] p-px ${category.featured ? 'bg-gold-light/40' : 'bg-white/10'}`}
+      className={`group relative rounded-[1.75rem] p-px shadow-[0_30px_70px_-30px_rgba(0,0,0,0.9)] ${
+        category.featured ? 'bg-gold-light' : 'bg-white/20'
+      }`}
     >
       <div
         aria-hidden="true"
@@ -139,27 +146,34 @@ function PriceCard({ category, animated }) {
         style={BORDER_GLOW}
       />
       <div
-        className={`relative h-full overflow-hidden rounded-[calc(1.75rem-1px)] p-6 sm:p-8 lg:p-10 ${
-          category.featured ? 'bg-gradient-to-br from-[#1d1408] via-bg to-bg' : 'bg-bg'
+        className={`relative h-full overflow-hidden rounded-[calc(1.75rem-1px)] p-6 text-bg sm:p-8 lg:p-10 ${
+          category.featured ? PAPER_FEATURED : PAPER
         }`}
       >
+        {/* Ícone do serviço em marca de água, no canto de baixo */}
+        <Icon
+          aria-hidden="true"
+          strokeWidth={1}
+          className="pointer-events-none absolute -bottom-10 -right-10 h-48 w-48 text-gold-dark/[0.07] transition-transform duration-700 group-hover:-rotate-6 group-hover:scale-105"
+        />
+
         {category.featured && (
-          <span className="absolute right-6 top-6 rounded-full border border-gold-light/40 bg-gold-light/10 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.25em] text-gold-light sm:right-8 sm:top-8">
+          <span className="absolute right-6 top-6 rounded-full bg-gold-bright px-3 py-1 text-[0.62rem] font-bold uppercase tracking-[0.25em] text-bg shadow-[0_6px_16px_-6px_rgba(107,63,10,0.6)] sm:right-8 sm:top-8">
             Feito à medida
           </span>
         )}
 
-        <div className="flex items-center gap-4">
-          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-gold-light/30 bg-gold-light/10 text-gold-light">
+        <div className="relative flex items-center gap-4">
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-bg text-gold-bright shadow-[0_8px_20px_-8px_rgba(10,8,5,0.6)]">
             <Icon className="h-6 w-6" strokeWidth={1.5} aria-hidden="true" />
           </span>
           <div>
-            <h3 className="font-display text-2xl font-semibold leading-tight sm:text-3xl">{category.title}</h3>
-            <p className="mt-0.5 text-sm text-text/60">{category.description}</p>
+            <h3 className="font-display text-2xl font-bold leading-tight sm:text-3xl">{category.title}</h3>
+            <p className="mt-0.5 text-sm text-[#5E4C34]">{category.description}</p>
           </div>
         </div>
 
-        <table className="mt-8 w-full border-collapse text-left">
+        <table className="relative mt-8 w-full border-collapse text-left">
           <caption className="sr-only">Preços de {category.title}</caption>
           <thead className="sr-only">
             <tr>
@@ -169,25 +183,25 @@ function PriceCard({ category, animated }) {
           </thead>
           <tbody>
             {category.items.map((item) => (
-              <motion.tr key={item.name} variants={rowIn} className="group/row border-t border-white/[0.07] first:border-t-0">
+              <motion.tr key={item.name} variants={rowIn} className="group/row border-t border-gold-dark/15 first:border-t-0">
                 <th scope="row" className="relative py-4 align-top font-normal">
                   {/* Barra dourada que cresce à esquerda no hover */}
                   <span
                     aria-hidden="true"
-                    className="absolute -left-6 top-1/2 h-0 w-px -translate-y-1/2 bg-gold-light transition-all duration-300 group-hover/row:h-3/5 sm:-left-8 lg:-left-10"
+                    className="absolute -left-6 top-1/2 h-0 w-0.5 -translate-y-1/2 rounded-full bg-gold-mid transition-all duration-300 group-hover/row:h-3/5 sm:-left-8 lg:-left-10"
                   />
                   {/* Nome, linha pontilhada e preço na mesma linha, como numa carta: o pontilhado vai
                       sempre até ao preço. O preço visível fica aqui; o da célula ao lado é para leitores de ecrã. */}
                   <span className="flex items-baseline gap-3">
-                    <span className="text-[0.98rem] font-semibold text-text transition-colors duration-300 group-hover/row:text-gold-pale">
+                    <span className="text-[0.98rem] font-bold text-bg transition-colors duration-300 group-hover/row:text-gold-dark">
                       {item.name}
                     </span>
-                    <span aria-hidden="true" className="mb-1 min-w-6 flex-1 border-b border-dotted border-gold-light/30" />
+                    <span aria-hidden="true" className="mb-1 min-w-6 flex-1 border-b-2 border-dotted border-gold-mid/35" />
                     <span aria-hidden="true" className="whitespace-nowrap">
                       <Price item={item} animated={animated} />
                     </span>
                   </span>
-                  {item.detail && <span className="mt-1 block text-[0.82rem] leading-5 text-text/55">{item.detail}</span>}
+                  {item.detail && <span className="mt-1 block text-[0.82rem] leading-5 text-[#5E4C34]">{item.detail}</span>}
                 </th>
                 <td className="w-0 p-0">
                   <span className="sr-only">{priceText(item)}</span>
@@ -224,10 +238,9 @@ function Precos() {
             </motion.div>
             <motion.p
               {...fadeUp}
-              className="mx-auto max-w-2xl hyphens-auto text-justify text-base leading-8 text-text/75 sm:text-lg lg:mx-0 lg:hyphens-manual lg:text-left"
+              className="mx-auto max-w-2xl text-center text-base leading-8 text-text/75 [text-wrap:balance] sm:text-lg lg:mx-0 lg:text-left"
             >
-              Uma referência para os trabalhos mais pedidos. Cada instrumento é único: o valor final depende do estado e do tipo
-              de instrumento, e fica sempre fechado no orçamento, antes de qualquer intervenção.
+              Valores indicativos. O orçamento é gratuito e nenhum trabalho começa sem o teu acordo.
             </motion.p>
           </div>
 
@@ -243,13 +256,7 @@ function Precos() {
             ))}
           </motion.div>
 
-          <motion.div
-            {...fadeUp}
-            className="mt-12 flex flex-col items-center gap-6 text-center sm:mt-14 lg:flex-row lg:justify-between lg:text-left"
-          >
-            <p className="max-w-xl text-sm leading-6 text-text/55">
-              Valores indicativos, em euros. O orçamento é gratuito e nenhum trabalho começa sem o teu acordo.
-            </p>
+          <motion.div {...fadeUp} className="mt-12 flex justify-center sm:mt-14">
             <Button asChild size="lg">
               <a href="#pedido">
                 Pedir orçamento

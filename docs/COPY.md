@@ -331,9 +331,9 @@ Carácter: solidez, sustentabilidade, sonoridade densa
 
 > Valores claros, antes de começar.
 
-**Introdução**
+**Subtítulo**
 
-> Uma referência para os trabalhos mais pedidos. Cada instrumento é único: o valor final depende do estado e do tipo de instrumento, e fica sempre fechado no orçamento, antes de qualquer intervenção.
+> Valores indicativos. O orçamento é gratuito e nenhum trabalho começa sem o teu acordo.
 
 **Setup & Regulação** · Para o instrumento tocar como deve.
 
@@ -372,13 +372,9 @@ Carácter: solidez, sustentabilidade, sonoridade densa
 | Viola campaniça     | Construção tradicional alentejana            | desde 1 700 €    |
 | Cavaquinho          | Com roseta embutida à mão                    | desde 750 €      |
 
-**Nota final**
-
-> Valores indicativos, em euros. O orçamento é gratuito e nenhum trabalho começa sem o teu acordo.
-
 **CTA:** Pedir orçamento → `#pedido`
 
-> **Design:** como a carta de um restaurante de alta cozinha: quatro cartões, um por tipo de serviço, com cada serviço ligado ao preço por uma linha pontilhada. A Construção fica em destaque, com borda dourada e a etiqueta “Feito à medida”. Os preços contam até ao valor quando aparecem no ecrã; cada linha ilumina-se no hover e a borda do cartão acende onde está o rato. As tabelas são tabelas HTML reais, legíveis por leitores de ecrã.
+> **Design:** como a carta de um restaurante de alta cozinha: quatro cartões em creme, como papel, um por tipo de serviço, com texto escuro, preços em dourado escuro e o ícone do serviço em marca de água no canto. Cada serviço liga-se ao preço por uma linha pontilhada. A Construção fica em destaque, num creme mais dourado com borda dourada e a etiqueta “Feito à medida” no amarelo dos Serviços. Os preços contam até ao valor quando aparecem no ecrã; cada linha ilumina-se no hover e a borda do cartão acende onde está o rato. As tabelas são tabelas HTML reais, legíveis por leitores de ecrã.
 >
 > **Por confirmar:** se os preços incluem IVA (depende do regime de IVA do Tiago, ver Pontos a decidir) e “O orçamento é gratuito”.
 

@@ -10,6 +10,7 @@ export default {
         'gold-light': '#C8882A',
         'gold-mid': '#A0661A',
         'gold-dark': '#6B3F0A',
+        'gold-bright': '#FABF52',
         text: '#E8DCC8',
         muted: '#8A7A62',
       },

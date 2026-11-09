@@ -6,12 +6,13 @@ import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { rememberService } from '@/utils/rememberService'
 import SectionLabel from '../ui/SectionLabel'
 
-// glow: posição horizontal do brilho dourado no fundo de cada cartão
+// glow: posição horizontal do reflexo de luz no fundo de cada cartão
 const SERVICES = [
   {
     id: 'construcao',
     icon: Guitar,
     title: 'Construção personalizada',
+    cta: 'Criar o meu instrumento',
     description:
       'Criamos juntos o instrumento dos teus sonhos. Escolhes a madeira, o perfil do braço, a escala, os acessórios. Eu construo, com rigor e paciência, do zero ao acabamento final.',
     items: [
@@ -26,6 +27,7 @@ const SERVICES = [
     id: 'reparacao',
     icon: Wrench,
     title: 'Reparação & Restauro',
+    cta: 'Reparar o meu instrumento',
     description:
       'O teu instrumento tem história? Eu ajudo-o a continuar a contá-la. Desde reparações simples até restauros complexos de instrumentos antigos e de família.',
     items: [
@@ -41,8 +43,9 @@ const SERVICES = [
     id: 'setup',
     icon: SlidersHorizontal,
     title: 'Setup & Regulação',
+    cta: 'Marcar o meu setup',
     description:
-      'Um bom instrumento mal regulado não dá o seu melhor. O setup profissional transforma a tua experiência de tocar — torna tudo mais fácil, mais expressivo, mais teu.',
+      'Um bom instrumento mal regulado não dá o seu melhor. O setup profissional transforma a tua experiência de tocar: torna tudo mais fácil, mais expressivo, mais teu.',
     items: [
       'Regulação de ação e altura das cordas',
       'Intonação e afinação por trastos',
@@ -83,7 +86,7 @@ function smallViewportHeight() {
 }
 
 // A pilha (com o título fixado) só se liga se todos os cartões couberem inteiros por baixo do título,
-// mesmo encolhidos até MIN_FIT; senão os números ficariam escondidos. Mede-se em vez de usar uma
+// mesmo encolhidos até MIN_FIT; senão o topo dos cartões ficaria escondido. Mede-se em vez de usar uma
 // altura fixa porque o espaço útil varia muito entre telemóveis e browsers.
 function useStackFits(listRef, titleRef, enabled) {
   const [fits, setFits] = useState(false)
@@ -119,7 +122,7 @@ function useStackFits(listRef, titleRef, enabled) {
 }
 
 // Posição em que o cartão fica fixado. Se o cartão não couber no ecrã a partir da posição ideal, encolhe
-// (fit) para que o número e o botão "Pedir orçamento" fiquem ambos visíveis. Só se tivesse de encolher
+// (fit) para que o título do cartão e o botão fiquem ambos visíveis. Só se tivesse de encolher
 // demasiado é que se fixa encostado ao fundo, com o topo escondido por baixo do título.
 function useStickyTop(ref, titleRef, index, enabled) {
   const [top, setTop] = useState(null)
@@ -166,6 +169,8 @@ function ServiceCard({ service, index, total, progress, stacked, titleRef }) {
   const targetScale = 1 - (total - 1 - index) * 0.05
   const stackScale = useTransform(progress, [index / total, 1], [1, targetScale])
   const scale = useTransform([stackScale, fit], ([stack, fitScale]) => stack * fitScale)
+  // Na pilha, os cartões que ficam por baixo escurecem, para as molduras amarelas se distinguirem umas das outras
+  const shade = useTransform(progress, [index / total, 1], [0, (total - 1 - index) * 0.22])
 
   return (
     <div ref={cardRef} className={stacked ? 'sticky' : 'h-full'} style={stacked && top !== null ? { top } : undefined}>
@@ -177,35 +182,22 @@ function ServiceCard({ service, index, total, progress, stacked, titleRef }) {
         whileInView={stacked ? undefined : { opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.7, ease: 'easeOut', delay: stacked ? 0 : index * 0.12 }}
-        className="group relative isolate flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-surface shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)] transition-colors duration-500 lg:hover:border-gold-light/40"
+        className="group relative isolate flex h-full flex-col overflow-hidden rounded-[2rem] bg-gold-bright p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85),inset_0_1px_0_rgba(255,255,255,0.45)] transition-shadow duration-500 lg:hover:shadow-[0_30px_90px_-20px_rgba(250,191,82,0.3),inset_0_1px_0_rgba(255,255,255,0.45)]"
       >
-        {/* Fundo: brilho dourado (mais intenso no hover) e seis cordas, para o vidro ter o que refletir */}
+        {/* Fundo do cartão de baixo: reflexo de luz no topo (mais intenso no hover), para o vidro ter o que refletir */}
         <div
           aria-hidden="true"
           className="absolute inset-0 -z-10 opacity-80 transition-opacity duration-700 lg:group-hover:opacity-100"
           style={{
-            background: `radial-gradient(110% 65% at ${service.glow} 0%, rgba(200,136,42,0.38), rgba(107,63,10,0.12) 45%, transparent 75%)`,
+            background: `radial-gradient(110% 65% at ${service.glow} 0%, rgba(255,233,180,0.8), transparent 70%), linear-gradient(to bottom, transparent 40%, rgba(200,136,42,0.45))`,
           }}
         />
-        <div aria-hidden="true" className="absolute inset-y-0 right-8 -z-10 flex w-28 justify-between">
-          {Array.from({ length: 6 }, (_, string) => (
-            <span key={string} className="w-px bg-gradient-to-b from-gold-pale/40 via-gold-light/15 to-transparent" />
-          ))}
-        </div>
-
-        {/* Número do serviço */}
-        <div className="flex items-center gap-4 px-6 pb-3 pt-4 sm:pb-5 sm:pt-6">
-          {/* lnum: a Cormorant usa algarismos antigos por defeito ("oI" em vez de "01") */}
-          <span className="font-display text-3xl font-semibold sm:text-4xl leading-none text-gold-pale [font-feature-settings:'lnum']">
-            {String(index + 1).padStart(2, '0')}
-          </span>
-          <span aria-hidden="true" className="h-px flex-1 bg-gradient-to-r from-gold-light/60 to-transparent" />
-        </div>
+        {stacked && <motion.div aria-hidden="true" style={{ opacity: shade }} className="pointer-events-none absolute inset-0 z-10 bg-bg" />}
 
         {/* Painel de vidro com o conteúdo */}
-        <div className="mx-3 mb-3 flex flex-1 flex-col rounded-[1.5rem] border border-white/15 bg-bg/70 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl backdrop-saturate-150 sm:p-7">
+        <div className="flex flex-1 flex-col rounded-[1.5rem] border border-white/15 bg-bg/80 p-5 text-text shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl backdrop-saturate-150 sm:p-7 lg:p-5 xl:p-7">
           <div className="flex items-center gap-4">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-gold-light/30 bg-gold-light/10 text-gold-light sm:h-12 sm:w-12">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-gold-bright/30 bg-gold-bright/10 text-gold-bright sm:h-12 sm:w-12">
               <Icon className="h-6 w-6" strokeWidth={1.5} aria-hidden="true" />
             </span>
             <h3 className="font-display text-2xl font-semibold leading-tight sm:text-[1.75rem]">{service.title}</h3>
@@ -218,17 +210,18 @@ function ServiceCard({ service, index, total, progress, stacked, titleRef }) {
           <ul className="mt-4 space-y-1.5 border-t border-white/10 pt-4 sm:mt-6 sm:space-y-3 sm:pt-6">
             {service.items.map((item) => (
               <li key={item} className="flex gap-3 text-sm leading-6 text-text/85">
-                <Check className="mt-1 h-4 w-4 shrink-0 text-gold-light" aria-hidden="true" />
+                <Check className="mt-1 h-4 w-4 shrink-0 text-gold-bright" aria-hidden="true" />
                 {item}
               </li>
             ))}
           </ul>
 
           <div className="mt-auto pt-5 sm:pt-8">
-            <Button asChild className="w-full">
+            {/* whitespace-normal: a 1024px o texto mais longo pode precisar de duas linhas */}
+            <Button asChild className="h-auto min-h-11 w-full whitespace-normal py-2.5 text-center lg:px-3 lg:tracking-normal xl:px-6 xl:tracking-wide">
               <a href="#pedido" onClick={() => rememberService(service.id)}>
-                Pedir orçamento
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                {service.cta}
+                <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
               </a>
             </Button>
           </div>
@@ -249,7 +242,7 @@ function Servicos() {
   const { scrollYProgress } = useScroll({ target: listRef, offset: ['start start', 'end end'] })
 
   // O último cartão não tem onde ficar fixado: ao passar a sua posição na pilha continua a subir.
-  // A partir daí o título sobe com ele, para o número do cartão não ficar escondido por baixo do título.
+  // A partir daí o título sobe com ele, para o topo do cartão não ficar escondido por baixo do título.
   const titleY = useMotionValue(0)
   useEffect(() => {
     titleY.set(0)
@@ -275,10 +268,10 @@ function Servicos() {
     <MotionConfig reducedMotion="user">
       {/* overflow-clip (e não hidden) para não anular o position: sticky dos cartões */}
       <section id="servicos" className="relative overflow-clip bg-bg px-6 py-20 text-text sm:py-24 lg:px-10 lg:py-32">
-        {/* Brilho dourado discreto por trás dos cartões, para o vidro ter o que refletir */}
+        {/* Brilho dourado discreto por trás dos cartões, como se a luz deles se espalhasse pelo fundo escuro */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-light/10 blur-[120px]"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-bright/[0.12] blur-[120px]"
         />
 
         <div className="relative mx-auto max-w-7xl">

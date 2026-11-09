@@ -144,7 +144,7 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 
 ### ⚙️ Setup & Regulação
 
-> Um bom instrumento mal regulado não dá o seu melhor. O setup profissional transforma a tua experiência de tocar — torna tudo mais fácil, mais expressivo, mais teu.
+> Um bom instrumento mal regulado não dá o seu melhor. O setup profissional transforma a tua experiência de tocar: torna tudo mais fácil, mais expressivo, mais teu.
 
 - Regulação de ação e altura das cordas
 - Intonação e afinação por trastos
@@ -152,11 +152,15 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 - Lubrificação e ajuste de cravelhas e mecânicas
 - Revisão geral pré-gravação ou pré-concerto
 
-**CTA em cada serviço:** Pedir orçamento → `#pedido`
+**CTA de cada serviço** (todos levam a `#pedido`):
+
+- Construção personalizada: Criar o meu instrumento
+- Reparação & Restauro: Reparar o meu instrumento
+- Setup & Regulação: Marcar o meu setup
 
 > **Implementação:** o botão de cada cartão leva a `#pedido` e guarda o serviço em `sessionStorage` (`servico_pretendido` = `construcao` | `reparacao` | `setup`). Na fase do formulário, este lê o valor e pré-seleciona o tipo de serviço.
 >
-> **Design:** cada cartão tem um fundo escuro com um brilho dourado e seis linhas finas a lembrar cordas, com o conteúdo num painel de vidro (glassmorphism). No telemóvel, o título “O que faço por ti” fixa-se por baixo da navbar e os cartões empilham-se por baixo dele ao fazer scroll: cada um fixa-se e o seguinte desliza por cima. Se um cartão não couber no ecrã por baixo do título, encolhe ligeiramente (até 75%) para o número e o botão ficarem ambos visíveis. No fim, o título sai junto com o último cartão. A página mede o ecrã (com as barras do browser visíveis): se mesmo assim os cartões não couberem, não há pilha nem título fixo.
+> **Design:** cartão duplo: o cartão de baixo é amarelo dourado (#FABF52, cor `gold-bright`) com um reflexo de luz no topo, e o conteúdo fica num painel de vidro escuro por cima (glassmorphism). Sem números nem linhas decorativas. No telemóvel, o título “O que faço por ti” fixa-se por baixo da navbar e os cartões empilham-se por baixo dele ao fazer scroll: cada um fixa-se e o seguinte desliza por cima. Se um cartão não couber no ecrã por baixo do título, encolhe ligeiramente (até 75%) para o título do cartão e o botão ficarem ambos visíveis. No fim, o título sai junto com o último cartão. A página mede o ecrã (com as barras do browser visíveis): se mesmo assim os cartões não couberem, não há pilha nem título fixo.
 >
 > **Imagens das madeiras** (`public/madeiras/`): amostras de referência da Xiloteca do Cirad, publicadas no Wikimedia Commons em **domínio público** (não exigem atribuição). Espécies: _Picea abies_, _Dalbergia latifolia_, _Diospyros crassiflora_. Já não são usadas nos Serviços; ficam guardadas para a secção Madeiras.
 

@@ -363,7 +363,7 @@ Carácter: solidez, sustentabilidade, sonoridade densa
 | Envernizamento a goma-laca | Acabamento tradicional, aplicado à mão         | desde 480 €      |
 | Restauro completo          | Instrumentos antigos, de herança ou de coleção | Sob orçamento    |
 
-**Construção** (em destaque: “Feito à medida”) · Feito à medida, do zero ao acabamento.
+**Construção** · Feito à medida, do zero ao acabamento.
 
 | Serviço             | Pormenor                                     | Preço (fictício) |
 | ------------------- | -------------------------------------------- | ---------------- |
@@ -374,7 +374,7 @@ Carácter: solidez, sustentabilidade, sonoridade densa
 
 **CTA:** Pedir orçamento → `#pedido`
 
-> **Design:** como a carta de um restaurante de alta cozinha: quatro cartões em creme, como papel, um por tipo de serviço, com texto escuro, preços em dourado escuro e o ícone do serviço em marca de água no canto. Cada serviço liga-se ao preço por uma linha pontilhada. A Construção fica em destaque, num creme mais dourado com borda dourada e a etiqueta “Feito à medida” no amarelo dos Serviços. Os preços contam até ao valor quando aparecem no ecrã; cada linha ilumina-se no hover e a borda do cartão acende onde está o rato. As tabelas são tabelas HTML reais, legíveis por leitores de ecrã.
+> **Design:** como a carta de um restaurante de alta cozinha: quatro cartões iguais em creme dourado, como papel, com borda dourada, um por tipo de serviço, com texto escuro, preços em dourado escuro e o ícone do serviço em marca de água no canto. Cada serviço liga-se ao preço por uma linha pontilhada. Os preços contam até ao valor quando aparecem no ecrã; cada linha ilumina-se no hover e a borda do cartão acende onde está o rato. As tabelas são tabelas HTML reais, legíveis por leitores de ecrã.
 >
 > **Por confirmar:** se os preços incluem IVA (depende do regime de IVA do Tiago, ver Pontos a decidir) e “O orçamento é gratuito”.
 

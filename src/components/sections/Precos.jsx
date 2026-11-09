@@ -50,7 +50,6 @@ const CATEGORIES = [
     icon: Guitar,
     title: 'Construção',
     description: 'Feito à medida, do zero ao acabamento.',
-    featured: true,
     items: [
       { name: 'Guitarra clássica', detail: 'Madeiras à escolha, braço e escala à medida', price: 2400, from: true },
       { name: 'Guitarra portuguesa', detail: 'De Coimbra ou de Lisboa', price: 2900, from: true },
@@ -124,10 +123,8 @@ function Price({ item, animated }) {
   )
 }
 
-// Cartões em creme, como o papel de uma carta: o mesmo tom do texto do site, mais claro no topo.
-// A Construção, em destaque, leva um creme mais dourado.
-const PAPER = 'bg-gradient-to-b from-[#F5EDE0] to-text'
-const PAPER_FEATURED = 'bg-gradient-to-b from-[#FAEBCB] to-[#EFD8A8]'
+// Cartões em creme dourado, como o papel de uma carta, mais claro no topo
+const PAPER = 'bg-gradient-to-b from-[#FAEBCB] to-[#EFD8A8]'
 
 function PriceCard({ category, animated }) {
   const { icon: Icon } = category
@@ -136,32 +133,20 @@ function PriceCard({ category, animated }) {
     <motion.article
       variants={cardIn}
       onPointerMove={trackSpotlight}
-      className={`group relative rounded-[1.75rem] p-px shadow-[0_30px_70px_-30px_rgba(0,0,0,0.9)] ${
-        category.featured ? 'bg-gold-light' : 'bg-white/20'
-      }`}
+      className="group relative rounded-[1.75rem] bg-gold-light p-px shadow-[0_30px_70px_-30px_rgba(0,0,0,0.9)]"
     >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 rounded-[1.75rem] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         style={BORDER_GLOW}
       />
-      <div
-        className={`relative h-full overflow-hidden rounded-[calc(1.75rem-1px)] p-6 text-bg sm:p-8 lg:p-10 ${
-          category.featured ? PAPER_FEATURED : PAPER
-        }`}
-      >
+      <div className={`relative h-full overflow-hidden rounded-[calc(1.75rem-1px)] p-6 text-bg sm:p-8 lg:p-10 ${PAPER}`}>
         {/* Ícone do serviço em marca de água, no canto de baixo */}
         <Icon
           aria-hidden="true"
           strokeWidth={1}
           className="pointer-events-none absolute -bottom-10 -right-10 h-48 w-48 text-gold-dark/[0.07] transition-transform duration-700 group-hover:-rotate-6 group-hover:scale-105"
         />
-
-        {category.featured && (
-          <span className="absolute right-6 top-6 rounded-full bg-gold-bright px-3 py-1 text-[0.62rem] font-bold uppercase tracking-[0.25em] text-bg shadow-[0_6px_16px_-6px_rgba(107,63,10,0.6)] sm:right-8 sm:top-8">
-            Feito à medida
-          </span>
-        )}
 
         <div className="relative flex items-center gap-4">
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-bg text-gold-bright shadow-[0_8px_20px_-8px_rgba(10,8,5,0.6)]">

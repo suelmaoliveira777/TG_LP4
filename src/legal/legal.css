@@ -8,7 +8,7 @@
 }
 
 .legal-prose h2 {
-  @apply mb-5 font-display text-2xl font-semibold text-text sm:text-3xl;
+  @apply mb-5 font-display text-2xl font-bold text-text sm:text-3xl;
 }
 
 .legal-prose h3 {

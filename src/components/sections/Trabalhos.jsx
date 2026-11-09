@@ -188,8 +188,8 @@ function Heading() {
   return (
     <>
       <SectionLabel>Portfólio</SectionLabel>
-      <h2 id="trabalhos-titulo" className="mt-6 font-display text-4xl font-medium leading-[1.1] sm:text-5xl lg:text-6xl">
-        Trabalhos <span className="font-normal italic text-gold-light">realizados</span>
+      <h2 id="trabalhos-titulo" className="mt-6 font-display text-4xl font-light leading-[1.1] sm:text-5xl lg:text-6xl">
+        Trabalhos <span className="font-bold text-gold-light">realizados</span>
       </h2>
     </>
   )
@@ -244,7 +244,7 @@ function CardTop({ work }) {
 function CardBottom({ work }) {
   return (
     <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 lg:p-8">
-      <h3 className="font-display text-[1.75rem] font-semibold leading-tight xl:text-4xl">{work.title}</h3>
+      <h3 className="font-display text-[1.75rem] font-bold leading-tight xl:text-4xl">{work.title}</h3>
       <p className="mt-1.5 text-sm leading-6 text-text/75">{work.summary}</p>
       <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-light">
         Ver trabalho
@@ -267,8 +267,8 @@ function QuoteCard({ className = '' }) {
         ✦
       </span>
       <div>
-        <p className="font-display text-3xl font-semibold leading-tight lg:text-4xl">
-          O teu instrumento pode ser o <span className="font-normal italic text-gold-light">próximo</span>.
+        <p className="font-display text-3xl font-light leading-tight lg:text-4xl">
+          O teu instrumento pode ser o <span className="font-bold text-gold-light">próximo</span>.
         </p>
         <Button asChild className="mt-7">
           <a href="#pedido">

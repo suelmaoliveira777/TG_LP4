@@ -88,7 +88,7 @@ function StepList({ step }) {
         return (
           <li key={item.id} className="relative flex items-center gap-4" aria-current={active ? 'step' : undefined}>
             <span
-              className={`relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border font-display text-base font-semibold transition-all duration-500 [font-feature-settings:'lnum'] ${
+              className={`relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border font-display text-base font-bold transition-all duration-500 [font-feature-settings:'lnum'] ${
                 done || active
                   ? 'border-gold-pale/80 bg-gradient-to-br from-gold-pale via-gold-light to-gold-mid text-bg shadow-glow'
                   : 'border-white/15 bg-surface text-muted'
@@ -183,7 +183,7 @@ function SuccessState({ onReset }) {
           transition={{ duration: 0.5, delay: 0.7, ease: 'easeOut' }}
         />
       </svg>
-      <h3 className="mt-8 font-display text-4xl font-medium">Obrigado!</h3>
+      <h3 className="mt-8 font-display text-4xl font-light">Obrigado!</h3>
       <p className="mt-3 max-w-sm text-base leading-7 text-text/80">Recebi o teu pedido e responderei em até 48 horas.</p>
       <Button type="button" variant="outline" className="mt-8" onClick={onReset}>
         Fazer outro pedido
@@ -332,8 +332,8 @@ function FormularioPedido() {
           {/* Coluna da esquerda: título, texto, passos e resumo (fixa no desktop) */}
           <motion.div {...fadeUp} className="text-center lg:sticky lg:top-28 lg:self-start lg:text-left">
             <SectionLabel>Pedido</SectionLabel>
-            <h2 className="mt-6 font-display text-4xl font-medium leading-[1.1] sm:text-5xl">
-              O teu instrumento está por construir. Ou por recuperar. <span className="font-normal italic text-gold-light">Começa aqui.</span>
+            <h2 className="mt-6 font-display text-4xl font-light leading-[1.1] sm:text-5xl">
+              O teu instrumento está por construir. Ou por recuperar. <span className="font-bold text-gold-light">Começa aqui.</span>
             </h2>
             <p className="mx-auto mt-6 max-w-xl hyphens-auto text-justify text-base leading-8 text-text/75 lg:mx-0 lg:hyphens-manual lg:text-left">
               Diz-me o que tens em mente e eu digo-te o melhor caminho. Preenche o formulário abaixo com os detalhes do teu
@@ -365,7 +365,7 @@ function FormularioPedido() {
                   id="pedido-passo"
                   ref={headingRef}
                   tabIndex={-1}
-                  className="mt-2 font-display text-3xl font-medium leading-tight outline-none sm:text-4xl"
+                  className="mt-2 font-display text-3xl font-light leading-tight outline-none sm:text-4xl"
                 >
                   {STEPS[step].title}
                 </h3>
@@ -419,7 +419,7 @@ function FormularioPedido() {
                                     <Icon className="h-6 w-6" strokeWidth={1.5} aria-hidden="true" />
                                   </span>
                                   <span className="min-w-0 flex-1">
-                                    <span className="block font-display text-lg font-semibold leading-snug sm:text-2xl">{item.title}</span>
+                                    <span className="block font-display text-lg font-bold leading-snug sm:text-2xl">{item.title}</span>
                                     <span className="block text-sm text-text/60">{item.description}</span>
                                   </span>
                                   <span

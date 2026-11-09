@@ -140,7 +140,7 @@ function WorkLightbox({ works, index, onClose, onNavigate, onRequestQuote }) {
                 </span>
               </div>
 
-              <h3 id={titleId} className="mt-4 font-display text-4xl font-medium leading-[1.05] sm:text-5xl">
+              <h3 id={titleId} className="mt-4 font-display text-4xl font-light leading-[1.05] sm:text-5xl">
                 {work.title}
               </h3>
               <p className="mt-5 text-base leading-7 text-text/80">{work.description}</p>

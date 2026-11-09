@@ -15,8 +15,8 @@ export default {
         muted: '#8A7A62',
       },
       fontFamily: {
-        // Fraunces na variante "Soft" (terminais arredondados): ver globals.css
-        display: ['Fraunces', 'Georgia', 'serif'],
+        // Nunito: sem serifas e totalmente arredondada (pesos em docs/COPY.md, "Tipografia")
+        display: ['Nunito', 'system-ui', 'sans-serif'],
         body: ['Lato', 'sans-serif'],
       },
       boxShadow: {

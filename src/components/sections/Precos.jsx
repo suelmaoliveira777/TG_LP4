@@ -110,12 +110,12 @@ const priceText = (item) =>
 
 function Price({ item, animated }) {
   if (item.price === null) {
-    return <span className="font-display text-lg font-semibold italic text-gold-dark">Sob orçamento</span>
+    return <span className="font-display text-lg font-bold text-gold-dark">Sob orçamento</span>
   }
   return (
     <span className="inline-flex items-baseline gap-1.5">
       {item.from && <span className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-[#7A6446]">desde</span>}
-      <span className="font-display text-2xl font-bold text-gold-dark sm:text-[1.7rem]">
+      <span className="font-display text-2xl font-extrabold text-gold-dark sm:text-[1.7rem]">
         <PriceValue value={item.price} animated={animated} />
       </span>
       <span className="text-sm font-semibold text-gold-mid">€</span>
@@ -153,7 +153,7 @@ function PriceCard({ category, animated }) {
             <Icon className="h-6 w-6" strokeWidth={1.5} aria-hidden="true" />
           </span>
           <div>
-            <h3 className="font-display text-2xl font-semibold leading-tight sm:text-3xl">{category.title}</h3>
+            <h3 className="font-display text-2xl font-bold leading-tight sm:text-3xl">{category.title}</h3>
             <p className="mt-0.5 text-sm text-[#5E4C34]">{category.description}</p>
           </div>
         </div>
@@ -217,8 +217,8 @@ function Precos() {
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
             <motion.div {...fadeUp} className="text-center lg:text-left">
               <SectionLabel>Preços</SectionLabel>
-              <h2 className="mt-6 font-display text-4xl font-medium leading-[1.1] sm:text-5xl lg:text-6xl">
-                Valores claros, <span className="font-normal italic text-gold-light">antes de começar.</span>
+              <h2 className="mt-6 font-display text-4xl font-light leading-[1.1] sm:text-5xl lg:text-6xl">
+                Valores claros, <span className="font-bold text-gold-light">antes de começar.</span>
               </h2>
             </motion.div>
             <motion.p

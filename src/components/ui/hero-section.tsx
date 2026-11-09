@@ -96,7 +96,7 @@ export const HeroSection = ({
             {/* Título em toda a largura: no topo a guitarra ainda não começou */}
             <motion.h1
               variants={itemVariants}
-              className="bg-gradient-to-b from-gold-pale to-gold-light bg-clip-text pb-2 font-display text-[clamp(1.85rem,8.6vw,2.15rem)] font-normal leading-[1.1] text-transparent sm:text-5xl lg:text-6xl xl:text-7xl"
+              className="bg-gradient-to-b from-gold-pale to-gold-light bg-clip-text pb-2 font-display text-[clamp(1.85rem,8.6vw,2.15rem)] font-light leading-[1.1] text-transparent sm:text-5xl lg:text-6xl xl:text-7xl"
             >
               {title}
             </motion.h1>

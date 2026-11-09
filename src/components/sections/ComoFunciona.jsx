@@ -216,7 +216,7 @@ function Marker({ ref, index, lit }) {
   return (
     <span
       ref={ref}
-      className={`relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border font-display text-xl font-semibold transition-all duration-700 [font-feature-settings:'lnum'] ${
+      className={`relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border font-display text-xl font-bold transition-all duration-700 [font-feature-settings:'lnum'] ${
         lit
           ? 'border-gold-pale/80 bg-gradient-to-br from-gold-pale via-gold-light to-gold-mid text-bg shadow-glow'
           : 'border-white/15 bg-surface text-muted'
@@ -252,7 +252,7 @@ function StepCard({ step, lit, onPluck }) {
       <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-gold-light/30 bg-gold-light/10 text-gold-light">
         <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
       </span>
-      <h3 className="mt-4 text-center font-display text-2xl font-semibold leading-tight [text-wrap:balance] sm:text-3xl">{step.title}</h3>
+      <h3 className="mt-4 text-center font-display text-2xl font-bold leading-tight [text-wrap:balance] sm:text-3xl">{step.title}</h3>
       <p className="mt-3 hyphens-auto text-justify text-[0.95rem] leading-7 text-text/80 lg:hyphens-manual lg:text-left">
         {step.description}
       </p>
@@ -299,8 +299,8 @@ function ComoFunciona() {
         <div className="relative mx-auto max-w-7xl">
           <motion.div {...fadeUp} className="mx-auto max-w-2xl text-center">
             <SectionLabel>Como funciona</SectionLabel>
-            <h2 className="mt-6 font-display text-4xl font-medium leading-[1.1] sm:text-5xl lg:text-6xl">
-              Três passos, <span className="font-normal italic text-gold-light">sem surpresas</span>
+            <h2 className="mt-6 font-display text-4xl font-light leading-[1.1] sm:text-5xl lg:text-6xl">
+              Três passos, <span className="font-bold text-gold-light">sem surpresas</span>
             </h2>
           </motion.div>
 

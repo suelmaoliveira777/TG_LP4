@@ -200,7 +200,7 @@ function ServiceCard({ service, index, total, progress, stacked, titleRef }) {
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-gold-bright/30 bg-gold-bright/10 text-gold-bright sm:h-12 sm:w-12">
               <Icon className="h-6 w-6" strokeWidth={1.5} aria-hidden="true" />
             </span>
-            <h3 className="font-display text-2xl font-semibold leading-tight sm:text-[1.75rem]">{service.title}</h3>
+            <h3 className="font-display text-2xl font-bold leading-tight sm:text-[1.75rem]">{service.title}</h3>
           </div>
 
           <p className="mt-3 hyphens-auto text-justify text-[0.95rem] leading-[1.6rem] text-text/80 sm:mt-5 sm:leading-7 lg:hyphens-manual lg:text-left">
@@ -289,8 +289,8 @@ function Servicos() {
             }
             style={stacked ? { top: `${NAVBAR_HEIGHT}rem`, y: titleY } : undefined}
           >
-            <motion.h2 {...fadeUp} className="font-display text-4xl font-medium leading-[1.1] sm:text-5xl lg:text-6xl">
-              O que faço <span className="font-normal italic text-gold-light">por ti</span>
+            <motion.h2 {...fadeUp} className="font-display text-4xl font-light leading-[1.1] sm:text-5xl lg:text-6xl">
+              O que faço <span className="font-bold text-gold-light">por ti</span>
             </motion.h2>
           </motion.div>
 

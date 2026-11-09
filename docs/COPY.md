@@ -174,23 +174,21 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 
 > Três passos, sem surpresas
 
-**01. Descreve** · etiqueta: Formulário ou WhatsApp
+**01. Descreve**
 
 > Conta o que tens e o que precisas, pelo formulário ou por WhatsApp. Quanto mais detalhe, melhor.
 
-**02. Orçamento claro** · etiqueta: Orçamento gratuito
+**02. Orçamento claro**
 
 > Analiso o teu pedido e devolvo-te um orçamento honesto. Sem surpresas, sem linguagem técnica que não percebas.
 
-**03. Só começa com o teu sim** · etiqueta: Acompanhas cada fase
+**03. Só começa com o teu sim**
 
 > Nenhum trabalho arranca sem o teu acordo. E sabes sempre em que fase está o teu instrumento.
 
 **CTA:** Pedir orçamento → `#pedido`
 
-> **Design:** um fluxograma em que a linha é uma corda de guitarra. No desktop atravessa o ecrã de ponta a ponta e os três passos ficam lado a lado; no telemóvel a corda desce na vertical, ao lado dos passos. Com o scroll, um ponto de luz percorre a corda e deixa-a dourada; cada passo tem um marcador redondo, como os pontos que marcam os trastes na escala, que acende quando a luz chega, e nesse momento a corda vibra como se fosse dedilhada. No desktop, passar o rato num passo também faz vibrar a corda. Os passos ainda por chegar ficam esbatidos. Com “reduzir movimento” ativo no sistema, a corda aparece já desenhada e os passos acesos.
->
-> **Etiquetas dos passos:** são novas. “Orçamento gratuito” repete o que já diz a descrição do site para o Google; confirmar com o cliente.
+> **Design:** um fluxograma em que a linha é uma corda de guitarra. No desktop atravessa o ecrã de ponta a ponta e os três passos ficam lado a lado; no telemóvel a corda desce na vertical, ao lado dos passos. Com o scroll, um ponto de luz percorre a corda e deixa-a dourada; cada passo tem um marcador redondo, como os pontos que marcam os trastes na escala, que acende quando a luz chega, e nesse momento a corda vibra como se fosse dedilhada. No desktop, passar o rato num passo também faz vibrar a corda. Os passos ainda por chegar ficam esbatidos. Com “reduzir movimento” ativo no sistema, a corda aparece já desenhada e os passos acesos. Em cada cartão, o ícone e o título ficam centrados; os cartões não têm etiquetas.
 
 ---
 

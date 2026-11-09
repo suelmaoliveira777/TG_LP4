@@ -18,21 +18,18 @@ const STEPS = [
   {
     id: 'descreve',
     icon: MessageSquareText,
-    tag: 'Formulário ou WhatsApp',
     title: 'Descreve',
     description: 'Conta o que tens e o que precisas, pelo formulário ou por WhatsApp. Quanto mais detalhe, melhor.',
   },
   {
     id: 'orcamento',
     icon: FileText,
-    tag: 'Orçamento gratuito',
     title: 'Orçamento claro',
     description: 'Analiso o teu pedido e devolvo-te um orçamento honesto. Sem surpresas, sem linguagem técnica que não percebas.',
   },
   {
     id: 'sim',
     icon: Handshake,
-    tag: 'Acompanhas cada fase',
     title: 'Só começa com o teu sim',
     description: 'Nenhum trabalho arranca sem o teu acordo. E sabes sempre em que fase está o teu instrumento.',
   },
@@ -251,12 +248,11 @@ function StepCard({ step, lit, onPluck }) {
         lit ? 'border-gold-light/25' : 'border-white/10'
       }`}
     >
-      {/* No desktop, etiqueta e título ao centro do cartão */}
-      <div className="flex items-center gap-3 text-gold-light lg:justify-center">
+      {/* Ícone e título ao centro do cartão */}
+      <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-gold-light/30 bg-gold-light/10 text-gold-light">
         <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
-        <span className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] [text-wrap:balance] sm:tracking-[0.25em]">{step.tag}</span>
-      </div>
-      <h3 className="mt-5 font-display text-2xl font-semibold leading-tight sm:text-3xl lg:text-center">{step.title}</h3>
+      </span>
+      <h3 className="mt-4 text-center font-display text-2xl font-semibold leading-tight [text-wrap:balance] sm:text-3xl">{step.title}</h3>
       <p className="mt-3 hyphens-auto text-justify text-[0.95rem] leading-7 text-text/80 lg:hyphens-manual lg:text-left">
         {step.description}
       </p>
@@ -315,7 +311,9 @@ function ComoFunciona() {
               {STEPS.map((step, index) => {
                 const lit = !animated || index < litCount
                 return (
-                  <li key={step.id} className="grid grid-cols-[3.5rem_minmax(0,1fr)] items-start gap-4 sm:gap-6 lg:grid-cols-1 lg:gap-10">
+                  // lg:grid-rows-[auto_1fr]: a altura que sobra vai para o cartão, e não para cima dele,
+                  // para os três cartões começarem à mesma altura mesmo com textos de tamanhos diferentes
+                  <li key={step.id} className="grid grid-cols-[3.5rem_minmax(0,1fr)] items-start gap-4 sm:gap-6 lg:grid-cols-1 lg:grid-rows-[auto_1fr] lg:gap-10">
                     <Marker
                       ref={(element) => {
                         markerRefs.current[index] = element

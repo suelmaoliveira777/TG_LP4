@@ -12,7 +12,7 @@ import {
   useTransform,
   useVelocity,
 } from 'framer-motion'
-import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ArrowUpRight, Guitar, SlidersHorizontal, Wrench } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { rememberService } from '@/utils/rememberService'
@@ -225,16 +225,17 @@ function ProgressBar({ progress, className = '' }) {
   )
 }
 
-// Etiqueta do tipo de trabalho e número do trabalho, no topo dos cartões
-function CardTop({ work, index }) {
+// Os mesmos ícones dos cartões da secção Serviços
+const SERVICE_ICONS = { construcao: Guitar, reparacao: Wrench, setup: SlidersHorizontal }
+
+// Etiqueta do tipo de trabalho, no topo dos cartões: sólida, no amarelo dos Serviços, para se ler sobre qualquer foto
+function CardTop({ work }) {
+  const Icon = SERVICE_ICONS[work.service]
   return (
-    <div className="absolute inset-x-0 top-0 flex items-start justify-between p-5 sm:p-6">
-      <span className="rounded-full border border-white/15 bg-bg/50 px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.2em] text-text backdrop-blur-md">
+    <div className="absolute inset-x-0 top-0 p-5 sm:p-6">
+      <span className="inline-flex items-center gap-2 rounded-full bg-gold-bright py-1.5 pl-2.5 pr-3.5 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-bg shadow-[0_8px_24px_-6px_rgba(0,0,0,0.7),inset_0_1px_0_rgba(255,255,255,0.5)]">
+        <Icon className="h-3.5 w-3.5" strokeWidth={2.25} aria-hidden="true" />
         {work.category}
-      </span>
-      {/* Número só em contorno; lnum: a Cormorant usa algarismos antigos por defeito */}
-      <span className="font-display text-5xl font-semibold leading-none text-transparent drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] [-webkit-text-stroke:1px_rgba(226,181,104,0.8)] [font-feature-settings:'lnum']">
-        {pad(index + 1)}
       </span>
     </div>
   )
@@ -335,7 +336,7 @@ function PinnedCard({ work, index, parallax, onOpen, onHover }) {
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/25 to-bg/10" />
         <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={SPOTLIGHT} />
-        <CardTop work={work} index={index} />
+        <CardTop work={work} />
         <CardBottom work={work} />
       </motion.div>
     </motion.button>
@@ -483,7 +484,7 @@ function SwipeCard({ work, index, scrollerRef, onOpen, animated }) {
         className={`absolute inset-y-0 left-[-10%] h-full w-[120%] max-w-none object-cover ${PHOTO_GRADE}`}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/30 to-bg/10" />
-      <CardTop work={work} index={index} />
+      <CardTop work={work} />
       <CardBottom work={work} />
     </motion.button>
   )

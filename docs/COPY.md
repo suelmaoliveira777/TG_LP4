@@ -24,6 +24,19 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
 ## Regras de design
 
 - **Separador entre secções:** a roseta ✦ (`ui/RosetaSeparator.jsx`) fica entre todas as secções, sobre a linha de fronteira. É colocada automaticamente em `App.jsx` (`ui/SectionDivider.jsx`), por isso uma secção nova recebe-a sem código extra.
+- **Tipografia:** títulos e subtítulos em **Fraunces**, na variante “Soft” (terminais arredondados, eixo `SOFT` a 100, e itálico sóbrio, eixo `WONK` a 0). É uma serifada quente e artesanal, ao estilo das etiquetas antigas coladas dentro das guitarras, e o tamanho ótico ajusta-se sozinho: traço mais fino nos títulos grandes, mais robusto nos pequenos. O texto corrido, os botões e as etiquetas continuam em **Lato**. A fonte é pedida ao Google Fonts no `index.html` (e nas três páginas legais) e definida como `font-display` em `tailwind.config.js` e `src/styles/globals.css`. Pesos, do maior para o menor tamanho:
+
+  | Uso                                                            | Peso                  |
+  | -------------------------------------------------------------- | --------------------- |
+  | Título da Hero                                                 | 400 (normal)          |
+  | Títulos das secções, da vista ampliada e das páginas legais    | 500 (médio)           |
+  | Parte dourada dos títulos (“por ti”, “realizados”…)            | 400 em itálico        |
+  | Títulos dos cartões (serviços, trabalhos, madeiras, preços…)   | 600 (seminegrito)     |
+  | Preços                                                         | 700 (negrito)         |
+  | Subtítulos em itálico (nomes científicos, “Começa pelo som…”)  | 300 (leve) em itálico |
+  | Assinatura “Tiago Gago” no footer                              | 300 (leve)            |
+
+  Quanto maior o texto, mais leve o peso, para os títulos grandes não ficarem pesados e os pequenos não ficarem frágeis.
 - **Telemóvel e tablet (até `lg`):** etiqueta e título centrados, texto corrido justificado com hifenização. A partir de `lg`, tudo alinhado à esquerda.
   - **Exceção — Hero:** texto à esquerda e guitarra à direita. O título ocupa o topo em toda a largura; o subtítulo e os botões ficam numa coluna de 60% ao lado do braço da guitarra. Imagem própria para telemóvel: `public/hero_TG-guitarra.jpg`.
 

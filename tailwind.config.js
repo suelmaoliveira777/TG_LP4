@@ -15,7 +15,8 @@ export default {
         muted: '#8A7A62',
       },
       fontFamily: {
-        display: ['Cormorant Garamond', 'serif'],
+        // Fraunces na variante "Soft" (terminais arredondados): ver globals.css
+        display: ['Fraunces', 'Georgia', 'serif'],
         body: ['Lato', 'sans-serif'],
       },
       boxShadow: {

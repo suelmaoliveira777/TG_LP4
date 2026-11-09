@@ -299,8 +299,8 @@ function ComoFunciona() {
         <div className="relative mx-auto max-w-7xl">
           <motion.div {...fadeUp} className="mx-auto max-w-2xl text-center">
             <SectionLabel>Como funciona</SectionLabel>
-            <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
-              Três passos, <span className="text-gold-light">sem surpresas</span>
+            <h2 className="mt-6 font-display text-4xl font-medium leading-[1.1] sm:text-5xl lg:text-6xl">
+              Três passos, <span className="font-normal italic text-gold-light">sem surpresas</span>
             </h2>
           </motion.div>
 

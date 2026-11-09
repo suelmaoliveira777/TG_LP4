@@ -188,8 +188,8 @@ function Heading() {
   return (
     <>
       <SectionLabel>Portfólio</SectionLabel>
-      <h2 id="trabalhos-titulo" className="mt-6 font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
-        Trabalhos <span className="text-gold-light">realizados</span>
+      <h2 id="trabalhos-titulo" className="mt-6 font-display text-4xl font-medium leading-[1.1] sm:text-5xl lg:text-6xl">
+        Trabalhos <span className="font-normal italic text-gold-light">realizados</span>
       </h2>
     </>
   )
@@ -268,7 +268,7 @@ function QuoteCard({ className = '' }) {
       </span>
       <div>
         <p className="font-display text-3xl font-semibold leading-tight lg:text-4xl">
-          O teu instrumento pode ser o <span className="text-gold-light">próximo</span>.
+          O teu instrumento pode ser o <span className="font-normal italic text-gold-light">próximo</span>.
         </p>
         <Button asChild className="mt-7">
           <a href="#pedido">

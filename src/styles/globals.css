@@ -43,3 +43,15 @@ body {
     @apply font-display;
   }
 }
+
+/* Fraunces: SOFT 100 arredonda os terminais e WONK 0 mantém o itálico sóbrio. O index.html já pede a fonte
+   com estes valores fixos; a declaração fica aqui para o caso de o pedido mudar. O tamanho ótico (opsz)
+   ajusta-se sozinho ao tamanho do texto: traço mais fino e contrastado nos títulos grandes. */
+.font-display,
+h1,
+h2,
+h3,
+h4 {
+  font-variation-settings: 'SOFT' 100, 'WONK' 0;
+  font-optical-sizing: auto;
+}

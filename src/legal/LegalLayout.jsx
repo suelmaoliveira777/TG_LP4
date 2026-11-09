@@ -21,7 +21,7 @@ function LegalLayout({ titulo, children }) {
       </header>
 
       <main className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
-        <h1 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">{titulo}</h1>
+        <h1 className="font-display text-4xl font-medium leading-tight sm:text-5xl">{titulo}</h1>
         <p className="mt-4 text-sm uppercase tracking-[0.2em] text-muted">
           Última atualização: <Dado campo="ultimaAtualizacao">data de publicação</Dado>
         </p>

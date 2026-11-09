@@ -33,10 +33,10 @@ function QuemSou() {
           {/* Até lg: etiqueta e título centrados, texto justificado (com hifenização para evitar buracos entre palavras) */}
           <motion.div {...fadeUp} className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
             <SectionLabel>Quem sou</SectionLabel>
-            <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
+            <h2 className="mt-6 font-display text-4xl font-medium leading-[1.1] sm:text-5xl lg:text-6xl">
               Das mãos de
               <br />
-              <span className="text-gold-light">quem sabe</span>
+              <span className="font-normal italic text-gold-light">quem sabe</span>
             </h2>
             <div className="mt-8 space-y-5 hyphens-auto text-justify text-base leading-8 text-text/80 sm:text-lg lg:hyphens-manual lg:text-left">
               <p>

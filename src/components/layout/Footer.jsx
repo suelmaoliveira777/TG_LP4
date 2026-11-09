@@ -68,7 +68,7 @@ function Footer() {
               <a href="#inicio" className="text-lg font-semibold uppercase tracking-[0.3em] text-text sm:text-xl">
                 Tiago Gago <span className="text-gold-light">Luthier</span>
               </a>
-              <p className="mt-4 font-display text-xl italic text-gold-pale">Construção · Reparação · Setup</p>
+              <p className="mt-4 font-display text-xl font-light italic text-gold-pale">Construção · Reparação · Setup</p>
               <p className="mt-3 inline-flex items-center gap-2 text-sm text-text/65">
                 <MapPin className="h-4 w-4 text-gold-light" strokeWidth={1.5} aria-hidden="true" />
                 Cascais, Portugal
@@ -162,7 +162,7 @@ function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="relative -mb-[0.22em] select-none overflow-hidden whitespace-nowrap text-center font-display text-[18vw] font-semibold leading-[0.85] lg:text-[16rem]"
+          className="relative -mb-[0.22em] select-none overflow-hidden whitespace-nowrap text-center font-display text-[18vw] font-light leading-[0.85] lg:text-[16rem]"
         >
           {[...SIGNATURE].map((letter, index) => (
             <motion.span

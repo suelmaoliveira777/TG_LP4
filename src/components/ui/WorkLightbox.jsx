@@ -134,13 +134,13 @@ function WorkLightbox({ works, index, onClose, onNavigate, onRequestQuote }) {
               <div className="flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-gold-light">
                 <span>{work.category}</span>
                 <span aria-hidden="true" className="h-px w-8 bg-gold-light/50" />
-                {/* lnum: a Cormorant usa algarismos antigos por defeito */}
+                {/* lnum: algarismos alinhados, todos da mesma altura */}
                 <span className="font-display text-sm tracking-[0.2em] text-text/60 [font-feature-settings:'lnum']">
                   {String(index + 1).padStart(2, '0')} / {String(works.length).padStart(2, '0')}
                 </span>
               </div>
 
-              <h3 id={titleId} className="mt-4 font-display text-4xl font-semibold leading-[1.05] sm:text-5xl">
+              <h3 id={titleId} className="mt-4 font-display text-4xl font-medium leading-[1.05] sm:text-5xl">
                 {work.title}
               </h3>
               <p className="mt-5 text-base leading-7 text-text/80">{work.description}</p>

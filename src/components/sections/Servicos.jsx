@@ -289,8 +289,8 @@ function Servicos() {
             }
             style={stacked ? { top: `${NAVBAR_HEIGHT}rem`, y: titleY } : undefined}
           >
-            <motion.h2 {...fadeUp} className="font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
-              O que faço <span className="text-gold-light">por ti</span>
+            <motion.h2 {...fadeUp} className="font-display text-4xl font-medium leading-[1.1] sm:text-5xl lg:text-6xl">
+              O que faço <span className="font-normal italic text-gold-light">por ti</span>
             </motion.h2>
           </motion.div>
 

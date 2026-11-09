@@ -201,7 +201,7 @@ function WoodCard({ wood, interactive }) {
 
       <div className="relative p-6 sm:p-8">
         <h3 className="font-display text-3xl font-semibold leading-tight sm:text-[2rem]">{wood.name}</h3>
-        <p className="mt-1 font-display text-lg italic text-gold-pale">{wood.species}</p>
+        <p className="mt-1 font-display text-lg font-light italic text-gold-pale">{wood.species}</p>
         <p className="mt-4 hyphens-auto text-justify text-[0.92rem] leading-7 text-text/80 lg:hyphens-manual lg:text-left">
           {wood.description}
         </p>
@@ -318,10 +318,10 @@ function Madeiras() {
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
             <motion.div {...fadeUp} className="text-center lg:text-left">
               <SectionLabel>As matérias-primas</SectionLabel>
-              <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
-                A madeira certa <span className="text-gold-light">muda tudo.</span>
+              <h2 className="mt-6 font-display text-4xl font-medium leading-[1.1] sm:text-5xl lg:text-6xl">
+                A madeira certa <span className="font-normal italic text-gold-light">muda tudo.</span>
               </h2>
-              <p className="mt-4 font-display text-2xl italic text-gold-pale sm:text-3xl">Começa pelo som. Termina na alma.</p>
+              <p className="mt-4 font-display text-2xl font-light italic text-gold-pale sm:text-3xl">Começa pelo som. Termina na alma.</p>
             </motion.div>
             <motion.p
               {...fadeUp}
@@ -362,7 +362,7 @@ function Madeiras() {
           >
             <p className="max-w-2xl font-display text-2xl leading-snug [text-wrap:balance] sm:text-3xl">
               Queres saber que madeiras fazem sentido para o teu instrumento?{' '}
-              <span className="text-gold-light">Fala comigo.</span>
+              <span className="font-normal italic text-gold-light">Fala comigo.</span>
             </p>
             <Button asChild size="lg">
               <a href="#pedido" onClick={() => rememberService('construcao')}>

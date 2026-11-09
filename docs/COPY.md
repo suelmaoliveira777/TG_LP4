@@ -304,8 +304,6 @@ Carácter: solidez, sustentabilidade, sonoridade densa
 
 ### Fecho da secção
 
-> Todas as madeiras utilizadas no atelier provêm de fornecedores com certificação de origem e rastreabilidade. A escolha sustentável não é apenas uma posição ética, é uma garantia de qualidade que protege o trabalho e quem o encomenda.
-
 **CTA**
 
 > Queres saber que madeiras fazem sentido para o teu instrumento? Fala comigo.
@@ -315,7 +313,7 @@ Carácter: solidez, sustentabilidade, sonoridade densa
 > **Porquê o formulário:** os campos de madeira da construção já aceitam “não sei, preciso de ajuda”. O pedido chega com o contexto todo (instrumento, estilo, orçamento) e a resposta pode ser concreta.
 > **Implementação:** são 9 madeiras em 4 grupos. Para não criar uma secção interminável, mostrar por separadores (Tampos · Fundos e ilhargas · Braços · Escala e cavalete) ou em grelha de cartões.
 >
-> **Design:** cabeçalho editorial (título e subtítulo à esquerda, introdução à direita no desktop) e separadores para os 4 grupos, com uma pílula dourada que desliza entre eles (também funcionam com as setas do teclado). Cada madeira é um cartão com a própria madeira como fundo: à vista no topo, a escurecer para o texto em baixo, com o carácter sonoro em etiquetas. No desktop, o cartão inclina-se em 3D atrás do rato e um reflexo percorre a madeira como luz sobre verniz; em ecrãs táteis e com “reduzir movimento” ativo, os cartões ficam parados. No fim, a nota sobre a origem das madeiras e o pedido de aconselhamento.
+> **Design:** cabeçalho editorial (título e subtítulo à esquerda, introdução à direita no desktop) e separadores para os 4 grupos, com uma pílula dourada que desliza entre eles (também funcionam com as setas do teclado). Cada madeira é um cartão com a própria madeira como fundo: à vista no topo, a escurecer para o texto em baixo, com o carácter sonoro em etiquetas. No desktop, o cartão inclina-se em 3D atrás do rato e um reflexo percorre a madeira como luz sobre verniz; em ecrãs táteis e com “reduzir movimento” ativo, os cartões ficam parados. No fim, centrado, o pedido de aconselhamento.
 >
 > **Fotos** (`public/madeiras/`): amostras da Xiloteca do Cirad (Wikimedia Commons, domínio público), exceto o pau-ferro. Duas são de espécies próximas e devem ser trocadas por fotos das madeiras reais do atelier:
 >
@@ -600,8 +598,7 @@ O plano gratuito da Vercel (Hobby) é **só para uso pessoal e não comercial**.
 ### Confirmar com o Tiago
 
 8. **Setup de guitarras elétricas.** O formulário dá “Guitarra elétrica” como exemplo, mas os Serviços não falam em elétricas.
-9. **“Fornecedores com certificação de origem e rastreabilidade”** (Madeiras): tem de corresponder à prática real, porque é uma promessa comercial.
-10. **Nome da agência:** “weblygrow” ou “Weblygrow”?
+9. **Nome da agência:** “weblygrow” ou “Weblygrow”?
 
 ---
 

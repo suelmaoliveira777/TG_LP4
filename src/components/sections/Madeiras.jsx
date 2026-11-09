@@ -9,7 +9,7 @@ import {
   useSpring,
   useTransform,
 } from 'framer-motion'
-import { ArrowRight, Leaf } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { rememberService } from '@/utils/rememberService'
@@ -355,33 +355,21 @@ function Madeiras() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Fecho: origem das madeiras e pedido de aconselhamento */}
+          {/* Fecho: pedido de aconselhamento */}
           <motion.div
             {...fadeUp}
-            className="mt-14 grid gap-10 border-t border-white/10 pt-10 sm:mt-16 lg:grid-cols-2 lg:items-center lg:gap-16"
+            className="mt-14 flex flex-col items-center gap-6 border-t border-white/10 pt-10 text-center sm:mt-16"
           >
-            <div className="flex gap-4">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-gold-light/30 bg-gold-light/10 text-gold-light">
-                <Leaf className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
-              </span>
-              <p className="hyphens-auto text-justify text-[0.95rem] leading-7 text-text/75 lg:hyphens-manual lg:text-left">
-                Todas as madeiras utilizadas no atelier provêm de fornecedores com certificação de origem e rastreabilidade. A
-                escolha sustentável não é apenas uma posição ética, é uma garantia de qualidade que protege o trabalho e quem o
-                encomenda.
-              </p>
-            </div>
-            <div className="flex flex-col items-center gap-5 text-center lg:items-end lg:text-right">
-              <p className="font-display text-2xl leading-snug sm:text-3xl">
-                Queres saber que madeiras fazem sentido para o teu instrumento?{' '}
-                <span className="text-gold-light">Fala comigo.</span>
-              </p>
-              <Button asChild size="lg">
-                <a href="#pedido" onClick={() => rememberService('construcao')}>
-                  Pedir aconselhamento
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </a>
-              </Button>
-            </div>
+            <p className="max-w-2xl font-display text-2xl leading-snug [text-wrap:balance] sm:text-3xl">
+              Queres saber que madeiras fazem sentido para o teu instrumento?{' '}
+              <span className="text-gold-light">Fala comigo.</span>
+            </p>
+            <Button asChild size="lg">
+              <a href="#pedido" onClick={() => rememberService('construcao')}>
+                Pedir aconselhamento
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </Button>
           </motion.div>
         </div>
       </section>

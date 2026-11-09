@@ -7,7 +7,7 @@ export const trackCTA = (label) => {
   window.fbq?.('trackCustom', 'CTA', { label })
 }
 
-// Clique num link de WhatsApp; source: onde foi o clique ("flutuante", "cta_final")
+// Clique num link de WhatsApp; source: onde foi o clique ("flutuante", "formulario")
 export const trackWhatsApp = (source) => {
   if (typeof window === 'undefined') return
   const consent = window.localStorage.getItem('cookie_consent')

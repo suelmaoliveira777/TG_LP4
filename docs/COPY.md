@@ -41,13 +41,12 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
 | 5   | Trabalhos realizados | `#trabalhos`     | `sections/Trabalhos.jsx`      | Feito, por aprovar (fotos e textos de exemplo) |
 | 6   | Madeiras             | `#madeiras`      | `sections/Madeiras.jsx`       | Feito, por aprovar                             |
 | 7   | Preços               | `#precos`        | `sections/Precos.jsx`         | Feito, por aprovar (preços fictícios)          |
-| 8   | CTA final            | `#contacto`      | `sections/CtaFinal.jsx`       | Feito, por aprovar                             |
-| 9   | Formulário de pedido | `#pedido`        | `sections/FormularioPedido.jsx` | Feito, por aprovar (falta ligar o envio)     |
-| 10  | Footer               | —                | `layout/Footer.jsx`           | Feito, por aprovar (confirmar redes sociais)   |
+| 8   | Formulário de pedido | `#pedido`        | `sections/FormularioPedido.jsx` | Feito, por aprovar (falta ligar o envio)     |
+| 9   | Footer               | —                | `layout/Footer.jsx`           | Feito, por aprovar (confirmar redes sociais)   |
 | —   | WhatsApp flutuante   | —                | `ui/WhatsAppButton.jsx`       | Feito, por aprovar (falta o número)            |
 | —   | Páginas legais       | ver abaixo       | `src/legal/`                  | Feitas, por preencher                          |
 
-**Secções antigas já apagadas** (não constam da nova estrutura): Prova social, Objeções, Garantia, FAQ, o formulário antigo (“Pedido”) e o bloco “Contacto” que fazia de footer. O formulário e o footer já foram refeitos a partir desta copy.
+**Secções antigas já apagadas** (não constam da nova estrutura): Prova social, Objeções, Garantia, FAQ, o formulário antigo (“Pedido”), o bloco “Contacto” que fazia de footer e o CTA final. O formulário e o footer já foram refeitos a partir desta copy.
 
 ---
 
@@ -385,21 +384,6 @@ Carácter: solidez, sustentabilidade, sonoridade densa
 
 ---
 
-## 8. CTA final
-
-**Texto**
-
-> Seja uma construção de raiz, uma reparação urgente ou um setup antes do próximo concerto: estou disponível para ouvir o que precisas e dar-te uma resposta honesta.
-
-**CTA principal:** Fazer o meu pedido agora → `#pedido`
-**CTA secundário:** Falar por WhatsApp → mesmo link do botão flutuante
-
-> **Design:** fundo escuro com textura de madeira. Tipografia dourada. Máximo impacto visual.
->
-> **Implementação:** o texto é o título da secção, em letra grande, e entra palavra a palavra; “uma resposta honesta.” fica a dourado. O fundo é pau-santo escurecido, com parallax ao fazer scroll e um foco de luz que segue o rato e revela o veio da madeira (no telemóvel o foco fica ao centro).
-
----
-
 ## WhatsApp flutuante
 
 Botão fixo no canto inferior direito, visível em todo o site principal.
@@ -414,7 +398,7 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 ---
 
-## 9. Formulário de pedido — fase final
+## 8. Formulário de pedido — fase final
 
 > **Feito** (`sections/FormularioPedido.jsx`, campos em `pedido/fields.js`). **Falta ligar o envio:** ver “Envio” no fim desta secção.
 
@@ -505,7 +489,7 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 ---
 
-## 10. Footer
+## 9. Footer
 
 **Coluna 1 — Identidade**
 
@@ -587,7 +571,7 @@ O plano gratuito da Vercel (Hobby) é **só para uso pessoal e não comercial**.
 
 ### Antes de publicar
 
-1. **Número de WhatsApp** do Tiago, para o botão flutuante e o CTA final (constante `WHATSAPP_NUMBER` em `src/config/contact.js`).
+1. **Número de WhatsApp** do Tiago, para o botão flutuante e o formulário (constante `WHATSAPP_NUMBER` em `src/config/contact.js`).
 2. **URLs reais das redes sociais** (Instagram, Facebook, YouTube) e do site da weblygrow. As das redes estão em `SOCIAL_LINKS`, em `src/config/contact.js`, deduzidas dos nomes da copy.
 3. **Dados para as páginas legais** (`src/legal/legal-data.js`): nome completo, NIF, morada, email, telefone, regime de IVA, percentagem do sinal, garantia de reparações e setups, foro e entidade de resolução alternativa de litígios. Para a entidade RAL, os candidatos prováveis são o CNIACC (âmbito nacional) e o Centro de Arbitragem de Conflitos de Consumo de Lisboa. A competência territorial para Cascais tem de ser confirmada no Portal do Consumidor.
 4. **Domínio:** confirmar se `tiagogagoluthier.pt` já está registado. É usado no SEO, nas páginas legais e no envio de emails.
@@ -626,8 +610,6 @@ Alterações feitas à copy original entregue pelo cliente.
 | Secção 6, Ébano                        | uma sustain suave                                                            | um sustain suave                                                                                             | Coerência com “sustain longo” e “um sustain equilibrado”                          |
 | Secção 6, botão                        | Fazer uma pergunta                                                           | Pedir aconselhamento → formulário                                                                            | Todo o contacto passa pelo formulário ou pelo WhatsApp                            |
 | Secção 7                               | —                                                                            | Secção Preços (nova)                                                                                         | Pedido do cliente; preços fictícios até haver os reais                            |
-| Secção 8, texto                        | antes do próximo concerto — estou disponível                                 | antes do próximo concerto: estou disponível                                                                  | Sem travessões no site (pedido do cliente)                                        |
-| Secção 8, CTA secundário               | Falar com o Tiago                                                            | Falar por WhatsApp                                                                                           | O botão diz o canal; voz na primeira pessoa                                       |
 | Formulário                             | —                                                                            | Caixa de consentimento                                                                                       | Obrigatória pelo RGPD                                                             |
 | Formulário, tipo de serviço            | 🎸 🔧 ⚙️ antes de cada opção                                                    | Ícones do site e uma frase curta por opção                                                                   | Coerência com o design do site                                                    |
 | Formulário, setup, observações         | Detalha o que sentes ao tocar — o que não está certo                         | Detalha o que sentes ao tocar: o que não está certo                                                          | Sem travessões no site (pedido do cliente)                                        |

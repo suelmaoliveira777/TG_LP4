@@ -1,4 +1,4 @@
-// Contacto por WhatsApp: o número fica só aqui (botão flutuante e CTA final usam este link).
+// Contacto por WhatsApp: o número fica só aqui (o botão flutuante e o formulário usam este link).
 // NÚMERO POR DEFINIR: substituir pelo número do Tiago, com indicativo e sem espaços nem "+" (ex.: 351912345678).
 export const WHATSAPP_NUMBER = '351XXXXXXXXX'
 

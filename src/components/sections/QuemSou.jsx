@@ -42,10 +42,9 @@ function QuemSou() {
             </h2>
             <div className="mt-8 space-y-5 hyphens-auto text-justify text-base leading-8 text-text/80 sm:text-lg lg:hyphens-manual lg:text-left">
               <p>
-                Sou o <strong className="font-semibold text-text">Tiago Gago dos Santos</strong> e aprendi lutheria com quem
-                realmente sabe: mestres portugueses com décadas de experiência na construção e reparação de instrumentos de corda
-                tradicionais. Com mais de 4 anos de experiência acumulada ao lado desses mestres, aprendi cada detalhe do ofício
-                com rigor e paciência.
+                Sou o <strong className="font-semibold text-text">Tiago Gago dos Santos</strong>, com mais de 4 anos de
+                experiência em luthieria, aprendi cada detalhe do ofício com rigor e paciência com mestres portugueses com décadas
+                de experiência na construção e reparação de instrumentos de corda tradicionais.
               </p>
               <p>
                 Hoje, no meu atelier em Cascais, construo, reparo e afino instrumentos de músicos que chegam de todo o país.

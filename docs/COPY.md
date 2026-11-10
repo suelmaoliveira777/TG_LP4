@@ -128,7 +128,7 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 
 **Texto**
 
-> Sou o **Tiago Gago dos Santos** e aprendi lutheria com quem realmente sabe: mestres portugueses com décadas de experiência na construção e reparação de instrumentos de corda tradicionais. Com mais de 4 anos de experiência acumulada ao lado desses mestres, aprendi cada detalhe do ofício com rigor e paciência.
+> Sou o **Tiago Gago dos Santos**, com mais de 4 anos de experiência em luthieria, aprendi cada detalhe do ofício com rigor e paciência com mestres portugueses com décadas de experiência na construção e reparação de instrumentos de corda tradicionais.
 >
 > Hoje, no meu atelier em Cascais, construo, reparo e afino instrumentos de músicos que chegam de todo o país.
 
@@ -611,7 +611,7 @@ Alterações feitas à copy original entregue pelo cliente.
 | Secção 2, 2.º parágrafo                | O Tiago Gago aprendeu lutheria…                                              | Sou o Tiago Gago dos Santos e aprendi lutheria…                                                              | Voz na primeira pessoa; apresenta o nome completo                                 |
 | Secção 2, 3.º parágrafo                | Hoje, em Cascais, recebe instrumentos de músicos de todo o país.             | Hoje, no meu atelier em Cascais, construo, reparo e afino instrumentos de músicos que chegam de todo o país. | Destaca o atelier e resume os três serviços                                       |
 | Secção 2, 1.º parágrafo                | Num instrumento, a diferença não está só na marca…                           | (apagado)                                                                                                    | Pedido do cliente: texto mais direto                                              |
-| Secção 2, 2.º parágrafo                | …instrumentos de corda tradicionais.                                         | + Com mais de 4 anos de experiência acumulada ao lado desses mestres, aprendi cada detalhe do ofício…        | Pedido do cliente: acrescenta os anos de aprendizagem                             |
+| Secção 2, 2.º parágrafo                | Sou o Tiago Gago dos Santos e aprendi lutheria com quem realmente sabe…      | Sou o Tiago Gago dos Santos, com mais de 4 anos de experiência em luthieria, aprendi cada detalhe do ofício… | Pedido do cliente: texto reescrito, com os anos de experiência                    |
 | Secção 4, passo 02                     | O Tiago analisa e devolve                                                    | Analiso o teu pedido e devolvo-te                                                                            | Voz na primeira pessoa                                                            |
 | Secção 4, passo 01                     | o que precisas — pelo formulário                                             | o que precisas, pelo formulário                                                                              | Sem travessões no site (pedido do cliente)                                        |
 | Secção 4                               | —                                                                            | Título “Três passos, sem surpresas” e etiquetas dos passos                                                   | A secção não tinha título                                                         |

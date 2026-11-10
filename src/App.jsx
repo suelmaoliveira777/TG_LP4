@@ -47,7 +47,7 @@ function App() {
           <meta name="keywords" content="luthier cascais, luthier lisboa, reparação guitarra lisboa, construção instrumentos cordas, set up guitarra portugal, viola campanica" />
           <link rel="canonical" href="https://tiagogagoluthier.pt" />
           <meta property="og:title" content="Tiago Gago Luthier" />
-          <meta property="og:description" content="Lutheria artesanal em Cascais. Construção, reparação e set up de instrumentos de corda." />
+          <meta property="og:description" content="Luthieria artesanal em Cascais. Construção, reparação e set up de instrumentos de corda." />
           <meta property="og:image" content="/og-image.jpg" />
           <meta property="og:url" content="https://tiagogagoluthier.pt" />
           <meta property="og:type" content="website" />

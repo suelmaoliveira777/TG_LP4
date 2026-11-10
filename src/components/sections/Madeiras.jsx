@@ -51,7 +51,7 @@ const GROUPS = [
         species: 'Dalbergia latifolia',
         image: '/madeiras/pau-santo.jpg',
         description:
-          'O par perfeito para os tampos de abeto. O pau-santo devolve ao som toda a complexidade que o tampo gera: graves poderosos, médios definidos e agudos brilhantes. É a escolha canónica da lutheria clássica por uma razão simples: funciona.',
+          'O par perfeito para os tampos de abeto. O pau-santo devolve ao som toda a complexidade que o tampo gera: graves poderosos, médios definidos e agudos brilhantes. É a escolha canónica da luthieria clássica por uma razão simples: funciona.',
         traitsLabel: 'Carácter sonoro',
         traits: ['Equilíbrio', 'Brilho', 'Reverberação rica'],
       },
@@ -91,7 +91,7 @@ const GROUPS = [
         species: 'Cedrus sp.',
         image: '/madeiras/cedro.jpg',
         description:
-          'Uma alternativa nobre ao mogno, com excelente estabilidade dimensional e resposta acústica própria. Muito usado na lutheria ibérica e latino-americana pela sua leveza e consistência.',
+          'Uma alternativa nobre ao mogno, com excelente estabilidade dimensional e resposta acústica própria. Muito usado na luthieria ibérica e latino-americana pela sua leveza e consistência.',
       },
     ],
   },
@@ -104,7 +104,7 @@ const GROUPS = [
         species: 'Diospyros crassiflora',
         image: '/madeiras/ebano.jpg',
         description:
-          'A madeira mais densa e precisa da lutheria. O ébano confere ao instrumento um ataque limpo, um sustain suave e uma durabilidade praticamente inabalável. Ao toque, a sensação é de precisão absoluta. Visualmente, é a linha negra que define o instrumento.',
+          'A madeira mais densa e precisa da luthieria. O ébano confere ao instrumento um ataque limpo, um sustain suave e uma durabilidade praticamente inabalável. Ao toque, a sensação é de precisão absoluta. Visualmente, é a linha negra que define o instrumento.',
         traitsLabel: 'Carácter',
         traits: ['Firmeza', 'Precisão', 'Acabamento premium'],
       },

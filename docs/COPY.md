@@ -13,7 +13,7 @@ Fonte única do texto e da estrutura do novo site. Cada secção será refeita a
 ## Voz e tom
 
 **Site — primeira pessoa do singular, tratamento por tu.**
-O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a mim, do início ao fim”. Falar na primeira pessoa (“faço”, “construo”, “analiso”) cumpre essa promessa logo na leitura e é a voz da maioria dos ateliers de lutheria de autor. O plural (“Quem Somos”) sugere uma equipa que não existe, e a terceira pessoa (“O Tiago analisa”) cria distância. O “tu” mantém-se: é próximo, comum entre músicos e coerente com toda a copy entregue.
+O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a mim, do início ao fim”. Falar na primeira pessoa (“faço”, “construo”, “analiso”) cumpre essa promessa logo na leitura e é a voz da maioria dos ateliers de luthieria de autor. O plural (“Quem Somos”) sugere uma equipa que não existe, e a terceira pessoa (“O Tiago analisa”) cria distância. O “tu” mantém-se: é próximo, comum entre músicos e coerente com toda a copy entregue.
 
 **Páginas legais — impessoal e formal.** É a norma em documentos legais e evita ambiguidade jurídica.
 
@@ -275,7 +275,7 @@ Carácter sonoro: calor, profundidade, resposta imediata
 
 **Pau-Santo Indiano** _(Dalbergia latifolia)_
 
-> O par perfeito para os tampos de abeto. O pau-santo devolve ao som toda a complexidade que o tampo gera: graves poderosos, médios definidos e agudos brilhantes. É a escolha canónica da lutheria clássica por uma razão simples: funciona.
+> O par perfeito para os tampos de abeto. O pau-santo devolve ao som toda a complexidade que o tampo gera: graves poderosos, médios definidos e agudos brilhantes. É a escolha canónica da luthieria clássica por uma razão simples: funciona.
 
 Carácter sonoro: equilíbrio, brilho, reverberação rica
 
@@ -299,13 +299,13 @@ Carácter sonoro: seco, percussivo, presença ibérica
 
 **Cedro** _(Cedrus sp.)_
 
-> Uma alternativa nobre ao mogno, com excelente estabilidade dimensional e resposta acústica própria. Muito usado na lutheria ibérica e latino-americana pela sua leveza e consistência.
+> Uma alternativa nobre ao mogno, com excelente estabilidade dimensional e resposta acústica própria. Muito usado na luthieria ibérica e latino-americana pela sua leveza e consistência.
 
 ### Escala e cavalete
 
 **Ébano Africano** _(Diospyros crassiflora)_
 
-> A madeira mais densa e precisa da lutheria. O ébano confere ao instrumento um ataque limpo, um sustain suave e uma durabilidade praticamente inabalável. Ao toque, a sensação é de precisão absoluta. Visualmente, é a linha negra que define o instrumento.
+> A madeira mais densa e precisa da luthieria. O ébano confere ao instrumento um ataque limpo, um sustain suave e uma durabilidade praticamente inabalável. Ao toque, a sensação é de precisão absoluta. Visualmente, é a linha negra que define o instrumento.
 
 Carácter: firmeza, precisão, acabamento premium
 
@@ -331,7 +331,7 @@ Carácter: solidez, sustentabilidade, sonoridade densa
 > **Fotos** (`public/madeiras/`): amostras da Xiloteca do Cirad (Wikimedia Commons, domínio público), exceto o pau-ferro. Duas são de espécies próximas e devem ser trocadas por fotos das madeiras reais do atelier:
 >
 > - **Cipreste:** não há amostra livre de *Cupressus sempervirens*; a foto é de *Tetraclinis articulata*, um cipreste mediterrânico da mesma família.
-> - **Pau-ferro:** a foto é de *Machaerium scleroxylon* (Vojtěch Zavadil, CC BY-SA 4.0, com crédito no cartão). Na lutheria, “pau-ferro” costuma ser precisamente esta espécie; *Libidibia ferrea*, a que está na copy, é outra árvore com o mesmo nome popular no Brasil. Confirmar com o Tiago qual usa.
+> - **Pau-ferro:** a foto é de *Machaerium scleroxylon* (Vojtěch Zavadil, CC BY-SA 4.0, com crédito no cartão). Na luthieria, “pau-ferro” costuma ser precisamente esta espécie; *Libidibia ferrea*, a que está na copy, é outra árvore com o mesmo nome popular no Brasil. Confirmar com o Tiago qual usa.
 
 ---
 
@@ -630,3 +630,4 @@ Alterações feitas à copy original entregue pelo cliente.
 | Footer                                 | Política de Cookies (RGPD)                                                   | + Livro de Reclamações                                                                                       | Obrigatório por lei (DL 74/2017)                                                  |
 | Footer, navegação                      | Pedido · Contacto                                                            | Como funciona · Fazer pedido                                                                                 | Coerência com a navbar                                                            |
 | Navbar, Footer                         | Nome em texto (“TIAGO GAGO” / “TIAGO GAGO LUTHIER”)                          | Logo oficial em imagem                                                                                       | Pedido do cliente: identidade visual da marca                                     |
+| Todo o site (Madeiras, SEO)            | lutheria                                                                     | luthieria                                                                                                    | Pedido do cliente: uma só grafia em todo o site                                   |

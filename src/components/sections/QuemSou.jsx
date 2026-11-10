@@ -12,10 +12,12 @@ function QuemSou() {
   return (
     <MotionConfig reducedMotion="user">
       <section id="quem-sou" className="bg-surface px-6 py-20 text-text sm:py-24 lg:px-10 lg:py-32">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
-          {/* No telemóvel a foto vem depois do texto; a partir de lg fica à esquerda */}
-          <motion.figure {...fadeUp} className="order-last lg:order-first">
-            <div className="rounded-[2rem] border border-gold-light/20 bg-bg/70 p-3 shadow-[0_0_60px_rgba(0,0,0,0.25)] sm:p-4">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-16 xl:gap-24">
+          {/* No telemóvel a foto vem depois do texto; a partir de lg fica à esquerda.
+              No desktop a moldura sai do fluxo (absolute): a altura da linha vem só do texto
+              e a foto estica até ela, por isso as duas colunas têm sempre a mesma altura */}
+          <motion.figure {...fadeUp} className="relative order-last lg:order-first">
+            <div className="rounded-[2rem] border border-gold-light/20 bg-bg/70 p-3 shadow-[0_0_60px_rgba(0,0,0,0.25)] sm:p-4 lg:absolute lg:inset-0">
               <img
                 src="/tiago-portrait-1200.jpg"
                 srcSet="/tiago-portrait-800.jpg 800w, /tiago-portrait-1200.jpg 1200w"
@@ -25,7 +27,7 @@ function QuemSou() {
                 alt="Tiago Gago a trabalhar o braço de uma guitarra no atelier"
                 loading="lazy"
                 decoding="async"
-                className="aspect-square w-full rounded-[1.5rem] object-cover object-[35%_center] lg:aspect-[4/5]"
+                className="aspect-square w-full rounded-[1.5rem] object-cover object-[35%_center] lg:aspect-auto lg:h-full"
               />
             </div>
           </motion.figure>
@@ -40,13 +42,10 @@ function QuemSou() {
             </h2>
             <div className="mt-8 space-y-5 hyphens-auto text-justify text-base leading-8 text-text/80 sm:text-lg lg:hyphens-manual lg:text-left">
               <p>
-                Num instrumento, a diferença não está só na marca nem no preço. Está também em quem o fez e em quem o cuida — e
-                isso pode transformar completamente o som e a experiência de quem toca.
-              </p>
-              <p>
                 Sou o <strong className="font-semibold text-text">Tiago Gago dos Santos</strong> e aprendi lutheria com quem
                 realmente sabe: mestres portugueses com décadas de experiência na construção e reparação de instrumentos de corda
-                tradicionais.
+                tradicionais. Com mais de 4 anos de experiência acumulada ao lado desses mestres, aprendi cada detalhe do ofício
+                com rigor e paciência.
               </p>
               <p>
                 Hoje, no meu atelier em Cascais, construo, reparo e afino instrumentos de músicos que chegam de todo o país.

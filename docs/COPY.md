@@ -37,6 +37,11 @@ O Tiago é um artesão que trabalha sozinho e a copy promete “acesso direto a 
   | Preços                                                              | 800 (extra-negrito)       |
 
   Os títulos grandes são leves e o destaque dourado faz-se pelo peso, não pelo itálico: os títulos não levam itálico. A única exceção são os nomes científicos das madeiras (_Picea abies_…), em itálico por convenção botânica.
+- **Logo:** a logo oficial (branca, fundo transparente) aparece na navbar e no footer, sempre através do componente `ui/Logo.jsx`, que liga ao início da página (`#inicio`). Os ficheiros estão em `src/assets/brand/`:
+  - `logo-tiago-gago.png`: original sem margens e sem compressão, guardado como ficheiro mestre (não é enviado para o site).
+  - `logo-tiago-gago-320.webp` e `logo-tiago-gago-640.webp`: as versões que o site usa. O browser escolhe a mais leve que fique nítida no ecrã de cada pessoa.
+  - Para trocar a logo, gera de novo estes três ficheiros com os mesmos nomes a partir da versão nova; o código não muda. Se a proporção mudar, atualiza `WIDTH` e `HEIGHT` em `ui/Logo.jsx`.
+  - Alturas: navbar 44 px (56 px a partir de `xl`), footer 80 px (96 px a partir de `sm`).
 - **Telemóvel e tablet (até `lg`):** etiqueta e título centrados, texto corrido justificado com hifenização. A partir de `lg`, tudo alinhado à esquerda.
   - **Exceção — Hero:** texto à esquerda e guitarra à direita. O título ocupa o topo em toda a largura; o subtítulo e os botões ficam numa coluna de 60% ao lado do braço da guitarra. Imagem própria para telemóvel: `public/hero_TG-guitarra.jpg`.
 
@@ -84,6 +89,8 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 - Portfólio → `#trabalhos`
 - Madeiras → `#madeiras`
 - Preços → `#precos`
+
+**Logo:** à esquerda, leva ao início (`#inicio`).
 
 **CTA:** Fazer pedido → `#pedido`
 
@@ -498,7 +505,7 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 **Coluna 1 — Identidade**
 
-> TIAGO GAGO LUTHIER
+> Logo Tiago Gago Luthier (imagem)
 > Construção · Reparação · Setup
 > Cascais, Portugal
 
@@ -622,3 +629,4 @@ Alterações feitas à copy original entregue pelo cliente.
 | Formulário, orçamento indicativo       | Ex: 800 € – 1200 €                                                           | Ex: 800 € a 1200 €                                                                                           | Sem travessões no site (pedido do cliente)                                        |
 | Footer                                 | Política de Cookies (RGPD)                                                   | + Livro de Reclamações                                                                                       | Obrigatório por lei (DL 74/2017)                                                  |
 | Footer, navegação                      | Pedido · Contacto                                                            | Como funciona · Fazer pedido                                                                                 | Coerência com a navbar                                                            |
+| Navbar, Footer                         | Nome em texto (“TIAGO GAGO” / “TIAGO GAGO LUTHIER”)                          | Logo oficial em imagem                                                                                       | Pedido do cliente: identidade visual da marca                                     |

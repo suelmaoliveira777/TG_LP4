@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import Logo from '../ui/Logo'
 
 const LINKS = [
   { href: '#quem-sou', label: 'Quem sou' },
@@ -61,8 +62,14 @@ function Navbar() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-        <a href="#inicio" onClick={close} className="text-base font-semibold uppercase tracking-[0.3em] text-text sm:text-lg">
-          Tiago Gago
+        <a
+          href="#inicio"
+          onClick={close}
+          className="rounded-md transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light"
+        >
+          {/* Prioridade alta: é a primeira coisa que se vê. Até xl tem a altura do botão do menu (h-11),
+              para o cabeçalho manter a altura que o menu móvel desconta */}
+          <Logo className="h-11 xl:h-14" sizes="(min-width: 1280px) 140px, 110px" fetchPriority="high" />
         </a>
 
         {/* No topo da página, a margem (proporcional à altura do ecrã, como a imagem da hero)

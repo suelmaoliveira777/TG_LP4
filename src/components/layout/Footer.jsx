@@ -2,6 +2,7 @@ import { MotionConfig, motion } from 'framer-motion'
 import { ArrowUp, ArrowUpRight, MapPin } from 'lucide-react'
 import { SOCIAL_LINKS } from '@/config/contact'
 import { LEGAL_PAGES, LIVRO_RECLAMACOES_URL } from '@/legal/legal-data'
+import Logo from '../ui/Logo'
 import SocialIcon from '../ui/SocialIcon'
 
 const NAV_LINKS = [
@@ -65,8 +66,11 @@ function Footer() {
           >
             {/* Identidade */}
             <div className="sm:col-span-2 lg:col-span-1">
-              <a href="#inicio" className="text-lg font-semibold uppercase tracking-[0.3em] text-text sm:text-xl">
-                Tiago Gago <span className="text-gold-light">Luthier</span>
+              <a
+                href="#inicio"
+                className="inline-block rounded-md transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light"
+              >
+                <Logo className="h-20 sm:h-24" sizes="(min-width: 640px) 240px, 200px" loading="lazy" />
               </a>
               <p className="mt-4 font-display text-xl font-normal text-gold-pale">Construção · Reparação · Setup</p>
               <p className="mt-3 inline-flex items-center gap-2 text-sm text-text/65">

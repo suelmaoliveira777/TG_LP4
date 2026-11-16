@@ -199,7 +199,8 @@ function WoodCard({ wood, interactive }) {
         />
       )}
 
-      <div className="relative p-6 sm:p-8">
+      {/* No desktop, mais margem em baixo: o texto sobe e não fica colado à base do cartão */}
+      <div className="relative p-6 sm:p-8 lg:pb-14">
         <h3 className="font-display text-3xl font-bold leading-tight sm:text-[2rem]">{wood.name}</h3>
         <p className="mt-1 font-display text-lg italic text-gold-pale">{wood.species}</p>
         <p className="mt-4 hyphens-auto text-justify text-[0.92rem] leading-7 text-text/80 lg:hyphens-manual lg:text-left">
@@ -255,7 +256,7 @@ function GroupTabs({ active, onChange }) {
       onKeyDown={handleKeyDown}
       // py-4/-my-4: espaço para o brilho da pílula, que de outro modo é cortado pelo scroll horizontal;
       // scroll-px-6: os separadores param com a mesma margem lateral do resto da página
-      className="-mx-6 -my-4 flex snap-x scroll-px-6 gap-2 overflow-x-auto px-6 py-4 [scrollbar-width:none] sm:mx-0 sm:justify-center sm:px-0 lg:justify-start [&::-webkit-scrollbar]:hidden"
+      className="-mx-6 -my-4 flex snap-x scroll-px-6 gap-2 overflow-x-auto px-6 py-4 [scrollbar-width:none] sm:mx-0 sm:justify-center sm:px-0 [&::-webkit-scrollbar]:hidden"
     >
       {GROUPS.map((group, index) => {
         const selected = index === active
@@ -314,18 +315,17 @@ function Madeiras() {
         />
 
         <div className="relative mx-auto max-w-7xl">
-          {/* Cabeçalho: título à esquerda e introdução à direita no desktop */}
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
-            <motion.div {...fadeUp} className="text-center lg:text-left">
+          {/* Cabeçalho centrado em todos os ecrãs: etiqueta, título e, por baixo, a introdução */}
+          <div className="text-center">
+            <motion.div {...fadeUp}>
               <SectionLabel>As matérias-primas</SectionLabel>
               <h2 className="mt-6 font-display text-4xl font-light leading-[1.1] sm:text-5xl lg:text-6xl">
                 Madeiras <span className="font-bold text-gold-light">selecionadas</span>
               </h2>
             </motion.div>
-            {/* Texto curto: centrado no telemóvel, como o título, em vez de justificado */}
             <motion.p
               {...fadeUp}
-              className="mx-auto max-w-2xl text-center text-base leading-8 text-text/75 [text-wrap:balance] sm:text-lg lg:mx-0 lg:text-left"
+              className="mx-auto mt-8 max-w-2xl text-base leading-8 text-text/75 [text-wrap:balance] sm:text-lg"
             >
               A escolha certa da madeira define o carácter sonoro, a resposta tátil, a durabilidade e a beleza de tudo o que
               será construído.

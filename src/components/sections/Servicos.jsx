@@ -14,7 +14,7 @@ const SERVICES = [
     title: 'Construção personalizada',
     cta: 'Criar o meu instrumento',
     description:
-      'Criamos juntos o instrumento dos teus sonhos. Escolhes a madeira, o perfil do braço, a escala, os acessórios. Eu construo, com rigor e paciência, do zero ao acabamento final.',
+      'Construção de raiz, à medida de quem toca. Definimos em conjunto a madeira, o perfil do braço, a escala e as ferragens. Executo todas as fases no atelier, do corte da madeira ao acabamento final.',
     items: [
       'Guitarras clássicas e acústicas',
       'Violas campaniças e tradicionais',
@@ -29,7 +29,7 @@ const SERVICES = [
     title: 'Reparação & Restauro',
     cta: 'Reparar o meu instrumento',
     description:
-      'O teu instrumento tem história? Eu ajudo-o a continuar a contá-la. Desde reparações simples até restauros complexos de instrumentos antigos e de família.',
+      'Reparação de danos estruturais e de desgaste, de intervenções simples a restauros completos de instrumentos antigos. Uso técnicas e materiais compatíveis com a construção original.',
     items: [
       'Colagem de tampos, fundos e ilhargas',
       'Substituição e nivelamento de trastos',
@@ -45,7 +45,7 @@ const SERVICES = [
     title: 'Setup & Regulação',
     cta: 'Marcar o meu setup',
     description:
-      'Um bom instrumento mal regulado não dá o seu melhor. O setup profissional transforma a tua experiência de tocar: torna tudo mais fácil, mais expressivo, mais teu.',
+      'Ajuste técnico de ação, intonação, tensor e trastos, para tocar com conforto e afinação estável em toda a escala. Recomendado após a compra, ao mudar o calibre das cordas e de forma regular.',
     items: [
       'Regulação de ação e altura das cordas',
       'Intonação e afinação por trastos',

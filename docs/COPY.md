@@ -142,7 +142,7 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 
 ### 🎸 Construção personalizada
 
-> Criamos juntos o instrumento dos teus sonhos. Escolhes a madeira, o perfil do braço, a escala, os acessórios. Eu construo, com rigor e paciência, do zero ao acabamento final.
+> Construção de raiz, à medida de quem toca. Definimos em conjunto a madeira, o perfil do braço, a escala e as ferragens. Executo todas as fases no atelier, do corte da madeira ao acabamento final.
 
 - Guitarras clássicas e acústicas
 - Violas campaniças e tradicionais
@@ -151,7 +151,7 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 
 ### 🔧 Reparação & Restauro
 
-> O teu instrumento tem história? Eu ajudo-o a continuar a contá-la. Desde reparações simples até restauros complexos de instrumentos antigos e de família.
+> Reparação de danos estruturais e de desgaste, de intervenções simples a restauros completos de instrumentos antigos. Uso técnicas e materiais compatíveis com a construção original.
 
 - Colagem de tampos, fundos e ilhargas
 - Substituição e nivelamento de trastos
@@ -161,7 +161,7 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 
 ### ⚙️ Setup & Regulação
 
-> Um bom instrumento mal regulado não dá o seu melhor. O setup profissional transforma a tua experiência de tocar: torna tudo mais fácil, mais expressivo, mais teu.
+> Ajuste técnico de ação, intonação, tensor e trastos, para tocar com conforto e afinação estável em toda a escala. Recomendado após a compra, ao mudar o calibre das cordas e de forma regular.
 
 - Regulação de ação e altura das cordas
 - Intonação e afinação por trastos
@@ -631,3 +631,6 @@ Alterações feitas à copy original entregue pelo cliente.
 | Footer, navegação                      | Pedido · Contacto                                                            | Como funciona · Fazer pedido                                                                                 | Coerência com a navbar                                                            |
 | Navbar, Footer                         | Nome em texto (“TIAGO GAGO” / “TIAGO GAGO LUTHIER”)                          | Logo oficial em imagem                                                                                       | Pedido do cliente: identidade visual da marca                                     |
 | Todo o site (Madeiras, SEO)            | lutheria                                                                     | luthieria                                                                                                    | Pedido do cliente: uma só grafia em todo o site                                   |
+| Secção 3, Construção (texto)           | Criamos juntos o instrumento dos teus sonhos…                                | Construção de raiz, à medida de quem toca…                                                                   | Pedido do cliente: linguagem técnica e direta, sem tom emotivo                    |
+| Secção 3, Reparação (texto)            | O teu instrumento tem história? Eu ajudo-o a continuar a contá-la…           | Reparação de danos estruturais e de desgaste…                                                                | Pedido do cliente: linguagem técnica e direta, sem tom emotivo                    |
+| Secção 3, Setup (texto)                | Um bom instrumento mal regulado não dá o seu melhor…                         | Ajuste técnico de ação, intonação, tensor e trastos…                                                         | Pedido do cliente: linguagem técnica e direta, sem tom emotivo                    |

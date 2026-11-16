@@ -403,11 +403,13 @@ function PinnedGallery({ onOpen }) {
         />
 
         <div className="relative px-10">
-          <div className="mx-auto flex max-w-7xl items-end justify-between gap-10">
-            <motion.div {...fadeUp}>
+          {/* Três colunas iguais nas pontas: o título fica no centro exato do ecrã e o contador à direita.
+              Em lg o contador é mais estreito para caber ao lado do título sem lhe tocar */}
+          <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-end gap-6">
+            <motion.div {...fadeUp} className="col-start-2 text-center">
               <Heading />
             </motion.div>
-            <motion.div {...fadeUp} className="flex w-56 flex-col items-end gap-3 pb-2">
+            <motion.div {...fadeUp} className="flex w-40 flex-col items-end gap-3 justify-self-end pb-2 xl:w-56">
               <Counter active={active} />
               <ProgressBar progress={progress} className="w-full" />
             </motion.div>

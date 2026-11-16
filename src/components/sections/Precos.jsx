@@ -213,18 +213,15 @@ function Precos() {
         />
 
         <div className="relative mx-auto max-w-7xl">
-          {/* Cabeçalho: título à esquerda e introdução à direita no desktop */}
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
-            <motion.div {...fadeUp} className="text-center lg:text-left">
+          {/* Cabeçalho centrado em todos os ecrãs: etiqueta, título e, por baixo, a introdução */}
+          <div className="text-center">
+            <motion.div {...fadeUp}>
               <SectionLabel>Preços</SectionLabel>
-              <h2 className="mt-6 font-display text-4xl font-light leading-[1.1] sm:text-5xl lg:text-6xl">
+              <h2 className="mt-6 font-display text-4xl font-light leading-[1.1] [text-wrap:balance] sm:text-5xl lg:text-6xl">
                 Valores claros, <span className="font-bold text-gold-light">antes de começar.</span>
               </h2>
             </motion.div>
-            <motion.p
-              {...fadeUp}
-              className="mx-auto max-w-2xl text-center text-base leading-8 text-text/75 [text-wrap:balance] sm:text-lg lg:mx-0 lg:text-left"
-            >
+            <motion.p {...fadeUp} className="mx-auto mt-8 max-w-2xl text-base leading-8 text-text/75 [text-wrap:balance] sm:text-lg">
               Valores indicativos. O orçamento é gratuito e nenhum trabalho começa sem o teu acordo.
             </motion.p>
           </div>

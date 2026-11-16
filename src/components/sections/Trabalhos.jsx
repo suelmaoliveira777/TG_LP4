@@ -298,7 +298,7 @@ const curtain = {
   visible: { clipPath: 'inset(0% 0% 0% 0% round 1.75rem)', transition: { duration: 1.1, ease: EASE_REVEAL } },
 }
 
-function PinnedCard({ work, index, parallax, onOpen, onHover }) {
+function PinnedCard({ work, index, parallax, onOpen }) {
   const portrait = work.image.height > work.image.width
 
   return (
@@ -307,12 +307,10 @@ function PinnedCard({ work, index, parallax, onOpen, onHover }) {
       aria-haspopup="dialog"
       onClick={() => onOpen(index)}
       onPointerMove={trackSpotlight}
-      onPointerEnter={() => onHover(true)}
-      onPointerLeave={() => onHover(false)}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
-      className={`group relative h-full shrink-0 cursor-none rounded-[1.75rem] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-2 focus-visible:ring-offset-bg ${
+      className={`group relative h-full shrink-0 cursor-pointer rounded-[1.75rem] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-2 focus-visible:ring-offset-bg ${
         portrait ? 'aspect-[3/4]' : 'aspect-[4/3]'
       }`}
     >
@@ -350,7 +348,6 @@ function PinnedGallery({ onOpen }) {
   const [distance, setDistance] = useState(0)
   const distanceValue = useMotionValue(0)
   const [active, setActive] = useState(0)
-  const [hovering, setHovering] = useState(false)
 
   // Distância a percorrer na horizontal = largura dos cartões que não cabem no ecrã.
   // A secção fica com essa altura extra, que é o scroll vertical que a faz deslizar.
@@ -385,17 +382,9 @@ function PinnedGallery({ onOpen }) {
     setActive(Math.min(WORKS.length - 1, Math.floor(value * WORKS.length))),
   )
 
-  // Cursor "Ver" que segue o rato sobre os cartões
-  const cursorX = useSpring(0, { stiffness: 500, damping: 40 })
-  const cursorY = useSpring(0, { stiffness: 500, damping: 40 })
-  const moveCursor = (event) => {
-    cursorX.set(event.clientX)
-    cursorY.set(event.clientY)
-  }
-
   return (
     <div ref={runwayRef} className="relative" style={{ height: `calc(100svh + ${distance}px)` }}>
-      <div ref={panelRef} onPointerMove={moveCursor} className="sticky top-0 flex h-[100svh] flex-col overflow-hidden pb-10 pt-28">
+      <div ref={panelRef} className="sticky top-0 flex h-[100svh] flex-col overflow-hidden pb-10 pt-28">
         {/* Brilho dourado discreto por trás dos cartões */}
         <div
           aria-hidden="true"
@@ -429,23 +418,12 @@ function PinnedGallery({ onOpen }) {
                 index={index}
                 parallax={parallax}
                 onOpen={onOpen}
-                onHover={setHovering}
               />
             ))}
             <QuoteCard className="h-full w-[24rem]" />
           </motion.div>
         </div>
       </div>
-
-      <motion.div
-        aria-hidden="true"
-        style={{ x: cursorX, y: cursorY }}
-        animate={{ scale: hovering ? 1 : 0, opacity: hovering ? 1 : 0 }}
-        transition={{ duration: 0.25, ease: 'easeOut' }}
-        className="pointer-events-none fixed left-0 top-0 z-20 -ml-[2.75rem] -mt-[2.75rem] flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-full bg-gold-light/90 text-xs font-semibold uppercase tracking-[0.2em] text-bg shadow-glow backdrop-blur-sm"
-      >
-        Ver
-      </motion.div>
     </div>
   )
 }

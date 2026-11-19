@@ -416,7 +416,7 @@ Botão fixo no canto inferior direito, visível em todo o site principal.
 
 **Título**
 
-> O teu instrumento está por construir. Ou por recuperar. Começa aqui.
+> O teu instrumento está por construir ou recuperar? Começa aqui.
 
 **Texto**
 
@@ -644,3 +644,4 @@ Alterações feitas à copy original entregue pelo cliente.
 | Secção 3, Construção (texto)           | Criamos juntos o instrumento dos teus sonhos…                                | Construção de raiz, à medida de quem toca…                                                                   | Pedido do cliente: linguagem técnica e direta, sem tom emotivo                    |
 | Secção 3, Reparação (texto)            | O teu instrumento tem história? Eu ajudo-o a continuar a contá-la…           | Reparação de danos estruturais e de desgaste…                                                                | Pedido do cliente: linguagem técnica e direta, sem tom emotivo                    |
 | Secção 3, Setup (texto)                | Um bom instrumento mal regulado não dá o seu melhor…                         | Ajuste técnico de ação, intonação, tensor e trastos…                                                         | Pedido do cliente: linguagem técnica e direta, sem tom emotivo                    |
+| Secção 8, título                       | O teu instrumento está por construir. Ou por recuperar. Começa aqui.        | O teu instrumento está por construir ou recuperar? Começa aqui.                                              | Pedido do cliente: uma só pergunta, mais direta                                   |

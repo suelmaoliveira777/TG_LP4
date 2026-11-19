@@ -333,7 +333,9 @@ function FormularioPedido() {
           <motion.div {...fadeUp} className="text-center lg:sticky lg:top-28 lg:self-start lg:text-left">
             <SectionLabel>Pedido</SectionLabel>
             <h2 className="mt-6 font-display text-4xl font-light leading-[1.1] sm:text-5xl">
-              O teu instrumento está por construir. Ou por recuperar. <span className="font-bold text-gold-light">Começa aqui.</span>
+              {/* whitespace-nowrap: o destaque dourado nunca se parte em duas linhas */}
+              O teu instrumento está por construir ou recuperar?{' '}
+              <span className="whitespace-nowrap font-bold text-gold-light">Começa aqui.</span>
             </h2>
             <p className="mx-auto mt-6 max-w-xl hyphens-auto text-justify text-base leading-8 text-text/75 lg:mx-0 lg:hyphens-manual lg:text-left">
               Diz-me o que tens em mente e eu digo-te o melhor caminho. Preenche o formulário abaixo com os detalhes do teu

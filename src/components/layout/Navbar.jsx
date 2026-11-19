@@ -108,12 +108,12 @@ function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={close}
-                className="border-b border-white/10 py-5 font-display text-3xl text-text transition hover:text-gold-light"
+                className="border-b border-white/10 py-5 text-center font-display text-3xl text-text transition hover:text-gold-light"
               >
                 {link.label}
               </a>
             ))}
-            <Button asChild size="lg" className="mt-8 w-full sm:w-auto sm:self-start">
+            <Button asChild size="lg" className="mt-8 w-full sm:w-auto sm:self-center">
               <a href={CTA.href} onClick={close}>
                 {CTA.label}
               </a>

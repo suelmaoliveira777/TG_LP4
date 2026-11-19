@@ -41,18 +41,8 @@ function App() {
   return (
     <HelmetProvider>
       <div className="min-h-screen bg-bg text-text">
+        {/* Título, descrição e tags de partilha estão no index.html (os robôs de partilha não correm JS) */}
         <Helmet>
-          <title>Tiago Gago Luthier | Construção e Reparação de Instrumentos em Cascais</title>
-          <meta name="description" content="Luthier artesanal em Cascais, Lisboa. Construção, reparação e set up profissional de instrumentos de corda. Formado com mestres portugueses. Orçamento gratuito." />
-          <meta name="keywords" content="luthier cascais, luthier lisboa, reparação guitarra lisboa, construção instrumentos cordas, set up guitarra portugal, viola campanica" />
-          <link rel="canonical" href="https://tiagogagoluthier.pt" />
-          <meta property="og:title" content="Tiago Gago Luthier" />
-          <meta property="og:description" content="Luthieria artesanal em Cascais. Construção, reparação e set up de instrumentos de corda." />
-          <meta property="og:image" content="/og-image.jpg" />
-          <meta property="og:url" content="https://tiagogagoluthier.pt" />
-          <meta property="og:type" content="website" />
-          <meta property="og:locale" content="pt_PT" />
-          <meta name="twitter:card" content="summary_large_image" />
           <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
         </Helmet>
 

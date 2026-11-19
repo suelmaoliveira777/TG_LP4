@@ -575,6 +575,16 @@ O plano gratuito da Vercel (Hobby) é **só para uso pessoal e não comercial**.
 - **Sem dependências frágeis:** fica tudo no mesmo alojamento e sem limites de envios relevantes para este volume.
 - **Requisito:** é preciso ter o domínio `tiagogagoluthier.pt` registado, para validar o envio de emails no Resend.
 
+### Pré-visualização ao partilhar o link (WhatsApp, Facebook, LinkedIn)
+
+Quando o link é partilhado, aparece um cartão com imagem, título e descrição.
+
+- **Onde está:** nas meta tags Open Graph do `index.html` (e das três páginas legais). Têm de estar no HTML e não no React, porque os robôs do WhatsApp e do Facebook não executam JavaScript.
+- **Texto:** título “Tiago Gago Luthier | Construção, reparação e setup em Cascais” e descrição “Luthieria artesanal em Cascais. Construção, reparação e setup de instrumentos de corda. Orçamento gratuito.”
+- **Imagem:** `public/og-image.jpg`, 1200 × 630 px (o tamanho pedido pelo WhatsApp e pelo Facebook), com a logo, “Construção · Reparação · Setup”, “Cascais, Portugal” e a viola campaniça da Hero. Pesa 78 KB (o WhatsApp ignora imagens muito pesadas). Para a trocar, basta substituir o ficheiro mantendo o nome e o tamanho.
+- **Endereço do site:** variável `VITE_SITE_URL` no ficheiro `.env` (hoje `https://tg-lp-4.vercel.app`). As redes sociais exigem endereços completos, por isso as tags, o link canónico e os dados estruturados usam esta variável. **Quando o domínio estiver ativo**, trocar para `https://tiagogagoluthier.pt` e publicar de novo.
+- **Cache:** o WhatsApp e o Facebook guardam a pré-visualização durante algum tempo. Para testar uma alteração na hora, partilhar o link com `?v=2` no fim (cada número novo obriga a gerar outra vez). Para ver o que os robôs leem, usar o [Sharing Debugger do Facebook](https://developers.facebook.com/tools/debug/) (botão “Scrape Again”).
+
 ---
 
 ## Pontos a decidir
@@ -584,7 +594,7 @@ O plano gratuito da Vercel (Hobby) é **só para uso pessoal e não comercial**.
 1. **Número de WhatsApp** do Tiago, para o botão flutuante e o formulário (constante `WHATSAPP_NUMBER` em `src/config/contact.js`).
 2. **URLs reais das redes sociais** (Instagram, Facebook, YouTube) e do site da weblygrow. As das redes estão em `SOCIAL_LINKS`, em `src/config/contact.js`, deduzidas dos nomes da copy.
 3. **Dados para as páginas legais** (`src/legal/legal-data.js`): nome completo, NIF, morada, email, telefone, regime de IVA, percentagem do sinal, garantia de reparações e setups, foro e entidade de resolução alternativa de litígios. Para a entidade RAL, os candidatos prováveis são o CNIACC (âmbito nacional) e o Centro de Arbitragem de Conflitos de Consumo de Lisboa. A competência territorial para Cascais tem de ser confirmada no Portal do Consumidor.
-4. **Domínio:** confirmar se `tiagogagoluthier.pt` já está registado. É usado no SEO, nas páginas legais e no envio de emails.
+4. **Domínio:** confirmar se `tiagogagoluthier.pt` já está registado. É usado no envio de emails e, depois de ativo, deve passar para `VITE_SITE_URL` no `.env` (SEO e pré-visualização de partilha; ver [Decisões técnicas](#decisões-técnicas)).
 5. **Alojamento:** aprovar a mudança para o Cloudflare Pages (ver [Decisões técnicas](#decisões-técnicas)).
 6. **Google Analytics e Meta Pixel:** os IDs no código são marcadores (`G-XXXXXXXXXX`) e os scripts nem chegam a ser carregados. Ativar os dois com as contas do Tiago, ou retirá-los do código e da Política de Cookies.
 7. **Preços reais** (secção Preços): os atuais são fictícios. Indicar também se incluem IVA.

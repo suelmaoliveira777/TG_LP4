@@ -3,7 +3,8 @@ export const schemaData = {
   '@type': 'LocalBusiness',
   name: 'Tiago Gago Luthier',
   description: 'Luthier artesanal em Cascais especializado em construção, reparação e set up de instrumentos de corda.',
-  url: 'https://tiagogagoluthier.pt',
+  url: `${import.meta.env.VITE_SITE_URL}/`,
+  image: `${import.meta.env.VITE_SITE_URL}/og-image.jpg`,
   telephone: '+351XXXXXXXXX',
   address: {
     '@type': 'PostalAddress',

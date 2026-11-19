@@ -205,7 +205,7 @@ Não há email, telefone nem outros formulários espalhados pelo site. Isto conc
 
 **CTA:** Pedir orçamento → `#pedido`
 
-> **Design:** um fluxograma em que a linha é uma corda de guitarra. No desktop atravessa o ecrã de ponta a ponta e os três passos ficam lado a lado; no telemóvel a corda desce na vertical, ao lado dos passos. Com o scroll, um ponto de luz percorre a corda e deixa-a dourada; cada passo tem um marcador redondo, como os pontos que marcam os trastes na escala, que acende quando a luz chega, e nesse momento a corda vibra como se fosse dedilhada. No desktop, passar o rato num passo também faz vibrar a corda. Os passos ainda por chegar ficam esbatidos. Com “reduzir movimento” ativo no sistema, a corda aparece já desenhada e os passos acesos. Em cada cartão, o ícone e o título ficam centrados; os cartões não têm etiquetas.
+> **Design:** um fluxograma em que a linha é uma corda de guitarra. No desktop atravessa o ecrã de ponta a ponta e os três passos ficam lado a lado; no telemóvel a corda desce na vertical, ao lado dos passos. Com o scroll, um ponto de luz percorre a corda e deixa-a dourada; cada passo tem um marcador redondo, como os pontos que marcam os trastes na escala (no desktop, centrado por cima do seu cartão), que acende quando a luz chega, e nesse momento a corda vibra como se fosse dedilhada. No desktop, passar o rato num passo também faz vibrar a corda. Os passos ainda por chegar ficam esbatidos. Com “reduzir movimento” ativo no sistema, a corda aparece já desenhada e os passos acesos. Em cada cartão, o ícone e o título ficam centrados; os cartões não têm etiquetas.
 
 ---
 

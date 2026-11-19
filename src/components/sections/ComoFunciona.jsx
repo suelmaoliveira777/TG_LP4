@@ -211,12 +211,13 @@ function GuitarString({ geometry, progress, plucks, animated }) {
 
 /* ---------- Passos ---------- */
 
-// Marcador do passo, como o ponto de madrepérola que marca os trastes na escala
+// Marcador do passo, como o ponto de madrepérola que marca os trastes na escala.
+// No desktop fica ao centro, por cima do cartão, alinhado com o ícone e o título.
 function Marker({ ref, index, lit }) {
   return (
     <span
       ref={ref}
-      className={`relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border font-display text-xl font-bold transition-all duration-700 [font-feature-settings:'lnum'] ${
+      className={`relative z-10 flex h-14 w-14 shrink-0 items-center lg:justify-self-center justify-center rounded-full border font-display text-xl font-bold transition-all duration-700 [font-feature-settings:'lnum'] ${
         lit
           ? 'border-gold-pale/80 bg-gradient-to-br from-gold-pale via-gold-light to-gold-mid text-bg shadow-glow'
           : 'border-white/15 bg-surface text-muted'
